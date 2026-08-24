@@ -1,0 +1,5716 @@
+[
+ {
+  "slug": "serum-z-gel-and-clot-activator-serum-separator-19",
+  "url": "/product/serum-z-gel-and-clot-activator-serum-separator-19/",
+  "title": "Z SERUM CLOT ACTIVATOR",
+  "codes": [
+   "PPC - GPC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/02/Z-Serum-Clot-Activator-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac serum tubes are used to collect serum sample for chemistry, serology and immunology.",
+  "description": "The tubes are coated with micronised silica particles which activate clotting when tubes are gently inverted.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PPC - GPC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Serum tube with clot activator for immune hematology, clinical chemistry tests."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "Z SERUM CLOT ACTIVATOR"
+ },
+ {
+  "slug": "no-additive",
+  "url": "/product/no-additive/",
+  "title": "Z NO ADDITIVE",
+  "codes": [
+   "PNC - GNC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/02/Z-No-Additive-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac Z No Additive tubes are mostly used for clinical biochemistry and immunology.",
+  "description": "It may be used either as a discard tube or a secondary tube.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PNC - GNC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "No additive included for immune hematology."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "Z NO ADDITIVE"
+ },
+ {
+  "slug": "serum-z-serum-clot-activator",
+  "url": "/product/serum-z-serum-clot-activator/",
+  "title": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+  "codes": [
+   "PGC - GGC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/02/Z-GelClot-Activator-Serum-Separator-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac gel and clot activator is used for routine blood donor screening as well as for diagnosinginfectious diseases.",
+  "description": "The gel barrier at the bottom of the tube is used to separate the serum and the blood clot as the gel barrier is moving upward to the serum clot during centrifugation.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PGC - GGC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Serum tube with clot activator for immune haematology, clinical chemistry tests."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR"
+ },
+ {
+  "slug": "coagulation-sodium-citrate",
+  "url": "/product/coagulation-sodium-citrate/",
+  "title": "SODIUM CITRATE",
+  "codes": [
+   "PPT - GPT"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/02/Sodium-Citrate-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac Citrate tubes (3.2% and 3.8%) are used for coagulation studies and contain buffered sodium citrate solution.",
+  "description": "The citrate tubes can also be used to obtain an accurate platelet count through a special test procedure.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PPT - GPT"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma tube for coagulation testing (ratio 1:9)."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "SODIUM CITRATE"
+ },
+ {
+  "slug": "heparin-lh-lithium-heparin",
+  "url": "/product/heparin-lh-lithium-heparin/",
+  "title": "LH LITHIUM HEPARIN",
+  "codes": [
+   "PHL - GHL"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/02/LH-Lithium-Heparin-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac lithium heparin tubes are used in chemistry and special chemistry testing. Heparin is the recommended anticoagulant for many determinations using whole blood or plasma specimens.",
+  "description": "Tubes are sprayed with dried sodium heparin additives.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PHL - GHL"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma tube for Blood Rheology",
+     "Emergency biochemistry",
+     "Trace elements"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "LH LITHIUM HEPARIN"
+ },
+ {
+  "slug": "fe-edta-sodium-fluoride",
+  "url": "/product/fe-edta-sodium-fluoride/",
+  "title": "FE EDTA/SODIUM FLUORIDE",
+  "codes": [
+   "PSE - GSE"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/04/FE-EDTA-Sodium-Fluoride-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac EDTA/Sodium Fluoride & Sodium Fluoride/Potassium Oxalate tubes are used in clinical biochemistry and are suitable for the analysis of glucose concentration within 48 hours.",
+  "description": "Sodium Fluoride is used as a glycolysis inhibitor, whereas the additive is used to prevent the enzymatic action in the glycolytic pathway.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PSE - GSE"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma tube for glucose",
+     "lactate testing"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "FE EDTA/SODIUM FLUORIDE"
+ },
+ {
+  "slug": "polyglycolic-acid-pga",
+  "url": "/product/polyglycolic-acid-pga/",
+  "title": "POLYGLYCOLIC ACID",
+  "codes": [
+   "PGA"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polyglycolic-Acid-HERO.jpg",
+  "descriptionSmall": "PGA surgical sutures are offered in violet or undyed and are available in U.S.P sizes 8/0 - 3.",
+  "description": "Polyglycolic Acid [PGA] is sterile absorbable synthetic multifilament surgical suture composed of homopolymers of glycolide. The suture can guarantee the holding power while it can be easily handled due to the soft and smooth surface.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PGA"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "skin closure",
+     "gastrointestinal surgery",
+     "gynaecology",
+     "obstetrics",
+     "plastic surgery",
+     "urology",
+     "ophthalmic surgery",
+     "orthopaedics"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT PLAIN",
+    "href": "/product/catgut-plain-cp/"
+   },
+   {
+    "label": "CATGUT CHROMIC",
+    "href": "/product/catgut-chronic/"
+   },
+   {
+    "label": "POLYGLACTINE SWIFT",
+    "href": "/product/polyglactine-swift-pgs/"
+   },
+   {
+    "label": "POLYGLACTINE 910 PLUS",
+    "href": "/product/polyglactine-910-plus-pgla-plus/"
+   },
+   {
+    "label": "POLYGLACTINE 910",
+    "href": "/product/polyglactine-910-pgla/"
+   },
+   {
+    "label": "POLIGLECAPRONE 25",
+    "href": "/product/poliglecaprone-25-plc/"
+   },
+   {
+    "label": "POLYDIOXANONE",
+    "href": "/product/polydioxanone-pdo/"
+   }
+  ],
+  "currentVariant": "POLYGLYCOLIC ACID"
+ },
+ {
+  "slug": "polydioxanone-pdo",
+  "url": "/product/polydioxanone-pdo/",
+  "title": "POLYDIOXANONE",
+  "codes": [
+   "PDO"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polydioxanone-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "PDO surgical sutures are offered in violet and are available in U.S.P sizes 8/0 - 3.",
+  "description": "Polydioxanone [PDO] is a sterile absorbable synthetic monofilament surgical suture composed of a polymer made from polyester poly (p-dioxanone). The suture can provide high initial tensile strength, guaranteeing the holding power and minimal tissue reaction. PDO surgical sutures can be easily handled due to the soft and smooth surface.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PDO"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "gastrointestinal surgery",
+     "orthopaedics",
+     "abdominal wall closure"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT PLAIN",
+    "href": "/product/catgut-plain-cp/"
+   },
+   {
+    "label": "CATGUT CHROMIC",
+    "href": "/product/catgut-chronic/"
+   },
+   {
+    "label": "POLYGLACTINE SWIFT",
+    "href": "/product/polyglactine-swift-pgs/"
+   },
+   {
+    "label": "POLYGLACTINE 910 PLUS",
+    "href": "/product/polyglactine-910-plus-pgla-plus/"
+   },
+   {
+    "label": "POLYGLACTINE 910",
+    "href": "/product/polyglactine-910-pgla/"
+   },
+   {
+    "label": "POLIGLECAPRONE 25",
+    "href": "/product/poliglecaprone-25-plc/"
+   },
+   {
+    "label": "POLYGLYCOLIC ACID",
+    "href": "/product/polyglycolic-acid-pga/"
+   }
+  ],
+  "currentVariant": "POLYDIOXANONE"
+ },
+ {
+  "slug": "poliglecaprone-25-plc",
+  "url": "/product/poliglecaprone-25-plc/",
+  "title": "POLIGLECAPRONE 25",
+  "codes": [
+   "PLC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Poliglecaprone-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "PLC surgical sutures are offered in violet or undyed and are available in U.S.P sizes 6/0 - 2.",
+  "description": "Poliglecaprone 25 [PLC] is a sterile absorbable synthetic monofilament surgical suture composed of 75% glycolide and 25% \u2013 e-caprolactone. The suture can provide high initial tensile strength, guaranteeing the holding power. It breaks down by hydrolysis. PLC surgical sutures can be easily handled due to the soft and smooth surface.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PLC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "plastic surgery",
+     "skin closure",
+     "urology",
+     "gastrointestinal surgery",
+     "gynaecology"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT PLAIN",
+    "href": "/product/catgut-plain-cp/"
+   },
+   {
+    "label": "CATGUT CHROMIC",
+    "href": "/product/catgut-chronic/"
+   },
+   {
+    "label": "POLYGLACTINE SWIFT",
+    "href": "/product/polyglactine-swift-pgs/"
+   },
+   {
+    "label": "POLYGLACTINE 910 PLUS",
+    "href": "/product/polyglactine-910-plus-pgla-plus/"
+   },
+   {
+    "label": "POLYGLACTINE 910",
+    "href": "/product/polyglactine-910-pgla/"
+   },
+   {
+    "label": "POLYDIOXANONE",
+    "href": "/product/polydioxanone-pdo/"
+   },
+   {
+    "label": "POLYGLYCOLIC ACID",
+    "href": "/product/polyglycolic-acid-pga/"
+   }
+  ],
+  "currentVariant": "POLIGLECAPRONE 25"
+ },
+ {
+  "slug": "polyglactine-910-pgla",
+  "url": "/product/polyglactine-910-pgla/",
+  "title": "POLYGLACTINE 910",
+  "codes": [
+   "PGLA"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polyglactine-910-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "Pgla surgical sutures are offered in dyed violet or undyed and are available in U.S.P  sizes 8/0 - 3.",
+  "description": "Polyglactine 910 [PGLA] is a sterile, absorbable, synthetic, braided surgical suture composed of a copolymer made from 90% glycolide and 10% L-lactide, formula of Poly (glycolide-co lactide (C2H2O2) m (C3H4O2) n. The suture can provide high tensile strength, guaranteeing the holding power.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PGLA"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "skin closure",
+     "gastrointestinal surgery",
+     "plastic surgery",
+     "ophthalmic surgery",
+     "gynaecology",
+     "obstetrics",
+     "orthopaedics",
+     "urology"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT PLAIN",
+    "href": "/product/catgut-plain-cp/"
+   },
+   {
+    "label": "CATGUT CHROMIC",
+    "href": "/product/catgut-chronic/"
+   },
+   {
+    "label": "POLYGLACTINE SWIFT",
+    "href": "/product/polyglactine-swift-pgs/"
+   },
+   {
+    "label": "POLYGLACTINE 910 PLUS",
+    "href": "/product/polyglactine-910-plus-pgla-plus/"
+   },
+   {
+    "label": "POLIGLECAPRONE 25",
+    "href": "/product/poliglecaprone-25-plc/"
+   },
+   {
+    "label": "POLYDIOXANONE",
+    "href": "/product/polydioxanone-pdo/"
+   },
+   {
+    "label": "POLYGLYCOLIC ACID",
+    "href": "/product/polyglycolic-acid-pga/"
+   }
+  ],
+  "currentVariant": "POLYGLACTINE 910"
+ },
+ {
+  "slug": "polyglactine-910-plus-pgla-plus",
+  "url": "/product/polyglactine-910-plus-pgla-plus/",
+  "title": "POLYGLACTINE 910 PLUS",
+  "codes": [
+   "PGLA - PLUS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polyglactine-910-Absorbable-Surgical-Sutures-D-Tek-Demophorius-1.jpg",
+  "descriptionSmall": "Pgla-plus surgical sutures are offered dyed or undyed and are available in U.S.P sizes 5/0 - 2.",
+  "description": "Polyglactine 910 PLUS [PGLA-PLUS] is a sterile, absorbable, synthetic, braided coated surgical suture composed of a copolymer made from 90% glycolide and 10% L-lactide. The suture can provide high tensile strength, guaranteeing the holding power while it can be easily handled due to the soft and smooth surface. Additionally, PGLA-PLUS can reduce the number of recovered bacteria in a buffered aqueous environment.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PGLA - PLUS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "SKIN CLOSURE",
+     "gastrointestinal surgery",
+     "plastic surgery",
+     "ophthalmic surgery",
+     "gynaecology",
+     "obstetrics",
+     "orthopaedics",
+     "urology"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT PLAIN",
+    "href": "/product/catgut-plain-cp/"
+   },
+   {
+    "label": "CATGUT CHROMIC",
+    "href": "/product/catgut-chronic/"
+   },
+   {
+    "label": "POLYGLACTINE SWIFT",
+    "href": "/product/polyglactine-swift-pgs/"
+   },
+   {
+    "label": "POLYGLACTINE 910",
+    "href": "/product/polyglactine-910-pgla/"
+   },
+   {
+    "label": "POLIGLECAPRONE 25",
+    "href": "/product/poliglecaprone-25-plc/"
+   },
+   {
+    "label": "POLYDIOXANONE",
+    "href": "/product/polydioxanone-pdo/"
+   },
+   {
+    "label": "POLYGLYCOLIC ACID",
+    "href": "/product/polyglycolic-acid-pga/"
+   }
+  ],
+  "currentVariant": "POLYGLACTINE 910 PLUS"
+ },
+ {
+  "slug": "polyglactine-swift-pgs",
+  "url": "/product/polyglactine-swift-pgs/",
+  "title": "POLYGLACTINE SWIFT",
+  "codes": [
+   "PGS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polyglactine-Swift-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "PGS surgical sutures are offered in violet or undyed and are available in U.S.P sizes 8/0 - 2.",
+  "description": "Polyglactine Swift [PGS] is a sterile, absorbable, synthetic, braided coated surgical suture composed of homopolymers of glycolic acid. The suture is coated with caprolactone / glycolide copolymer and calcium stearoyl lactylate while the absorption rate is expected with minimal tissue reaction. Also, PGS can provide high tensile strength, guaranteeing the holding power while it can be easily handled due to the soft and smooth surface.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PGS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "urology",
+     "obstetrics (Epistomy repair)",
+     "gynaecology",
+     "ophthalmic surgery (conjunctiva)",
+     "plastic surgery"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT PLAIN",
+    "href": "/product/catgut-plain-cp/"
+   },
+   {
+    "label": "CATGUT CHROMIC",
+    "href": "/product/catgut-chronic/"
+   },
+   {
+    "label": "POLYGLACTINE 910 PLUS",
+    "href": "/product/polyglactine-910-plus-pgla-plus/"
+   },
+   {
+    "label": "POLYGLACTINE 910",
+    "href": "/product/polyglactine-910-pgla/"
+   },
+   {
+    "label": "POLIGLECAPRONE 25",
+    "href": "/product/poliglecaprone-25-plc/"
+   },
+   {
+    "label": "POLYDIOXANONE",
+    "href": "/product/polydioxanone-pdo/"
+   },
+   {
+    "label": "POLYGLYCOLIC ACID",
+    "href": "/product/polyglycolic-acid-pga/"
+   }
+  ],
+  "currentVariant": "POLYGLACTINE SWIFT"
+ },
+ {
+  "slug": "catgut-chronic",
+  "url": "/product/catgut-chronic/",
+  "title": "CATGUT CHROMIC",
+  "codes": [
+   "CC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Catgut-Chromic-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "CC surgical sutures are offered in brown or undyed and are available in U.S.P sizes 6/0 - 3.",
+  "description": "Catgut Chromic [CC] is an animal originated, sterile, absorbable, natural, twisted multifilament surgical suture made of strands of purified collagen taken from the serosal layer of selected bovines tanned with chrome salts. Origin from BSE-free classified countries. The suture comprises high purity collagen 98%, treated with glycerol and chromic salt solutions while it can provide high tensile strength, guaranteeing the holding power and easy handling.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "CC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "gastrointestinal surgery",
+     "gynaecology",
+     "obstetrics",
+     "urology",
+     "ophthalmic surgery"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT PLAIN",
+    "href": "/product/catgut-plain-cp/"
+   },
+   {
+    "label": "POLYGLACTINE SWIFT",
+    "href": "/product/polyglactine-swift-pgs/"
+   },
+   {
+    "label": "POLYGLACTINE 910 PLUS",
+    "href": "/product/polyglactine-910-plus-pgla-plus/"
+   },
+   {
+    "label": "POLYGLACTINE 910",
+    "href": "/product/polyglactine-910-pgla/"
+   },
+   {
+    "label": "POLIGLECAPRONE 25",
+    "href": "/product/poliglecaprone-25-plc/"
+   },
+   {
+    "label": "POLYDIOXANONE",
+    "href": "/product/polydioxanone-pdo/"
+   },
+   {
+    "label": "POLYGLYCOLIC ACID",
+    "href": "/product/polyglycolic-acid-pga/"
+   }
+  ],
+  "currentVariant": "CATGUT CHROMIC"
+ },
+ {
+  "slug": "catgut-plain-cp",
+  "url": "/product/catgut-plain-cp/",
+  "title": "CATGUT PLAIN",
+  "codes": [
+   "CP"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Catgut-Plain-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "Catgut Plain surgical sutures are offered in ivory and are available in U.S.P sizes 6/0 - 3.",
+  "description": "Catgut Plain [CP] is an animal originated, sterile, absorbable, natural, twisted multifilament surgical suture made of strands of purified collagen taken from the serosal layer of selected bovines. Origin from BSE-free classified countries. The suture comprises high purity collagen 98%, treated with glycerol and chromic salt solutions while it can provide high tensile strength, guaranteeing the holding power and easy handling.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/absorbable-surgical-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "CP"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/absorbable-surgical-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "GYNAECOLOGY",
+     "OBSTETRICS",
+     "UROLOGY",
+     "OPHTHALMIC SURGERY"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "CATGUT CHROMIC",
+    "href": "/product/catgut-chronic/"
+   },
+   {
+    "label": "POLYGLACTINE SWIFT",
+    "href": "/product/polyglactine-swift-pgs/"
+   },
+   {
+    "label": "POLYGLACTINE 910 PLUS",
+    "href": "/product/polyglactine-910-plus-pgla-plus/"
+   },
+   {
+    "label": "POLYGLACTINE 910",
+    "href": "/product/polyglactine-910-pgla/"
+   },
+   {
+    "label": "POLIGLECAPRONE 25",
+    "href": "/product/poliglecaprone-25-plc/"
+   },
+   {
+    "label": "POLYDIOXANONE",
+    "href": "/product/polydioxanone-pdo/"
+   },
+   {
+    "label": "POLYGLYCOLIC ACID",
+    "href": "/product/polyglycolic-acid-pga/"
+   }
+  ],
+  "currentVariant": "CATGUT PLAIN"
+ },
+ {
+  "slug": "silk-sk",
+  "url": "/product/silk-sk/",
+  "title": "SILK",
+  "codes": [
+   "SK"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Silk-Non-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "SK surgical sutures are offered in black or undyed and are available in U.S.P sizes 6/0 - 3.",
+  "description": "Silk (SK) is a sterile non-absorbable natural multifilament surgical suture composed of natural silk organic protein called fibroin (This protein is derived from Bombyx mori species). The suture is smooth and flexible providing easy handling to the user with high initial tensile strength.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "NON-ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/non-absorbable-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "SK"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NON-ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/non-absorbable-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "skin closure",
+     "ophthalmic surgery",
+     "oral surgery",
+     "gastrointestinal surgery",
+     "gynaecology and obstetrics."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "STAINLESS STEEL WIRE",
+    "href": "/product/stainless-steel-wire-sw/"
+   },
+   {
+    "label": "POLYESTER",
+    "href": "/product/polyester-pb/"
+   },
+   {
+    "label": "POLYPROPYLENE",
+    "href": "/product/polypropylene-pm/"
+   },
+   {
+    "label": "POLYAMIDE",
+    "href": "/product/polyamide-pl/"
+   },
+   {
+    "label": "NYLON",
+    "href": "/product/nylon-nl/"
+   }
+  ],
+  "currentVariant": "SILK"
+ },
+ {
+  "slug": "nylon-nl",
+  "url": "/product/nylon-nl/",
+  "title": "NYLON",
+  "codes": [
+   "NL"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Nylon-Non-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "SK SURGICAL SUTURES ARE OFFERED IN BLACK and BLUE. CSK surgical sutures are offered in black, blue or undyed and are available in U.S.P sizes 10/0 - 2.",
+  "description": "Nylon (NL) is a sterile non-absorbable synthetic monofilament surgical suture composed of long-chain aliphatic polymers Nylon 6,6. The suture is smooth and flexible providing easy handling to the user with high initial tensile strength.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "NON-ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/non-absorbable-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "NL"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NON-ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/non-absorbable-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "GENERAL SURGERY",
+     "plastic surgery",
+     "gastrointestinal surgery",
+     "gynaecology",
+     "obstetrics and orthopaedics",
+     "Black Nylon sutures are mainly used in plastic and ophthalmic surgery."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "STAINLESS STEEL WIRE",
+    "href": "/product/stainless-steel-wire-sw/"
+   },
+   {
+    "label": "POLYESTER",
+    "href": "/product/polyester-pb/"
+   },
+   {
+    "label": "POLYPROPYLENE",
+    "href": "/product/polypropylene-pm/"
+   },
+   {
+    "label": "POLYAMIDE",
+    "href": "/product/polyamide-pl/"
+   },
+   {
+    "label": "SILK",
+    "href": "/product/silk-sk/"
+   }
+  ],
+  "currentVariant": "NYLON"
+ },
+ {
+  "slug": "polyamide-pl",
+  "url": "/product/polyamide-pl/",
+  "title": "POLYAMIDE",
+  "codes": [
+   "PL"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polyamide-Non-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "PL surgical sutures are offered in blue and are available in U.S.P sizes 10/0 - 2.",
+  "description": "Polyamide (PL) is a sterile non-absorbable synthetic monofilament surgical suture composed of Polyamide 6.6 strands enclosed in a polyamide 6 sheet. The suture is smooth and flexible providing easy handling to the user with high initial tensile strength.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "NON-ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/non-absorbable-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PL"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NON-ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/non-absorbable-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "skin closure"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "STAINLESS STEEL WIRE",
+    "href": "/product/stainless-steel-wire-sw/"
+   },
+   {
+    "label": "POLYESTER",
+    "href": "/product/polyester-pb/"
+   },
+   {
+    "label": "POLYPROPYLENE",
+    "href": "/product/polypropylene-pm/"
+   },
+   {
+    "label": "NYLON",
+    "href": "/product/nylon-nl/"
+   },
+   {
+    "label": "SILK",
+    "href": "/product/silk-sk/"
+   }
+  ],
+  "currentVariant": "POLYAMIDE"
+ },
+ {
+  "slug": "polypropylene-pm",
+  "url": "/product/polypropylene-pm/",
+  "title": "POLYPROPYLENE",
+  "codes": [
+   "PM"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polypropylene-Non-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "PM surgical sutures are offered in blue or undyed and are available in U.S.P  sizes 9/0 - 2.",
+  "description": "Polypropylene (PM) is a sterile non-absorbable synthetic monofilament surgical suture composed of an isotactic crystalline stereoisomer of polypropylene, a synthetic linear polyolefin and polyethylene. The suture is smooth and flexible providing easy handling to the user with high initial tensile strength.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "NON-ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/non-absorbable-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PM"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NON-ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/non-absorbable-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "cardiovascular surgery",
+     "neurosurgery",
+     "ophthalmic surgery",
+     "microsurgery",
+     "plastic surgery",
+     "skin closure",
+     "orthopaedics",
+     "hernias  (also as a mesh)",
+     "gastrointestinal surgery",
+     "general surgery",
+     "ynaecology and obstetrics."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "STAINLESS STEEL WIRE",
+    "href": "/product/stainless-steel-wire-sw/"
+   },
+   {
+    "label": "POLYESTER",
+    "href": "/product/polyester-pb/"
+   },
+   {
+    "label": "POLYAMIDE",
+    "href": "/product/polyamide-pl/"
+   },
+   {
+    "label": "NYLON",
+    "href": "/product/nylon-nl/"
+   },
+   {
+    "label": "SILK",
+    "href": "/product/silk-sk/"
+   }
+  ],
+  "currentVariant": "POLYPROPYLENE"
+ },
+ {
+  "slug": "polyester-pb",
+  "url": "/product/polyester-pb/",
+  "title": "POLYESTER",
+  "codes": [
+   "PB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Polyester-Non-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "PB surgical sutures are offered in green, blue or undyed and are available in U.S.P sizes 6/0 - 2.",
+  "description": "Polyester (PB) is a sterile non-absorbable synthetic braided multifilament surgical suture composed of an isotactic crystalline stereoisomer of polypropylene, a synthetic linear polyolefin and polyethylene. The suture is silicon coated, smooth and flexible providing easy handling to the user with high initial tensile strength.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "NON-ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/non-absorbable-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NON-ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/non-absorbable-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "cardiovascular surgery",
+     "ophthalmic surgery",
+     "general surgery",
+     "skin closure",
+     "orthopaedics",
+     "gastrointestinal surgery",
+     "obstetrics"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "STAINLESS STEEL WIRE",
+    "href": "/product/stainless-steel-wire-sw/"
+   },
+   {
+    "label": "POLYPROPYLENE",
+    "href": "/product/polypropylene-pm/"
+   },
+   {
+    "label": "POLYAMIDE",
+    "href": "/product/polyamide-pl/"
+   },
+   {
+    "label": "NYLON",
+    "href": "/product/nylon-nl/"
+   },
+   {
+    "label": "SILK",
+    "href": "/product/silk-sk/"
+   }
+  ],
+  "currentVariant": "POLYESTER"
+ },
+ {
+  "slug": "stainless-steel-wire-sw",
+  "url": "/product/stainless-steel-wire-sw/",
+  "title": "STAINLESS STEEL WIRE",
+  "codes": [
+   "SW"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Stainless-Steel-Wire-Non-Absorbable-Surgical-Sutures-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "SW surgical sutures are available in U.S.P sizes 4/0 - 7.",
+  "description": "Stainless steel wire (sw) is a sterile non-absorbable, monofilament surgical suture composed of nickel, iron and chromium alloy providing exceptional strength with minimal tissue reaction and excellent knot security.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "NON-ABSORBABLE SURGICAL SUTURES",
+    "href": "/category/d-tek/non-absorbable-sutures/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "SW"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NON-ABSORBABLE SURGICAL SUTURES",
+      "href": "/category/d-tek/non-absorbable-sutures/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Closure of sternum, Orthopaedics, Abdominal wall closure and Hernia repair."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "POLYESTER",
+    "href": "/product/polyester-pb/"
+   },
+   {
+    "label": "POLYPROPYLENE",
+    "href": "/product/polypropylene-pm/"
+   },
+   {
+    "label": "POLYAMIDE",
+    "href": "/product/polyamide-pl/"
+   },
+   {
+    "label": "NYLON",
+    "href": "/product/nylon-nl/"
+   },
+   {
+    "label": "SILK",
+    "href": "/product/silk-sk/"
+   }
+  ],
+  "currentVariant": "STAINLESS STEEL WIRE"
+ },
+ {
+  "slug": "nh-sodium-heparin",
+  "url": "/product/nh-sodium-heparin/",
+  "title": "NH SODIUM HEPARIN",
+  "codes": [
+   "PHS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/NH-Sodium-Heparin-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac tubes containing sodium heparin are used for the collection of heparinised plasma or whole blood for special tests like endocrine, metabolic disorders and generally routine tests.",
+  "description": "The additive is anticoagulant which prevents clotting or activation of thrombin. Should not be used for coagulation or haematology testing.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PHS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma tube for Blood Rheology",
+     "Emergency biochemistry",
+     "Trace elements"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "NH SODIUM HEPARIN"
+ },
+ {
+  "slug": "lh-g-lithium-heparin-and-gel",
+  "url": "/product/lh-g-lithium-heparin-and-gel/",
+  "title": "LH G LITHIUM HEPARIN AND GEL",
+  "codes": [
+   "LH"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/02/LH-Lithium-Heparin-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac Lithium Heparin & Gel tubes are coated with spray-dried lithium heparin which serves as anticoagulant.",
+  "description": "They are available with a separator gel, which acts as a stable barrier between the plasma and the blood cells during and after centrifugation thus preventing any substance exchange.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "LH"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma tube for biochemistry and immunology."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "LH G LITHIUM HEPARIN AND GEL"
+ },
+ {
+  "slug": "k3e-edta-k3",
+  "url": "/product/k3e-edta-k3/",
+  "title": "K3E EDTA K3",
+  "codes": [
+   "GED - GEDB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/K2E-EDTA-K2K3E-EDTA-K3-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac EDTA tubes are used in haematology while EDTA salts are widely used as anticoagulant in blood collection tubes to cover the calcium ions of the blood, therefore preventing blood coagulation.",
+  "description": "EDTA tubes are available in a spray dried form which functions effectively.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "GED - GEDB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Whole blood / plasma tube for hematology"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "K3E EDTA K3"
+ },
+ {
+  "slug": "k2e-edta-k2-gel",
+  "url": "/product/k2e-edta-k2-gel/",
+  "title": "K2E EDTA K2 + GEL",
+  "codes": [
+   "PED - GED"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/K2E-EDTA-K2GEL-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac EDTA K2 tubes with gel (plasma separator) are used for testing plasma in moleculardiagnostics and viral load detection.",
+  "description": "The gel acts as a stable barrier between the plasma and the blood cells during and after centrifugation thus preventing any substance exchange.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PED - GED"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "PLASMA TUBE FOR MOLECULAR DIAGNOSTICS"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "K2E EDTA K2 + GEL"
+ },
+ {
+  "slug": "4nc-esr",
+  "url": "/product/4nc-esr/",
+  "title": "4NC ESR",
+  "codes": [
+   "PES - GES"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/4NC-ESR-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac erythrocyte sedimentation rate (ESR) tubes contain 3. 8% sodium citrate solution and are used for the collection and transport of venous blood for blood sedimentation rate testing.",
+  "description": "ESR measurements refer to Westergren method.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PES - GES"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Whole blood tube for ESR testing (ratio 1:4)"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2",
+    "href": "/product/k2e-edta-k2/"
+   },
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   }
+  ],
+  "currentVariant": "4NC ESR"
+ },
+ {
+  "slug": "z-no-additive",
+  "url": "/product/z-no-additive/",
+  "title": "Z NO ADDITIVE",
+  "codes": [
+   "PEDM - HS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/No-Additive-Mini-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac Z No Additive tubes are mostly used for clinical biochemistry and immunology.",
+  "description": "It may be used either as a discard tube or a secondary tube.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "MINI TUBES",
+    "href": "/category/d-vac/mini-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PEDM - HS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MINI TUBES",
+      "href": "/category/d-vac/mini-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "No additive included for immune hematology."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA",
+    "href": "/product/k2e-edta-2/"
+   },
+   {
+    "label": "Z GEL & CLOT ACTIVATOR SEP",
+    "href": "/product/z-gel-clot-activator-separator/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/lh-lithium-heparin/"
+   },
+   {
+    "label": "FE SODIUM FLUORIDE & Na2EDTA",
+    "href": "/product/k2e-edta/"
+   },
+   {
+    "label": "K3E EDTA",
+    "href": "/product/k3e-edta/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/z-serum-clot-activator/"
+   }
+  ],
+  "currentVariant": "Z NO ADDITIVE"
+ },
+ {
+  "slug": "z-serum-clot-activator",
+  "url": "/product/z-serum-clot-activator/",
+  "title": "Z SERUM CLOT ACTIVATOR",
+  "codes": [
+   "PEDM - PC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Clot-Activator-Mini-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac serum tubes are used to collect serum sample for chemistry, serology and immunology.",
+  "description": "They are coated with micronised silica particles which activate clotting when tubes are gently inverted.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "MINI TUBES",
+    "href": "/category/d-vac/mini-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PEDM - PC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MINI TUBES",
+      "href": "/category/d-vac/mini-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Serum tube with clot activator for immune hematology, clinical chemistry tests."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA",
+    "href": "/product/k2e-edta-2/"
+   },
+   {
+    "label": "Z GEL & CLOT ACTIVATOR SEP",
+    "href": "/product/z-gel-clot-activator-separator/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/lh-lithium-heparin/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/z-no-additive/"
+   },
+   {
+    "label": "FE SODIUM FLUORIDE & Na2EDTA",
+    "href": "/product/k2e-edta/"
+   },
+   {
+    "label": "K3E EDTA",
+    "href": "/product/k3e-edta/"
+   }
+  ],
+  "currentVariant": "Z SERUM CLOT ACTIVATOR"
+ },
+ {
+  "slug": "k3e-edta",
+  "url": "/product/k3e-edta/",
+  "title": "K3E EDTA",
+  "codes": [
+   "PEDM - T"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/K3-EDTA-Mini-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac EDTA tubes are used in haematology while EDTA salts are widely used as anticoagulant in blood collection tubes to cover the calcium ions of the blood, therefore preventing blood coagulation.",
+  "description": "EDTA tubes are available in a spray dried form which functions effectively.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "MINI TUBES",
+    "href": "/category/d-vac/mini-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PEDM - T"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MINI TUBES",
+      "href": "/category/d-vac/mini-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Whole blood / plasma tube for hematology"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA",
+    "href": "/product/k2e-edta-2/"
+   },
+   {
+    "label": "Z GEL & CLOT ACTIVATOR SEP",
+    "href": "/product/z-gel-clot-activator-separator/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/lh-lithium-heparin/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/z-no-additive/"
+   },
+   {
+    "label": "FE SODIUM FLUORIDE & Na2EDTA",
+    "href": "/product/k2e-edta/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/z-serum-clot-activator/"
+   }
+  ],
+  "currentVariant": "K3E EDTA"
+ },
+ {
+  "slug": "k2e-edta",
+  "url": "/product/k2e-edta/",
+  "title": "FE SODIUM FLUORIDE & Na2EDTA",
+  "codes": [
+   "PEDM - SE"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Sodium-Heparin-Mini-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac EDTA/Sodium Fluoride & Sodium Fluoride/Potassium Oxalate tubes are used in clinical biochemistry and are suitable for the analysis of glucose concentration within 48 hours.",
+  "description": "Sodium Fluoride is used as a glycolysis inhibitor, whereas the additive is used to prevent the enzymatic action in the glycolytic pathway.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "MINI TUBES",
+    "href": "/category/d-vac/mini-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PEDM - SE"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MINI TUBES",
+      "href": "/category/d-vac/mini-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma tube for glucose",
+     "lactate testing"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA",
+    "href": "/product/k2e-edta-2/"
+   },
+   {
+    "label": "Z GEL & CLOT ACTIVATOR SEP",
+    "href": "/product/z-gel-clot-activator-separator/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/lh-lithium-heparin/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/z-no-additive/"
+   },
+   {
+    "label": "K3E EDTA",
+    "href": "/product/k3e-edta/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/z-serum-clot-activator/"
+   }
+  ],
+  "currentVariant": "FE SODIUM FLUORIDE & Na2EDTA"
+ },
+ {
+  "slug": "k2e-edta-k2",
+  "url": "/product/k2e-edta-k2/",
+  "title": "K2E EDTA K2",
+  "codes": [
+   "PED - PEDB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/K2E-EDTA-K2K3E-EDTA-K3-Blood-Collection-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac EDTA tubes are used in haematology while EDTA salts are widely used as anticoagulant in blood collection tubes to cover the calcium ions of the blood, therefore preventing blood coagulation.",
+  "description": "EDTA tubes are available in a spray dried form which functions effectively.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "BLOOD COLLECTION TUBES",
+    "href": "/category/d-vac/blood-collection-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PED - PEDB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD COLLECTION TUBES",
+      "href": "/category/d-vac/blood-collection-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Whole blood / plasma tube for hematology"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA K2 + GEL",
+    "href": "/product/k2e-edta-k2-gel/"
+   },
+   {
+    "label": "K3E EDTA K3",
+    "href": "/product/k3e-edta-k3/"
+   },
+   {
+    "label": "LH G LITHIUM HEPARIN AND GEL",
+    "href": "/product/lh-g-lithium-heparin-and-gel/"
+   },
+   {
+    "label": "NH SODIUM HEPARIN",
+    "href": "/product/nh-sodium-heparin/"
+   },
+   {
+    "label": "FE EDTA/SODIUM FLUORIDE",
+    "href": "/product/fe-edta-sodium-fluoride/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/heparin-lh-lithium-heparin/"
+   },
+   {
+    "label": "SODIUM CITRATE",
+    "href": "/product/coagulation-sodium-citrate/"
+   },
+   {
+    "label": "Z GEL AND CLOT ACTIVATOR SERUM SEPARATOR",
+    "href": "/product/serum-z-serum-clot-activator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/no-additive/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/serum-z-gel-and-clot-activator-serum-separator-19/"
+   },
+   {
+    "label": "4NC ESR",
+    "href": "/product/4nc-esr/"
+   }
+  ],
+  "currentVariant": "K2E EDTA K2"
+ },
+ {
+  "slug": "lh-lithium-heparin",
+  "url": "/product/lh-lithium-heparin/",
+  "title": "LH LITHIUM HEPARIN",
+  "codes": [
+   "PEDM - HL"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Lithium-Heparin-Mini-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac lithium heparin tubes are used in chemistry and special chemistry testing. Heparin is the recommended anticoagulant for many determinations using whole blood or plasma specimens.",
+  "description": "Tubes are sprayed with dried sodium heparin additives.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "MINI TUBES",
+    "href": "/category/d-vac/mini-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PEDM - HL"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MINI TUBES",
+      "href": "/category/d-vac/mini-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma tube for Blood Rheology",
+     "Emergency biochemistry",
+     "Trace elements"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA",
+    "href": "/product/k2e-edta-2/"
+   },
+   {
+    "label": "Z GEL & CLOT ACTIVATOR SEP",
+    "href": "/product/z-gel-clot-activator-separator/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/z-no-additive/"
+   },
+   {
+    "label": "FE SODIUM FLUORIDE & Na2EDTA",
+    "href": "/product/k2e-edta/"
+   },
+   {
+    "label": "K3E EDTA",
+    "href": "/product/k3e-edta/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/z-serum-clot-activator/"
+   }
+  ],
+  "currentVariant": "LH LITHIUM HEPARIN"
+ },
+ {
+  "slug": "z-gel-clot-activator-separator",
+  "url": "/product/z-gel-clot-activator-separator/",
+  "title": "Z GEL & CLOT ACTIVATOR SEP",
+  "codes": [
+   "PEDM - GC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/GelClot-Activator-Mini-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac gel and clot activator is used for routine blood donor screening as well as for diagnosing infectious diseases.",
+  "description": "The gel barrier at the bottom of the tube is used to separate the serum and the blood clot as the gel barrier moves upward to the serum clot during the centrifugation.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "MINI TUBES",
+    "href": "/category/d-vac/mini-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PEDM - GC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MINI TUBES",
+      "href": "/category/d-vac/mini-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Serum tube with clot activator for immune hematology, clinical chemistry tests."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "K2E EDTA",
+    "href": "/product/k2e-edta-2/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/lh-lithium-heparin/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/z-no-additive/"
+   },
+   {
+    "label": "FE SODIUM FLUORIDE & Na2EDTA",
+    "href": "/product/k2e-edta/"
+   },
+   {
+    "label": "K3E EDTA",
+    "href": "/product/k3e-edta/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/z-serum-clot-activator/"
+   }
+  ],
+  "currentVariant": "Z GEL & CLOT ACTIVATOR SEP"
+ },
+ {
+  "slug": "blood-collection-needles",
+  "url": "/product/blood-collection-needles/",
+  "title": "BLOOD COLLECTION NEEDLES",
+  "codes": [
+   "BCN"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Blood-Collection-Needles-NeedlesAccessories-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "The d-vac blood collection needle consists of two bilateral flexible \u201cwings\u201d and flexible small-bore transparent tube of 20-30cm.",
+  "description": "D-vac needles are sterilised by EO and are siliconised. They have a single use and are made of medical grade stainless steel. The venepuncture end has a point which is specially designed for easy puncturing.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "NEEDLES & ACCESSORIES",
+    "href": "/category/d-vac/needles-accessories/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BCN"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NEEDLES &amp; ACCESSORIES",
+      "href": "/category/d-vac/needles-accessories/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Blood Collection Needles are designed to satisfy the demands for pediatric patients and for accessing small or fragile veins because of their small size."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "FLASHBACK NEEDLES",
+    "href": "/product/flashback-needles/"
+   },
+   {
+    "label": "SAFETY NEEDLES",
+    "href": "/product/safety-needles/"
+   },
+   {
+    "label": "MULTI-SAMPLE NEEDLES",
+    "href": "/product/multi-sample-needles/"
+   }
+  ],
+  "currentVariant": "BLOOD COLLECTION NEEDLES"
+ },
+ {
+  "slug": "multi-sample-needles",
+  "url": "/product/multi-sample-needles/",
+  "title": "MULTI-SAMPLE NEEDLES",
+  "codes": [
+   "MSN"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Flashback-Needles-NeedlesAccessories-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "The d-vac multi-sample needle consists of protection cover, needle, tube and rubber sheath. The needle should be used with holder.",
+  "description": "D-vac needles are sterilised by EO and are siliconised. They have a single use and are made of medical grade stainless steel. The venepuncture end has a point which is specially designed for easy puncturing. The needle can be used for multiple tube samples.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "NEEDLES & ACCESSORIES",
+    "href": "/category/d-vac/needles-accessories/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "MSN"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NEEDLES &amp; ACCESSORIES",
+      "href": "/category/d-vac/needles-accessories/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Collection of blood into multiple vacuum collection tubes through a single venepuncture."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "FLASHBACK NEEDLES",
+    "href": "/product/flashback-needles/"
+   },
+   {
+    "label": "SAFETY NEEDLES",
+    "href": "/product/safety-needles/"
+   },
+   {
+    "label": "BLOOD COLLECTION NEEDLES",
+    "href": "/product/blood-collection-needles/"
+   }
+  ],
+  "currentVariant": "MULTI-SAMPLE NEEDLES"
+ },
+ {
+  "slug": "safety-needles",
+  "url": "/product/safety-needles/",
+  "title": "SAFETY NEEDLES",
+  "codes": [
+   "BCNS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Safety-Needles-NeedlesAccessories-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac safety needles are user-friendly and easy to use. They reduce the risk of contamination and eliminate direct user contact with blood sample.",
+  "description": "The needle is smooth and sharp while minimising pain during penetration. The risk of incidental needle stick injury is eliminated.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "NEEDLES & ACCESSORIES",
+    "href": "/category/d-vac/needles-accessories/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BCNS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NEEDLES &amp; ACCESSORIES",
+      "href": "/category/d-vac/needles-accessories/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Avoids accidentally injuries."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "FLASHBACK NEEDLES",
+    "href": "/product/flashback-needles/"
+   },
+   {
+    "label": "MULTI-SAMPLE NEEDLES",
+    "href": "/product/multi-sample-needles/"
+   },
+   {
+    "label": "BLOOD COLLECTION NEEDLES",
+    "href": "/product/blood-collection-needles/"
+   }
+  ],
+  "currentVariant": "SAFETY NEEDLES"
+ },
+ {
+  "slug": "flashback-needles",
+  "url": "/product/flashback-needles/",
+  "title": "FLASHBACK NEEDLES",
+  "codes": [
+   "MSNFB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Flashback-Needles-NeedlesAccessories-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "Offer immediate confirmation of needle placement through a visual flashback system.",
+  "description": "Flashback Needles have a unique design for blood flow, prevent patient pain caused by multiple venepunctures and reduce the potential for sharp injuries.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "NEEDLES & ACCESSORIES",
+    "href": "/category/d-vac/needles-accessories/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "MSNFB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "NEEDLES &amp; ACCESSORIES",
+      "href": "/category/d-vac/needles-accessories/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Used to simplifying blood collection routine for phlebotomists."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SAFETY NEEDLES",
+    "href": "/product/safety-needles/"
+   },
+   {
+    "label": "MULTI-SAMPLE NEEDLES",
+    "href": "/product/multi-sample-needles/"
+   },
+   {
+    "label": "BLOOD COLLECTION NEEDLES",
+    "href": "/product/blood-collection-needles/"
+   }
+  ],
+  "currentVariant": "FLASHBACK NEEDLES"
+ },
+ {
+  "slug": "latex-examination-gloves",
+  "url": "/product/latex-examination-gloves/",
+  "title": "LATEX EXAMINATION GLOVES",
+  "codes": [
+   "SG"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Latex-Examination-Gloves-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Powdered and powder-free.",
+  "description": "The gloves shall maintain their properties when stored in a dry condition at temperature not higher than 30\u00b0C. \u2022 Non-Slip Inner Lining \u2022 Protection From Unwanted Or Dangerous Substances \u2022 Easy Donning \u2022 Softness Provides Superior Comfort And Natural Fit \u2022 Beaded Cuff Makes Donning Easy \u2022 Ambidextrous And Straight Fingers \u2022 Best Handling Of Sensitive Instruments Due To Its Excellent Tactile Sensitivity \u2022 Meet En455",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "EXAMINATION GLOVES",
+    "href": "/category/demotek/examination-gloves/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "SG"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "EXAMINATION GLOVES",
+      "href": "/category/demotek/examination-gloves/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Surgical gloves are worn by surgeons and other health professionals that have direct contact with blood, infections, sharp tools and other harmful objects and substances that could cause extreme illness or infection."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "VINYL EXAMINATION GLOVES",
+    "href": "/product/vinyl-examination-gloves/"
+   },
+   {
+    "label": "NITRILE EXAMINATION GLOVES",
+    "href": "/product/nitrile-examination-gloves/"
+   }
+  ],
+  "currentVariant": "LATEX EXAMINATION GLOVES"
+ },
+ {
+  "slug": "nitrile-examination-gloves",
+  "url": "/product/nitrile-examination-gloves/",
+  "title": "NITRILE EXAMINATION GLOVES",
+  "codes": [
+   "NG"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Nitrile-Examination-Gloves-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Powdered and powder-free.Ambidextrous, textured, beaded cuff, natural white or coloured.",
+  "description": "The gloves shall maintain their properties when stored in a cool and dry condition. \u2022 Protection From Unwanted And Dangerous Substances \u2022 Beaded Cuff Ensures Easy Donning And Prevents Roll Down \u2022 Superior Strength With Better Puncture Resistance \u2022 Full Textured Enhances Wet And Dry Grip \u2022 Thinner Gauge Improved Tactile Sensitivity \u2022 Custom Design Enhances Comfort And Fit \u2022 Provide An Alternative Solution For Individuals Who Are Allergic To Natural Rubber Latex",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "EXAMINATION GLOVES",
+    "href": "/category/demotek/examination-gloves/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "NG"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "EXAMINATION GLOVES",
+      "href": "/category/demotek/examination-gloves/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Medical examination",
+     "Dental treatment",
+     "Medical care",
+     "Home care",
+     "Laboratory"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "VINYL EXAMINATION GLOVES",
+    "href": "/product/vinyl-examination-gloves/"
+   },
+   {
+    "label": "LATEX EXAMINATION GLOVES",
+    "href": "/product/latex-examination-gloves/"
+   }
+  ],
+  "currentVariant": "NITRILE EXAMINATION GLOVES"
+ },
+ {
+  "slug": "vinyl-examination-gloves",
+  "url": "/product/vinyl-examination-gloves/",
+  "title": "VINYL EXAMINATION GLOVES",
+  "codes": [
+   "VG"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Vinyl-Examination-Gloves-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Powdered and powder-free.",
+  "description": "Vinyl gloves offer high quality barrier protection for light duty tasks or food handling. This glove provides excellent strength and durability as well as enhanced comfort for better donning and use. It is also resistant to detergents and diluted chemicals. The gloves shall maintain their properties when stored in a dry condition at temperature between 10-30\u00b0C. Protect gloves against ultra violet light sources such as sunlight and oxidizing agents. Copper ions discolour the gloves.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "EXAMINATION GLOVES",
+    "href": "/category/demotek/examination-gloves/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "VG"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "EXAMINATION GLOVES",
+      "href": "/category/demotek/examination-gloves/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Medical tasks",
+     "Food handling"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "NITRILE EXAMINATION GLOVES",
+    "href": "/product/nitrile-examination-gloves/"
+   },
+   {
+    "label": "LATEX EXAMINATION GLOVES",
+    "href": "/product/latex-examination-gloves/"
+   }
+  ],
+  "currentVariant": "VINYL EXAMINATION GLOVES"
+ },
+ {
+  "slug": "double-blood-bags",
+  "url": "/product/double-blood-bags/",
+  "title": "DOUBLE BLOOD BAGS",
+  "codes": [
+   "BBD"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2023/03/02-Double-Blood-Bag-e1679561615476.jpg",
+  "descriptionSmall": "Suitable for preservation and transfer of human blood or its components.",
+  "description": "Demotek double blood bag is designed for the collection and separation of whole blood into two different blood components; plasma and red cells. This is obtained through the process of centrifugation and extraction. The primary bag contains CPDA-1 anticoagulant solution.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBD"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "COLLECTION & SEPARATION OF WHOLE BLOOD"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE BLOOD BAGS",
+    "href": "/product/single-blood-bags/"
+   },
+   {
+    "label": "TRIPLE BLOOD BAGS",
+    "href": "/product/triple-blood-bags/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAGS",
+    "href": "/product/quadruple-blood-bags/"
+   },
+   {
+    "label": "TRANSFER BLOOD BAGS",
+    "href": "/product/transfer-blood-bags/"
+   },
+   {
+    "label": "PEDIATRIC BLOOD BAGS",
+    "href": "/product/pediatric-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+    "href": "/product/top-bottom-triple-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+    "href": "/product/top-bottom-quadruple-blood-bags/"
+   }
+  ],
+  "currentVariant": "DOUBLE BLOOD BAGS"
+ },
+ {
+  "slug": "single-blood-bags",
+  "url": "/product/single-blood-bags/",
+  "title": "SINGLE BLOOD BAGS",
+  "codes": [
+   "BBS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/single_bloodbags_demophorius.jpg",
+  "descriptionSmall": "Suitable for preservation and transfer of human blood.",
+  "description": "Demotek single blood bag is designed for blood collection, preservation and transfusion of whole blood. The primary bag contains CPDA-1 anticoagulant solution.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "COLLECTION OF WHOLE BLOOD"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "DOUBLE BLOOD BAGS",
+    "href": "/product/double-blood-bags/"
+   },
+   {
+    "label": "TRIPLE BLOOD BAGS",
+    "href": "/product/triple-blood-bags/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAGS",
+    "href": "/product/quadruple-blood-bags/"
+   },
+   {
+    "label": "TRANSFER BLOOD BAGS",
+    "href": "/product/transfer-blood-bags/"
+   },
+   {
+    "label": "PEDIATRIC BLOOD BAGS",
+    "href": "/product/pediatric-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+    "href": "/product/top-bottom-triple-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+    "href": "/product/top-bottom-quadruple-blood-bags/"
+   }
+  ],
+  "currentVariant": "SINGLE BLOOD BAGS"
+ },
+ {
+  "slug": "triple-blood-bags",
+  "url": "/product/triple-blood-bags/",
+  "title": "TRIPLE BLOOD BAGS",
+  "codes": [
+   "BBT"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2023/03/03-Triple-Blood-Bag-e1679561635554.jpg",
+  "descriptionSmall": "Suitable for preservation and transfer of human blood or its components.",
+  "description": "Demotek triple blood bag is designed to separate whole blood into three blood components; red blood cells, platelets and plasma through the process of centrifugation and extraction. Demotek triple blood bag is available with CPDA-1 or CPD/SAG-M anticoagulant solution. A platelet storage bag is incorporated for 5-days platelet storage.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBT"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "COLLECTION & SEPARATION OF WHOLE BLOOD"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE BLOOD BAGS",
+    "href": "/product/single-blood-bags/"
+   },
+   {
+    "label": "DOUBLE BLOOD BAGS",
+    "href": "/product/double-blood-bags/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAGS",
+    "href": "/product/quadruple-blood-bags/"
+   },
+   {
+    "label": "TRANSFER BLOOD BAGS",
+    "href": "/product/transfer-blood-bags/"
+   },
+   {
+    "label": "PEDIATRIC BLOOD BAGS",
+    "href": "/product/pediatric-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+    "href": "/product/top-bottom-triple-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+    "href": "/product/top-bottom-quadruple-blood-bags/"
+   }
+  ],
+  "currentVariant": "TRIPLE BLOOD BAGS"
+ },
+ {
+  "slug": "quadruple-blood-bags",
+  "url": "/product/quadruple-blood-bags/",
+  "title": "QUADRUPLE BLOOD BAGS",
+  "codes": [
+   "BBQ"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2023/03/04-Quadruple-Blood-Bag-e1679561646655.jpg",
+  "descriptionSmall": "Suitable for preservation and transfer of human blood or its components.",
+  "description": "Demotek quadruple blood bag is designed for whole blood collection and separation into four different components; red blood cells, plasma, platelets or buffy coat and cryoprecipitate or leukocyte through the process of centrifugation and extraction. Demotek quadruple blood bag is available with CPDA-1 or CPD/SAG-M anticoagulant solution. A platelet storage bag is incorporated for 5-days platelet storage.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBQ"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "COLLECTION & SEPARATION OF WHOLE BLOOD"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE BLOOD BAGS",
+    "href": "/product/single-blood-bags/"
+   },
+   {
+    "label": "DOUBLE BLOOD BAGS",
+    "href": "/product/double-blood-bags/"
+   },
+   {
+    "label": "TRIPLE BLOOD BAGS",
+    "href": "/product/triple-blood-bags/"
+   },
+   {
+    "label": "TRANSFER BLOOD BAGS",
+    "href": "/product/transfer-blood-bags/"
+   },
+   {
+    "label": "PEDIATRIC BLOOD BAGS",
+    "href": "/product/pediatric-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+    "href": "/product/top-bottom-triple-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+    "href": "/product/top-bottom-quadruple-blood-bags/"
+   }
+  ],
+  "currentVariant": "QUADRUPLE BLOOD BAGS"
+ },
+ {
+  "slug": "top-bottom-triple-blood-bags",
+  "url": "/product/top-bottom-triple-blood-bags/",
+  "title": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+  "codes": [
+   "BBTTB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2023/03/05-Top-Bottom-Triple-Blood-Bag-e1679561723381.jpg",
+  "descriptionSmall": "Suitable for preservation and transfer of human blood or its components.",
+  "description": "Demotek triple top and bottom blood bag is designed for the collection and separation of three different blood components; plasma, red cells and buffy coat which are obtained through the process of centrifugation and extraction. The primary bag comes with CPD solution while one of the transfer bags with SAGM solution is used for the preservation of red blood cells.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBTTB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "COLLECTION & SEPARATION OF WHOLE BLOOD"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE BLOOD BAGS",
+    "href": "/product/single-blood-bags/"
+   },
+   {
+    "label": "DOUBLE BLOOD BAGS",
+    "href": "/product/double-blood-bags/"
+   },
+   {
+    "label": "TRIPLE BLOOD BAGS",
+    "href": "/product/triple-blood-bags/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAGS",
+    "href": "/product/quadruple-blood-bags/"
+   },
+   {
+    "label": "TRANSFER BLOOD BAGS",
+    "href": "/product/transfer-blood-bags/"
+   },
+   {
+    "label": "PEDIATRIC BLOOD BAGS",
+    "href": "/product/pediatric-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+    "href": "/product/top-bottom-quadruple-blood-bags/"
+   }
+  ],
+  "currentVariant": "TOP & BOTTOM TRIPLE BLOOD BAGS"
+ },
+ {
+  "slug": "top-bottom-quadruple-blood-bags",
+  "url": "/product/top-bottom-quadruple-blood-bags/",
+  "title": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+  "codes": [
+   "BBQTB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2023/03/05-Top-Bottom-Triple-Blood-Bag-e1679561723381.jpg",
+  "descriptionSmall": "Suitable for preservation and transfer of human blood or its components.",
+  "description": "Demotek quadruple top and bottom blood bag is designed for the preparation of plasma, red cell concentrate and high quality platelet. This is achieved through the process of centrifugation and extraction. One of the transfer bags is used for platelets conservation for 5 days. Excellent platelet yield is achieved through optimal buffy coat removal.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBQTB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "COLLECTION & SEPARATION OF WHOLE BLOOD"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE BLOOD BAGS",
+    "href": "/product/single-blood-bags/"
+   },
+   {
+    "label": "DOUBLE BLOOD BAGS",
+    "href": "/product/double-blood-bags/"
+   },
+   {
+    "label": "TRIPLE BLOOD BAGS",
+    "href": "/product/triple-blood-bags/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAGS",
+    "href": "/product/quadruple-blood-bags/"
+   },
+   {
+    "label": "TRANSFER BLOOD BAGS",
+    "href": "/product/transfer-blood-bags/"
+   },
+   {
+    "label": "PEDIATRIC BLOOD BAGS",
+    "href": "/product/pediatric-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+    "href": "/product/top-bottom-triple-blood-bags/"
+   }
+  ],
+  "currentVariant": "TOP & BOTTOM QUADRUPLE BLOOD BAGS"
+ },
+ {
+  "slug": "pediatric-blood-bags",
+  "url": "/product/pediatric-blood-bags/",
+  "title": "PEDIATRIC BLOOD BAGS",
+  "codes": [
+   "PBB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/pediatric_bloodbags_demophorius.jpg",
+  "descriptionSmall": "Suitable for preservation and transfer of human blood or its components.",
+  "description": "Demotek paediatric blood bag is designed from high medical grade PVC in order to provide maximum safety and convenience, while allowing the splitting of blood units into four equal paediatric size bags.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PBB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "COLLECTION & SEPARATION OF WHOLE BLOOD"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE BLOOD BAGS",
+    "href": "/product/single-blood-bags/"
+   },
+   {
+    "label": "DOUBLE BLOOD BAGS",
+    "href": "/product/double-blood-bags/"
+   },
+   {
+    "label": "TRIPLE BLOOD BAGS",
+    "href": "/product/triple-blood-bags/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAGS",
+    "href": "/product/quadruple-blood-bags/"
+   },
+   {
+    "label": "TRANSFER BLOOD BAGS",
+    "href": "/product/transfer-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+    "href": "/product/top-bottom-triple-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+    "href": "/product/top-bottom-quadruple-blood-bags/"
+   }
+  ],
+  "currentVariant": "PEDIATRIC BLOOD BAGS"
+ },
+ {
+  "slug": "cord-blood-bags-2",
+  "url": "/product/cord-blood-bags-2/",
+  "title": "CORD BLOOD BAGS",
+  "codes": [
+   "BBC"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2023/04/cord_blood_bags_demophorius.jpg",
+  "descriptionSmall": "Used to collect umbilical cord blood stem cells during and after the birth of the baby.",
+  "description": "",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Cord Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/cord-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBC"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Cord Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/cord-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "USED FOR CORD BLOOD COLLECTION AND PROCESSING"
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "CORD BLOOD BAGS"
+ },
+ {
+  "slug": "transfer-blood-bags",
+  "url": "/product/transfer-blood-bags/",
+  "title": "TRANSFER BLOOD BAGS",
+  "codes": [
+   "TBB"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/transfer_blood_bags.jpg",
+  "descriptionSmall": "Suitable for separation and storage of human blood and components.",
+  "description": "",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Conventional Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "TBB"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Conventional Blood Bags",
+      "href": "/category/demotek/blood-bags-demotek/conversional-blood-bags/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "SEPARATION AND STORAGE OF BLOOD COMPONENTS"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE BLOOD BAGS",
+    "href": "/product/single-blood-bags/"
+   },
+   {
+    "label": "DOUBLE BLOOD BAGS",
+    "href": "/product/double-blood-bags/"
+   },
+   {
+    "label": "TRIPLE BLOOD BAGS",
+    "href": "/product/triple-blood-bags/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAGS",
+    "href": "/product/quadruple-blood-bags/"
+   },
+   {
+    "label": "PEDIATRIC BLOOD BAGS",
+    "href": "/product/pediatric-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM TRIPLE BLOOD BAGS",
+    "href": "/product/top-bottom-triple-blood-bags/"
+   },
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAGS",
+    "href": "/product/top-bottom-quadruple-blood-bags/"
+   }
+  ],
+  "currentVariant": "TRANSFER BLOOD BAGS"
+ },
+ {
+  "slug": "quadruple-blood-baag-with-integrated-whole-blood-leukoreduction-filtration-system",
+  "url": "/product/quadruple-blood-baag-with-integrated-whole-blood-leukoreduction-filtration-system/",
+  "title": "QUADRUPLE BLOOD BAG WITH INTEGRATED WHOLE BLOOD LEUKOREDUCTION FILTRATION SYSTEM",
+  "codes": [
+   "BBQF"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Quadruple-Blood-Bag-Leukoreduction-Filtration-System-Demotek-Demophorius.jpg",
+  "descriptionSmall": "With integrated whole blood leukoreduction filtration system.",
+  "description": "Demotek quadruple blood bag with an in-line leukoreduction filter for whole blood is designed for the removal of leukocytes of one whole blood unit resulting in high-yield filtered plasma and red cell concentrate. Leukoreduction rate is at 99.99%. The residual leukocyte is <1\u00d710^6 per unit.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Filter Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/"
+   },
+   {
+    "label": "Inline Filters",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/inline-filters/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBQF"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Inline Filters",
+      "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/inline-filters/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "DESIGNED FOR THE REMOVAL OF LEUKOCYTES."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAG WITH INLINE FILTRATION SYSTEM FOR RED CELLS",
+    "href": "/product/top-bottom-quadruple-blood-bag-with-inline-filtration-system-for-red-cells/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAG WITH INTEGRATED RED CELL FILTRATION SYSTEM",
+    "href": "/product/quadruple-blood-bag-with-integrated-red-cell-filtration-system/"
+   }
+  ],
+  "currentVariant": "QUADRUPLE BLOOD BAG WITH INTEGRATED WHOLE BLOOD LEUKOREDUCTION FILTRATION SYSTEM"
+ },
+ {
+  "slug": "quadruple-blood-bag-with-integrated-red-cell-filtration-system",
+  "url": "/product/quadruple-blood-bag-with-integrated-red-cell-filtration-system/",
+  "title": "QUADRUPLE BLOOD BAG WITH INTEGRATED RED CELL FILTRATION SYSTEM",
+  "codes": [
+   "BBQSF"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Quadruple-Blood-Bag-Red-Cell-Filtration-System-Demotek-Demophorius.jpg",
+  "descriptionSmall": "With intergrated red cell filtration system.",
+  "description": "Demotek quadruple blood bag incorporates an in-line leukoreduction filter for red cells designed to reduce leukocytes from a unit of red blood cells. The filter is efficient and high performing, aiming at the lowest residual leukocytes level from one unit of red blood cells. Red cell recovery is greater than 90%. Leukocyte reduction rate is achieved at 99.99%. The residual leukocyte is <1\u00d710^6 per unit.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Filter Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/"
+   },
+   {
+    "label": "Inline Filters",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/inline-filters/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBQSF"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Inline Filters",
+      "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/inline-filters/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "DESIGNED TO REDUCE LEUKOCYTES FROM A UNIT OF RED BLOOD CELLS"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "TOP & BOTTOM QUADRUPLE BLOOD BAG WITH INLINE FILTRATION SYSTEM FOR RED CELLS",
+    "href": "/product/top-bottom-quadruple-blood-bag-with-inline-filtration-system-for-red-cells/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAG WITH INTEGRATED WHOLE BLOOD LEUKOREDUCTION FILTRATION SYSTEM",
+    "href": "/product/quadruple-blood-baag-with-integrated-whole-blood-leukoreduction-filtration-system/"
+   }
+  ],
+  "currentVariant": "QUADRUPLE BLOOD BAG WITH INTEGRATED RED CELL FILTRATION SYSTEM"
+ },
+ {
+  "slug": "top-bottom-quadruple-blood-bag-with-inline-filtration-system-for-red-cells",
+  "url": "/product/top-bottom-quadruple-blood-bag-with-inline-filtration-system-for-red-cells/",
+  "title": "TOP & BOTTOM QUADRUPLE BLOOD BAG WITH INLINE FILTRATION SYSTEM FOR RED CELLS",
+  "codes": [
+   "BBQTBSF"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/TopBottom-Quadruple-Blood-Bag-Red-Cell-Filtration-System-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Inline filtration system for red cells.",
+  "description": "Demotek top and bottom quadruple blood bag incorporates a filter for the filtration of red blood cells. Suitable for the preparation of plasma, platelets rich in buffy coat and leukocytes depleted red cell concentrate. Leukocyte reduction rate is achieved at 99.99%. The residual leukocyte is 1\u00d710^6 per unit.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Filter Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/"
+   },
+   {
+    "label": "Inline Filters",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/inline-filters/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBQTBSF"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Inline Filters",
+      "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/inline-filters/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "QUADRUPLE BAG INCORPORATES:  FILTER FOR THE FILTRATION OF RED BLOOD CELLS, CPD/SAG-M SOLUTION"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "QUADRUPLE BLOOD BAG WITH INTEGRATED RED CELL FILTRATION SYSTEM",
+    "href": "/product/quadruple-blood-bag-with-integrated-red-cell-filtration-system/"
+   },
+   {
+    "label": "QUADRUPLE BLOOD BAG WITH INTEGRATED WHOLE BLOOD LEUKOREDUCTION FILTRATION SYSTEM",
+    "href": "/product/quadruple-blood-baag-with-integrated-whole-blood-leukoreduction-filtration-system/"
+   }
+  ],
+  "currentVariant": "TOP & BOTTOM QUADRUPLE BLOOD BAG WITH INLINE FILTRATION SYSTEM FOR RED CELLS"
+ },
+ {
+  "slug": "platelet-pooling-set-with-train-configuration",
+  "url": "/product/platelet-pooling-set-with-train-configuration/",
+  "title": "PLATELET POOLING SET WITH TRAIN CONFIGURATION",
+  "codes": [
+   "PP"
+  ],
+  "image": "",
+  "descriptionSmall": "With platelet filter (Train Configuration by pooling 4-6 buffy coat)",
+  "description": "To obtain one therapeutic unit by preparation and filtration of buffy coat or platelets within a closed system.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Filter Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/"
+   },
+   {
+    "label": "Laboratory",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/laboratory/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PP"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Laboratory",
+      "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/laboratory/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "SUITABLE FOR PREPARATION OF LEUKOCYTE-DEPLETED PLATELETS"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "LABORATORY FILTERS",
+    "href": "/product/laboratory-filters/"
+   },
+   {
+    "label": "PLATELET POOLING SET WITH OCTOPUS METHOD",
+    "href": "/product/platelet-pooling-set-with-octopus-method/"
+   }
+  ],
+  "currentVariant": "PLATELET POOLING SET WITH TRAIN CONFIGURATION"
+ },
+ {
+  "slug": "platelet-pooling-set-with-octopus-method",
+  "url": "/product/platelet-pooling-set-with-octopus-method/",
+  "title": "PLATELET POOLING SET WITH OCTOPUS METHOD",
+  "codes": [
+   "PP"
+  ],
+  "image": "",
+  "descriptionSmall": "With platelet filter (octopus method by pooling 4-6 buffy coat).",
+  "description": "To obtain one therapeutic unit by preparation and filtration of buffy coat or platelets within a closed system.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Filter Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/"
+   },
+   {
+    "label": "Laboratory",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/laboratory/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PP"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Laboratory",
+      "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/laboratory/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "SUITABLE FOR PREPARATION OF LEUKOCYTE DEPLETED PLATELETS"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "LABORATORY FILTERS",
+    "href": "/product/laboratory-filters/"
+   },
+   {
+    "label": "PLATELET POOLING SET WITH TRAIN CONFIGURATION",
+    "href": "/product/platelet-pooling-set-with-train-configuration/"
+   }
+  ],
+  "currentVariant": "PLATELET POOLING SET WITH OCTOPUS METHOD"
+ },
+ {
+  "slug": "laboratory-filters",
+  "url": "/product/laboratory-filters/",
+  "title": "LABORATORY FILTERS",
+  "codes": [
+   "BBF2"
+  ],
+  "image": "",
+  "descriptionSmall": "For leukocyte removal.",
+  "description": "Used to reduce the leucocytes (white blood cell) from whole blood (with anticoagulant) or Red Blood Cell concentrated.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Filter Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/"
+   },
+   {
+    "label": "Laboratory",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/laboratory/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBF2"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Laboratory",
+      "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/laboratory/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "LEUKOCYTE REMOVAL: FROM ONE UNIT OF WHOLE BLOOD OR RBC's."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "PLATELET POOLING SET WITH OCTOPUS METHOD",
+    "href": "/product/platelet-pooling-set-with-octopus-method/"
+   },
+   {
+    "label": "PLATELET POOLING SET WITH TRAIN CONFIGURATION",
+    "href": "/product/platelet-pooling-set-with-train-configuration/"
+   }
+  ],
+  "currentVariant": "LABORATORY FILTERS"
+ },
+ {
+  "slug": "bedside-filters-2",
+  "url": "/product/bedside-filters-2/",
+  "title": "BEDSIDE FILTERS",
+  "codes": [
+   "BBF"
+  ],
+  "image": "",
+  "descriptionSmall": "For leukocyte removal.",
+  "description": "Used to reduce the leucocyte (white blood cell) from whole blood (with anticoagulant) or Red Blood Cell Suspension prepared from it.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD BAGS",
+    "href": "/category/demotek/blood-bags-demotek/"
+   },
+   {
+    "label": "Filter Blood Bags",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/"
+   },
+   {
+    "label": "Bed side",
+    "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/bed-side/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BBF"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "Bed side",
+      "href": "/category/demotek/blood-bags-demotek/filter-blood-bags/bed-side/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "OBTAIN ERYTHROCYTES",
+     "PLASMA DERIVED WHOLE BLOOD WITH ADDITIONAL SOLUTION",
+     "ADMINISTRATION OF LEUKOCYTES",
+     "REDUCED PLATELETS"
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "BEDSIDE FILTERS"
+ },
+ {
+  "slug": "tube-stripper",
+  "url": "/product/tube-stripper/",
+  "title": "TUBE STRIPPER",
+  "codes": [
+   "DTS-10002"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/09/Tube-Stripper-Tube-Strippers-D-Mach-Demophorius.jpg",
+  "descriptionSmall": "Ideal for all commercial blood bag systems on the market",
+  "description": "\u2022\tChangeable stripping speed on power supply \u2022\tPower supply with stabilised output, low ripple & low interference, short circuit & overload protection \u2022\tHigh efficiency and low energy consumption \u2022\tAutomatically centered tubing fed through pair of rollers by a guidance system \u2022\tDesigned for right and left hand use \u2022\tLow weight for easy handling \u2022\tSwift and complete stripping of blood bag tubes \u2022\tStrip undiluted blood from donor tubing",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "TUBE STRIPPERS",
+    "href": "/category/d-mach/tube-stripper/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DTS-10002"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "TUBE STRIPPERS",
+      "href": "/category/d-mach/tube-stripper/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Strip undiluted blood from the donor tubing."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "TUBE STRIPPER"
+ },
+ {
+  "slug": "bench-tube-sealer",
+  "url": "/product/bench-tube-sealer/",
+  "title": "BENCH TUBE SEALER",
+  "codes": [
+   "DSS-10151"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Bench-Tube-Sealer-Sealer-Machines-D-Mach-Demophorius.jpg",
+  "descriptionSmall": "Designed to produce an aseptic tubing connection from two separate tubing segments.",
+  "description": "\u2022Each seal appears with a central line to facilitate the snap apart separation of the 2 parts \u2022   A separate handgun is available as an option to improve the flexibility of work \u2022   Dmach-t can be used to seal most of standard pvc tubing available on the market \u2022   Once the tube is inserted the sealing clamp automatically closes and produces a seal in about 1.5 sec \u2022   It is easy to use and it has a high working capacity",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "SEALER MACHINES",
+    "href": "/category/d-mach/sealer-machines/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DSS-10151"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "SEALER MACHINES",
+      "href": "/category/d-mach/sealer-machines/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Sealing blood tubes."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "BENCH TUBE SEALER"
+ },
+ {
+  "slug": "monitor-semi-automatic-press",
+  "url": "/product/monitor-semi-automatic-press/",
+  "title": "BLOOD DONATION MONITOR",
+  "codes": [
+   "DBA-30300"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/09/Blood-Donation-Monitor-Monitors-D-Mach-Demophorius.jpg",
+  "descriptionSmall": "Designed in such way to accept all types of blood donor bags",
+  "description": "\u2022 Controls & standardises the process of blood collection \u2022 3D Mixing System Guarantees Best Mixing Of Blood With Anticoagulant From Donor \u2022 Optimises yield of plasma and platelets at the end of the process \u2022 Accurate collection is ensured through adjustable alarms for low & high flow to prevent blood clots formation \u2022 Mixer\u2019s tray can also accept bags of different volumes \u2022 Collects accurate blood during blood collection process",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "MONITORS",
+    "href": "/category/d-mach/monitors/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DBA-30300"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MONITORS",
+      "href": "/category/d-mach/monitors/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "collect accurate blood during blood collection process."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "BLOOD DONATION MONITOR"
+ },
+ {
+  "slug": "double-press",
+  "url": "/product/double-press/",
+  "title": "DOUBLE PRESS",
+  "codes": [
+   "DLU-20000"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Double-Press-Extraction-Machines-D-Mach-Demophorius-e1666092837919.jpg",
+  "descriptionSmall": "Designed to prepare blood components from centrifuged blood in single use plasic bags.",
+  "description": "\u2022 Can be used to Seal Most Of Standard Pvc Tubing Of Blood Bags With Diameter Up To 5.00mm \u2022 Easy To Clean And Use Due To The Detachable Sealing Head \u2022 Sealing Is Performed Automatically By A Powerful Motor Upon Clicking The Trigger \u2022 Blocks The Tubes By Two Moving Wings And Then Performs The Sealing \u2022 The Process Takes Less Than 3 Sec",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "EXTRACTION MACHINES",
+    "href": "/category/d-mach/extraction-machines/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DLU-20000"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "EXTRACTION MACHINES",
+      "href": "/category/d-mach/extraction-machines/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Automatic separation of blood components."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SINGLE PRESS",
+    "href": "/product/single-press/"
+   },
+   {
+    "label": "MANUAL PRESS",
+    "href": "/product/manual-press/"
+   },
+   {
+    "label": "SEMI-AUTOMATIC PRESS",
+    "href": "/product/semi-automatic-press/"
+   }
+  ],
+  "currentVariant": "DOUBLE PRESS"
+ },
+ {
+  "slug": "single-press",
+  "url": "/product/single-press/",
+  "title": "SINGLE PRESS",
+  "codes": [
+   "DNO-10000"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Demophorius-Single-Press.jpg",
+  "descriptionSmall": "Designed to prepare blood components from centrifuged blood in single use plastic bags.",
+  "description": "\u2022\tHighest Separation Quality Of The Whole Blood \u2022\t4 X Precise Balances For All Blood Products \u2022\tColour Touchscreen With Intuitive User Navigation \u2022\tFlow Regulation For Low Hemolysis Rates \u2022\tAutomatic Valve Breaking. Ensures safety for Operator (from damaged bags and finger injuries).",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "EXTRACTION MACHINES",
+    "href": "/category/d-mach/extraction-machines/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DNO-10000"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "EXTRACTION MACHINES",
+      "href": "/category/d-mach/extraction-machines/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Automatic separation of blood components."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "DOUBLE PRESS",
+    "href": "/product/double-press/"
+   },
+   {
+    "label": "MANUAL PRESS",
+    "href": "/product/manual-press/"
+   },
+   {
+    "label": "SEMI-AUTOMATIC PRESS",
+    "href": "/product/semi-automatic-press/"
+   }
+  ],
+  "currentVariant": "SINGLE PRESS"
+ },
+ {
+  "slug": "manual-press",
+  "url": "/product/manual-press/",
+  "title": "MANUAL PRESS",
+  "codes": [
+   "DPE-10000"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Manual-Press.jpg",
+  "descriptionSmall": "Durable design for confortable daily work.",
+  "description": "\u2022 Easy To Use \u2022 Manual System Which Accepts All Types Of Blood Bags \u2022 Stainless Steel Constraction \u2022 Transparent Plate For Visual Control Of Red Cells And Plasma",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "EXTRACTION MACHINES",
+    "href": "/category/d-mach/extraction-machines/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DPE-10000"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "EXTRACTION MACHINES",
+      "href": "/category/d-mach/extraction-machines/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Plasma separation"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "DOUBLE PRESS",
+    "href": "/product/double-press/"
+   },
+   {
+    "label": "SINGLE PRESS",
+    "href": "/product/single-press/"
+   },
+   {
+    "label": "SEMI-AUTOMATIC PRESS",
+    "href": "/product/semi-automatic-press/"
+   }
+  ],
+  "currentVariant": "MANUAL PRESS"
+ },
+ {
+  "slug": "semi-automatic-press",
+  "url": "/product/semi-automatic-press/",
+  "title": "SEMI-AUTOMATIC PRESS",
+  "codes": [
+   "DMM-10000"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Semi-Automatic-Press.jpg",
+  "descriptionSmall": "For plasma separation from centrifuged whole blood.",
+  "description": "\u2022 Easy Separation Of Centrifuged Blood \u2022 Easy Usage And Maintenance \u2022 Fast Extractions \u2022 Ensures Separation Without Red Cell Contamination \u2022 Highly Sensitive Sensor System \u2013 Ensures A Precise Separation",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "EXTRACTION MACHINES",
+    "href": "/category/d-mach/extraction-machines/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DMM-10000"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "EXTRACTION MACHINES",
+      "href": "/category/d-mach/extraction-machines/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "plasma separation"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "DOUBLE PRESS",
+    "href": "/product/double-press/"
+   },
+   {
+    "label": "SINGLE PRESS",
+    "href": "/product/single-press/"
+   },
+   {
+    "label": "MANUAL PRESS",
+    "href": "/product/manual-press/"
+   }
+  ],
+  "currentVariant": "SEMI-AUTOMATIC PRESS"
+ },
+ {
+  "slug": "tube-welder",
+  "url": "/product/tube-welder/",
+  "title": "TUBE WELDER",
+  "codes": [
+   "DTSW6810"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Tube-Welder-Welder-Machines-D-Mach-Demophorius.jpg",
+  "descriptionSmall": "Designed to produce an aseptic tubing connection from two separate tubing segments.",
+  "description": "\u2022 Patented Innovation For Welding Processes With Cassette \u2022 Next-Generation Device With A Closed System \u2022 Connects With Polyvinyl Chloride (Pvc) Tubing \u2022 Ensures Quality Flexibility & Reliability",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "WELDER MACHINES",
+    "href": "/category/d-mach/welder-machines/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DTSW6810"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "WELDER MACHINES",
+      "href": "/category/d-mach/welder-machines/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Creation of strong, dependable tubing connections."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "TUBE WELDER",
+    "href": "/product/tube-welder-2/"
+   }
+  ],
+  "currentVariant": "TUBE WELDER"
+ },
+ {
+  "slug": "skin-stapler",
+  "url": "/product/skin-stapler/",
+  "title": "SKIN STAPLER",
+  "codes": [
+   "DSS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Skin-Stapler-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "D-tek skin stapler is a specialized dispodable stapler",
+  "description": "indicated for use in skin closure such as hernia repair, chest wall reconstruction and fascial structure repair.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "SKIN STAPLERS",
+    "href": "/category/d-tek/skin-staplers/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DSS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.tek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "SKIN STAPLERS",
+      "href": "/category/d-tek/skin-staplers/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "skin closure such as hernia repair",
+     "chest wall reconstruction",
+     "fasciae structure repair"
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "SKIN STAPLER"
+ },
+ {
+  "slug": "urine-collection",
+  "url": "/product/urine-collection/",
+  "title": "URINE COLLECTION",
+  "codes": [
+   "PUBA"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/09/Urine-Collection-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac urine collection tubes allow the collection, transportation and analysis of urine specimen quickly, safely and hygienically.",
+  "description": "The tube is sterile, leak proof and safe to use. Made of Polyethylene terephthalate (PET). Tubes are vacuum, with a pre-defined collection volume, as per the requirement. They should be used within 30-60 minutes from collection. Urine tubes are available with no additive for an immediate analysis carried out after collection or, with 1% boric acid to maintain sample up to 12 hours without the need to refrigerate. The preservative is important when the sample cannot be analysed within 2 hours from collection.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "URINE COLLECTION",
+    "href": "/category/d-vac/urine-collection/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PUBA"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "URINE COLLECTION",
+      "href": "/category/d-vac/urine-collection/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Analysis of urine sample."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "URINE COLLECTION"
+ },
+ {
+  "slug": "insulin-syringes",
+  "url": "/product/insulin-syringes/",
+  "title": "INSULIN SYRINGES",
+  "codes": [
+   "IS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Insulin-Syringes-with-cup-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Made of latex and pvc free material according to ISO 7886-1 with no \"dead space\" for accurate dosage and insulin mixing.",
+  "description": "\u2022 Lubricated Thin Wall Needles Extra Sharp For Maximum Comfort \u2022 Made Of Special Surgical Grade Stainless Steel \u2022 Permanently Pre-Attached Needle Prevents Leakage And Contamination \u2022 Triple Beveled Needle \u2013 Creates A Sharper Point For A Better Patient Comfort",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "SYRINGES",
+    "href": "/category/demotek/syringes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "IS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "SYRINGES",
+      "href": "/category/demotek/syringes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "To main the blood sugar level the patients have to inject insulin into their bodies time and time again after regular intervals."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "SYRINGES",
+    "href": "/product/syringes/"
+   }
+  ],
+  "currentVariant": "INSULIN SYRINGES"
+ },
+ {
+  "slug": "i-v-cannula-pen-type",
+  "url": "/product/i-v-cannula-pen-type/",
+  "title": "I.V CANNULA PEN TYPE",
+  "codes": [
+   "CA2"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/IV.-Cannula-Wings-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Used for short term peripheral catheterisation of vein to give access for drug delivery on continuous intermittent basis infusion or transfusion.",
+  "description": "Specially curved thumb guard for proper grip during insertion. Protects the needle and catheter from contamination.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "I.V CANNULA",
+    "href": "/category/demotek/i-v-cannula/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "CA2"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "I.V CANNULA",
+      "href": "/category/demotek/i-v-cannula/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "SHORT TERM PERIPHERAL CATHETERISATION OF VEIN"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "I.V CANNULA WITH WINGS AND INJECTION PORT",
+    "href": "/product/i-v-cannula-with-wings-and-injection-port/"
+   },
+   {
+    "label": "I.V CANNULA WITH WINGS",
+    "href": "/product/i-v-cannula-with-wings/"
+   }
+  ],
+  "currentVariant": "I.V CANNULA PEN TYPE"
+ },
+ {
+  "slug": "i-v-cannula-with-wings",
+  "url": "/product/i-v-cannula-with-wings/",
+  "title": "I.V CANNULA WITH WINGS",
+  "codes": [
+   "CA1"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/IV.-Cannula-Wings-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Used for short term peripheral catheterisation of vein to give access for drug delivery on continuous intermittent basis infusion or transfusion.",
+  "description": "Specially curved thumb guard for proper grip during insertion. Protects the needle and catheter from contamination.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "I.V CANNULA",
+    "href": "/category/demotek/i-v-cannula/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "CA1"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "I.V CANNULA",
+      "href": "/category/demotek/i-v-cannula/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "SHORT TERM PERIPHERAL CATHETERISATION OF VEIN"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "I.V CANNULA WITH WINGS AND INJECTION PORT",
+    "href": "/product/i-v-cannula-with-wings-and-injection-port/"
+   },
+   {
+    "label": "I.V CANNULA PEN TYPE",
+    "href": "/product/i-v-cannula-pen-type/"
+   }
+  ],
+  "currentVariant": "I.V CANNULA WITH WINGS"
+ },
+ {
+  "slug": "i-v-cannula-with-wings-and-injection-port",
+  "url": "/product/i-v-cannula-with-wings-and-injection-port/",
+  "title": "I.V CANNULA WITH WINGS AND INJECTION PORT",
+  "codes": [
+   "CA0"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/IV.-Cannula-WingsInjection-Port-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Used for short term peripheral catheterisation of vein to give access for drug delivery on continuous intermittent basis infusion or transfusion.",
+  "description": "The cap on the top prevents from any contamination, once valve is not in use.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "I.V CANNULA",
+    "href": "/category/demotek/i-v-cannula/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "CA0"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "I.V CANNULA",
+      "href": "/category/demotek/i-v-cannula/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "SHORT TERM PERIPHERAL CATHETERISATION OF VEIN"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "I.V CANNULA WITH WINGS",
+    "href": "/product/i-v-cannula-with-wings/"
+   },
+   {
+    "label": "I.V CANNULA PEN TYPE",
+    "href": "/product/i-v-cannula-pen-type/"
+   }
+  ],
+  "currentVariant": "I.V CANNULA WITH WINGS AND INJECTION PORT"
+ },
+ {
+  "slug": "infusion-set",
+  "url": "/product/infusion-set/",
+  "title": "INFUSION SET",
+  "codes": [
+   "IS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Blood-Infusion-Set-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Specifically designed for intravenous and hypodermic injections.",
+  "description": "The needle/cannula is inserted under the skin and fluid is absorbed by the tissue. Demotek infusion sets are for single use only and are made of high grade pvc plastic for medical use. The components consist of a puncture spike, air filter, drip chamber, fluid filter, roller clamp, transparent tubing and injecting needle.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "INFUSION SETS",
+    "href": "/category/demotek/infusion-sets/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "IS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "INFUSION SETS",
+      "href": "/category/demotek/infusion-sets/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "The purpose of an infusion set is to deliver insulin under the skin, fulfilling a similar function like an intravenous line."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "INFUSION SET"
+ },
+ {
+  "slug": "latex-surgical-gloves",
+  "url": "/product/latex-surgical-gloves/",
+  "title": "LATEX SURGICAL GLOVES",
+  "codes": [
+   "SG"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Latex-Surgical-Gloves-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Powedered And Powder-Free.",
+  "description": "Surgical gloves are a disposable device intended for surgical purposes and are worn on the hand of healthcare personnel during surgery to prevent contamination between the healthcare personnel and the patient.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "SURGICAL GLOVES",
+    "href": "/category/demotek/surgical-gloves/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "SG"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "SURGICAL GLOVES",
+      "href": "/category/demotek/surgical-gloves/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Surgical gloves are worn by surgeons and other health professionals that have direct contact with blood, infections, sharp tools and other harmful objects and substances that could cause extreme illness or infection."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "LATEX SURGICAL GLOVES"
+ },
+ {
+  "slug": "syringes",
+  "url": "/product/syringes/",
+  "title": "SYRINGES",
+  "codes": [
+   "S01A"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/06/Syringes-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Demotek syringes are made in two or three parts from non toxic latex free and pvc free polypropylane material and easy to read graduation, leak tight according to iso 7886-1 standard.",
+  "description": "\u2022 Finest Quality Material For Accurate Dosing \u2022 Precise And Finely Detailed Graduation Scale, Dark And Legible, Easy To Read \u2022 Optimum Design Of Finger Flanges For Better Grip Control And Stability During Injection \u2022 Choice Of Luer Lock Tip, Luer Slip Tip Centric Or Eccentric Tip Design Plunger And Plunger Control Tip: \u2022 Smooth Plunger Action \u2022 Ergonomic Thumb Rest On Plunger, Provides Comfortable Positive Grip \u2022 Silicone Coated Plunger Stop \u2022 Medical Grade Latex Free Plunger Tip",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "SYRINGES",
+    "href": "/category/demotek/syringes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "S01A"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "SYRINGES",
+      "href": "/category/demotek/syringes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Used for extraction of blood."
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "INSULIN SYRINGES",
+    "href": "/product/insulin-syringes/"
+   }
+  ],
+  "currentVariant": "SYRINGES"
+ },
+ {
+  "slug": "skin-stapler-remover",
+  "url": "/product/skin-stapler-remover/",
+  "title": "SKIN STAPLER REMOVER",
+  "codes": [
+   "DSR"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/09/Stapler-Remover-D-Tek-Demophorius.jpg",
+  "descriptionSmall": "Easy structure and novel appearance.",
+  "description": "Dtek Skin Staple remover is designed to provide fast and easy removal of all types of surgical skin staples.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "STAPLER REMOVERS",
+    "href": "/category/d-tek/stapler-removers/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DSR"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "STAPLER REMOVERS",
+      "href": "/category/d-tek/stapler-removers/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "For removing the skin staples."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "SKIN STAPLER REMOVER"
+ },
+ {
+  "slug": "hypodermic-needles-2",
+  "url": "/product/hypodermic-needles-2/",
+  "title": "HYPODERMIC NEEDLES",
+  "codes": [
+   "N1"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/07/Hypodermic-Needles-Demotek-Demophorius.jpg",
+  "descriptionSmall": "Single use made of stainless steel (aisi 304) silicon coated to maximize patient comfort.",
+  "description": "It is commonly used with a syringe, a hand-operated device with a plunger. \u2022 Multi-Facet Advanced Needle Bevel Design \u2022 Special, Automated, Polishing And Lubrication Processes \u2022 Ultra Sharp Bevel Point",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "HYPODERMIC NEEDLES",
+    "href": "/category/demotek/hypodermic-needles/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "N1"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "HYPODERMIC NEEDLES",
+      "href": "/category/demotek/hypodermic-needles/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "to inject substances into the body."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "HYPODERMIC NEEDLES"
+ },
+ {
+  "slug": "blood-transfusion-set",
+  "url": "/product/blood-transfusion-set/",
+  "title": "Blood Transfusion Set",
+  "codes": [
+   "BT"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/07/Blood-Transfusion-Set-Demotek-Demophorius.jpg",
+  "descriptionSmall": "For the administration of blood and blood components.",
+  "description": "Demotek blood transfusion set is for single use and it is manufactured according to the international standard ISO1135-4 \u2018Blood Transfusion set for single use\u2019 to assure the safeness and reliability of the product.",
+  "breadcrumb": [
+   {
+    "label": "demotek",
+    "href": "/category/demotek/"
+   },
+   {
+    "label": "BLOOD TRANSFUSION SET",
+    "href": "/category/demotek/blood-transfusion-set/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "BT"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD TRANSFUSION SET",
+      "href": "/category/demotek/blood-transfusion-set/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Transfusion of blood or blood components."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "Blood Transfusion Set"
+ },
+ {
+  "slug": "bone-wax",
+  "url": "/product/bone-wax/",
+  "title": "BONE WAX",
+  "codes": [
+   "DSS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2023/04/MG_6042-scaled-e1682070971179.jpg",
+  "descriptionSmall": "D-tek Bone wax is a sterile mixture of Beeswax Paraffin wax and Isopropyl Palmitate used to control the bleeding from bone surfaces.",
+  "description": "It is used in traumatology and orthopaedics, sternum and rib surgery, ion maxillofacial surgery, general plastic surgery and neurosurgery (trepanation), dental, oral and jaw surgery.",
+  "breadcrumb": [
+   {
+    "label": "dtek",
+    "href": "/category/d-tek/"
+   },
+   {
+    "label": "BONE WAX",
+    "href": "/category/d-tek/bone-wax/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DSS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demotek"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BONE WAX",
+      "href": "/category/d-tek/bone-wax/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "to control bleeding from bone surfaces."
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "BONE WAX"
+ },
+ {
+  "slug": "k2e-edta-2",
+  "url": "/product/k2e-edta-2/",
+  "title": "K2E EDTA",
+  "codes": [
+   "PEDM - T"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/07/K2-EDTA-Mini-Tubes-D-Vac-Demophorius.jpg",
+  "descriptionSmall": "D-vac EDTA tubes are used in haematology while EDTA salts are widely used as anticoagulant in blood collection tubes to cover the calcium ions of the blood, therefore preventing blood coagulation.",
+  "description": "EDTA tubes are available in a spray dried form which functions effectively.",
+  "breadcrumb": [
+   {
+    "label": "dvac",
+    "href": "/category/d-vac/"
+   },
+   {
+    "label": "MINI TUBES",
+    "href": "/category/d-vac/mini-tubes/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PEDM - T"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.vac"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "MINI TUBES",
+      "href": "/category/d-vac/mini-tubes/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Whole blood / plasma tube for hematology"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "Z GEL & CLOT ACTIVATOR SEP",
+    "href": "/product/z-gel-clot-activator-separator/"
+   },
+   {
+    "label": "LH LITHIUM HEPARIN",
+    "href": "/product/lh-lithium-heparin/"
+   },
+   {
+    "label": "Z NO ADDITIVE",
+    "href": "/product/z-no-additive/"
+   },
+   {
+    "label": "FE SODIUM FLUORIDE & Na2EDTA",
+    "href": "/product/k2e-edta/"
+   },
+   {
+    "label": "K3E EDTA",
+    "href": "/product/k3e-edta/"
+   },
+   {
+    "label": "Z SERUM CLOT ACTIVATOR",
+    "href": "/product/z-serum-clot-activator/"
+   }
+  ],
+  "currentVariant": "K2E EDTA"
+ },
+ {
+  "slug": "demoflush-0-9-prefilled-syringe",
+  "url": "/product/demoflush-0-9-prefilled-syringe/",
+  "title": "Demoflush 0.9% Sodium Chloride (NaCl) Pre-filled Flush Syringe",
+  "codes": [
+   "PFS"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2021/11/Pre-Filled-Flush-Syringes-Full-Range.jpg",
+  "descriptionSmall": "Demophorius succeeded in creating its newly advanced pre-filled normal saline syringe that meets the highest standards for quality and safety.",
+  "description": "Manufactured according to internationally recognised technical standards, current Good Manufacturing Practices and ISO 13485 Quality Management System requirements. Demophorius Demoflush is a range of ready-to-use sterile pre-filled flush syringes containing sodium chloride (NaCL) 0.9%, specifically designed to enhance best clinical practice. \u2022 Eliminates the risk of microbial contamination \u2022 Eliminates the risk of medication errors \u2022 Eliminates syringe induced blood reflux \u2022 Eliminates needle stick injuries risk \u2022 Prolonged VADs placement time \u2022 Reduce particle contamination \u2022 Easy to operate \u2022 Zero reflux Available in different filling volume sizes (3ml, 5ml and 10ml). All supplied with a standard 10ml (diameter) syringe. Standard 10ml barrel for 3-5-10ml sizes.",
+  "breadcrumb": [
+   {
+    "label": "demoflush",
+    "href": "/category/demoflush/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "PFS"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "demoflush"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "demoflush",
+      "href": "/category/demoflush/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "Pre-filled Saline Syringes are indicated for flushing and locking VADs  (vascular access devices)"
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "Demoflush 0.9% Sodium Chloride (NaCl) Pre-filled Flush Syringe"
+ },
+ {
+  "slug": "tube-welder-2",
+  "url": "/product/tube-welder-2/",
+  "title": "TUBE WELDER",
+  "codes": [
+   "DWM-10350"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2025/05/Untitled-design-7-1.png",
+  "descriptionSmall": "Sterile Medical PVC Tube Welder with GREEN Technology",
+  "description": "Uses advanced RF technology for all phases: sealing and welding Connects medical PVC tubes without using disposables \u2013 no knife, blade, or copper wire Eco-friendly process: minimal odor, waste, and exhaust with GREEN output Integrated HEPA filter traps PVC particles for a cleaner environment Smooth sealing and welding with no preheating required Enables sterile connections of wet and dry blood bag tubing",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "WELDER MACHINES",
+    "href": "/category/d-mach/welder-machines/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DWM-10350"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "WELDER MACHINES",
+      "href": "/category/d-mach/welder-machines/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "INTENDED FOR MAKING STRONG STERILE CONNECTIONS BETWEEN MEDICAL PVC TUBING"
+    ]
+   }
+  ],
+  "variants": [
+   {
+    "label": "TUBE WELDER",
+    "href": "/product/tube-welder/"
+   }
+  ],
+  "currentVariant": "TUBE WELDER"
+ },
+ {
+  "slug": "centrifuge",
+  "url": "/product/centrifuge/",
+  "title": "CENTRIFUGE",
+  "codes": [
+   "DC600RE-2PXXL"
+  ],
+  "image": "https://demophorius.com/wp-content/uploads/2025/05/Untitled-design-15-e1785404556968.png",
+  "descriptionSmall": "Designed to meet all needs related to blood treatment and optimized to reach the highest level of performance, while remaining ergonomic and user-friendly.",
+  "description": "High Capacity & Flexibility: Processes up to 12 blood bags or 6 x 2L bottles with customizable cycles from 10 seconds to 99 hours Advanced Safety & Hygiene: Includes motorized lid-lock, imbalance detection, auto rotor recognition, and automatic disinfection/drying cycle Precision & Power: Delivers \u00b10.5% speed accuracy, max RCF of 5526, and runs on a maintenance-free brushless motor for reliable performance Smart, Eco-Friendly Design: Features intuitive 5.7\u201d touchscreen, CFC-free cooling with precool, and integrated \u201cBlue Box\u201d for centralized control",
+  "breadcrumb": [
+   {
+    "label": "dmach",
+    "href": "/category/d-mach/"
+   },
+   {
+    "label": "BLOOD BANK CENTRIFUGES",
+    "href": "/category/d-mach/centrifuges/"
+   }
+  ],
+  "specRows": [
+   {
+    "label": "PRODUCT CODE",
+    "value": [
+     "DC600RE-2PXXL"
+    ]
+   },
+   {
+    "label": "BRAND",
+    "value": "d.mach"
+   },
+   {
+    "label": "CATEGORY",
+    "value": [
+     {
+      "label": "BLOOD BANK CENTRIFUGES",
+      "href": "/category/d-mach/centrifuges/"
+     }
+    ]
+   },
+   {
+    "label": "USAGE",
+    "value": [
+     "SEPERATE BLOOD COMPONENTS FOR SAFE STORAGE, ACCURATE TESTING AND TARGETED TRANSFUSION THERAPY"
+    ]
+   }
+  ],
+  "variants": [],
+  "currentVariant": "CENTRIFUGE"
+ }
+]

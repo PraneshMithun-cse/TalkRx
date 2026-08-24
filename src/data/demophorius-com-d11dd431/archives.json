@@ -1,0 +1,346 @@
+{
+ "news_category": {
+  "announcements": {
+   "title": "Category: Announcements",
+   "items": [
+    {
+     "title": "World Health Day",
+     "href": "/news/world-health-day/",
+     "date": "07.04 2026"
+    },
+    {
+     "title": "AfSBT 2026",
+     "href": "/news/afsbt-2026/",
+     "date": "12.03 2026"
+    },
+    {
+     "title": "WHX Dubai 2026",
+     "href": "/news/whx-dubai-2026/",
+     "date": "20.01 2026"
+    },
+    {
+     "title": "What a Great Week at MEDICA 2025",
+     "href": "/news/what-a-great-week-at-medica-2026/",
+     "date": "28.11 2025"
+    },
+    {
+     "title": "MEDICA 2025",
+     "href": "/news/medica-2025/",
+     "date": "04.11 2025"
+    },
+    {
+     "title": "New Podcast Episode from FIME 2025! \ud83c\udfa5",
+     "href": "/news/new-podcast-episode-from-fime-2025-%f0%9f%8e%a5/",
+     "date": "07.07 2025"
+    },
+    {
+     "title": "Live from ISBT Milan 2025 \u2013 Join Us at Booth C51!",
+     "href": "/news/live-from-isbt-milan-2025-join-us-at-booth-c51/",
+     "date": "01.06 2025"
+    },
+    {
+     "title": "FIME \u2013 Florida International Medical Expo 2025",
+     "href": "/news/fime-florida-international-medical-expo-2025/",
+     "date": "08.05 2025"
+    },
+    {
+     "title": "ISBT Milan 2025",
+     "href": "/news/isbt-milan-2025/",
+     "date": "05.05 2025"
+    },
+    {
+     "title": "Arab Health 2025",
+     "href": "/news/arab-health-2025/",
+     "date": "14.01 2025"
+    }
+   ]
+  },
+  "press-releases": {
+   "title": "Category: Press releases",
+   "items": [
+    {
+     "title": "Fear the \u2018KRAKEN\u2019",
+     "href": "/news/fear-the-kraken/",
+     "date": "27.01 2023"
+    },
+    {
+     "title": "MEDICA Trade Fair 2022",
+     "href": "/news/medica-2022/",
+     "date": "23.11 2022"
+    },
+    {
+     "title": "Demophorius Healthcare Dmach Training",
+     "href": "/news/demophorius-healthcare-d_mach-training/",
+     "date": "11.10 2022"
+    },
+    {
+     "title": "History of Pandemics",
+     "href": "/news/history-of-pandemics/",
+     "date": "19.09 2022"
+    },
+    {
+     "title": "The first Xenotransplantation \u2013 What can scientists learn?",
+     "href": "/news/the-first-xenotransplantation-what-can-scientists-learn/",
+     "date": "08.09 2022"
+    },
+    {
+     "title": "Coronavirus: Total US COVID-19 cases top 43 million",
+     "href": "/news/coronavirus-total-us-covid-19-cases-top-43-million/",
+     "date": "27.09 2021"
+    },
+    {
+     "title": "Biden receives Pfizer-BioNTech booster shot days after CDC approval",
+     "href": "/news/biden-receives-pfizer-biontech-booster-shot-days-after-cdc-approval/",
+     "date": "27.09 2021"
+    },
+    {
+     "title": "Experts Recommend Lowering Age to 35 for Initial Prediabetes, Type 2 Diabetes Screening",
+     "href": "/news/experts-recommend-lowering-age-to-35-for-initial-prediabetes-type-2-diabetes-screening/",
+     "date": "25.08 2021"
+    },
+    {
+     "title": "FDA Is Reportedly Looking Again at Heart Inflammation Linked to Moderna Vaccine",
+     "href": "/news/fda-is-reportedly-looking-again-at-heart-inflammation-linked-to-moderna-vaccine/",
+     "date": "25.08 2021"
+    },
+    {
+     "title": "U.S. administers 359.6 mln doses of COVID-19 vaccines \u2013 CDC",
+     "href": "/news/u-s-administers-359-6-mln-doses-of-covid-19-vaccines-cdc/",
+     "date": "25.08 2021"
+    }
+   ]
+  },
+  "exhibitions": {
+   "title": "Category: Exhibitions",
+   "items": [
+    {
+     "title": "ISBT 2026 Kuala Lumpur",
+     "href": "/news/isbt-2026-kuala-lumpur/",
+     "date": "11.06 2026"
+    },
+    {
+     "title": "Global Health Exhibition 2025 \u2013 Riyadh, Saudi Arabia",
+     "href": "/news/global-health-exhibition-2025-riyadh-saudi-arabia/",
+     "date": "29.10 2025"
+    },
+    {
+     "title": "FIME \u2013 Florida International Medical Expo 2025",
+     "href": "/news/fime-florida-international-medical-expo-2025/",
+     "date": "08.05 2025"
+    },
+    {
+     "title": "MEDICA  2024 / Where Healthcare is going",
+     "href": "/news/medica-2024-where-healthcare-is-going/",
+     "date": "30.10 2024"
+    },
+    {
+     "title": "Medica  2023 / Where Healthcare is going",
+     "href": "/news/medica-2023/",
+     "date": "02.11 2023"
+    },
+    {
+     "title": "ISBT Cape Town 2023",
+     "href": "/news/isbt-cape-town-2023/",
+     "date": "02.11 2023"
+    },
+    {
+     "title": "FIME \u2013 Florida International Medical Expo 2023",
+     "href": "/news/fime-florida-international-medical-expo-2023/",
+     "date": "08.06 2023"
+    },
+    {
+     "title": "23rd MEDEXPO 2023 Nairobi, Kenya",
+     "href": "/news/23rd-medexpo-2023-nairobi-kenya/",
+     "date": "18.05 2023"
+    },
+    {
+     "title": "MEDICA Trade Fair 2022",
+     "href": "/news/medica-trade-fair-2022-2/",
+     "date": "23.11 2022"
+    },
+    {
+     "title": "Demophorius Healthcare Dmach Training",
+     "href": "/news/demophorius-healthcare-d_mach-training/",
+     "date": "11.10 2022"
+    }
+   ]
+  },
+  "articles": {
+   "title": "Category: Articles",
+   "items": [
+    {
+     "title": "Cost-Effectiveness of IV Iron Treatment",
+     "href": "/news/cost-effectiveness-of-iv-iron-treatment/",
+     "date": "03.02 2026"
+    },
+    {
+     "title": "Low Rates of Late-Onset CAR T-Cell\u2013Related CRS/ICANS Support Shorter AE Monitoring Periods",
+     "href": "/news/low-rates-of-late-onset-car-t-cell-related-crs-icans-support-shorter-ae-monitoring-periods/",
+     "date": "31.03 2025"
+    },
+    {
+     "title": "New mRNA vaccine for malaria uses cancer immunotherapy adjuvant to improve efficacy",
+     "href": "/news/new-mrna-vaccine-for-malaria-uses-cancer-immunotherapy-adjuvant-to-improve-efficacy/",
+     "date": "31.07 2023"
+    },
+    {
+     "title": "What to wait for in 2023?",
+     "href": "/news/scientific-events-to-wait-for-in-2023/",
+     "date": "30.12 2022"
+    },
+    {
+     "title": "What\u2019s the exact cause of Chronic Lymphocytic Leukemia?",
+     "href": "/news/whats-the-exact-cause-of-chronic-lymphocytic-leukemia/",
+     "date": "18.11 2022"
+    },
+    {
+     "title": "The role of T-Cells in cancer",
+     "href": "/news/the-role-of-t-cells-in-cancer/",
+     "date": "27.09 2022"
+    },
+    {
+     "title": "Climate change can exacerbate more pandemics?",
+     "href": "/news/climate-change-can-exacerbate-more-pandemics/",
+     "date": "13.09 2022"
+    },
+    {
+     "title": "The rise of Monkeypox",
+     "href": "/news/monkeypox/",
+     "date": "20.08 2022"
+    },
+    {
+     "title": "Pfizer buys into next-generation gene editing in $300 million deal with Beam Therapeutics",
+     "href": "/news/pfizer-buys-into-next-generation-gene-editing-in-300-million-deal-with-beam-therapeutics/",
+     "date": "14.01 2022"
+    },
+    {
+     "title": "Officials across the US enact emergency procedures to help hospitals combat record-high Covid-19 numbers",
+     "href": "/news/1605/",
+     "date": "14.01 2022"
+    }
+   ]
+  }
+ },
+ "employee_category": {
+  "management": {
+   "title": "Category: Management",
+   "items": [
+    {
+     "title": "SAKIS PAPASPYROU",
+     "href": "/employee/sakis-papaspyrou/",
+     "date": "08.02 2023"
+    }
+   ]
+  },
+  "administration": {
+   "title": "Category: Administration",
+   "items": [
+    {
+     "title": "NITSA PAPASPYROU",
+     "href": "/employee/nitsa-papaspyrou/",
+     "date": "27.11 2022"
+    }
+   ]
+  },
+  "sales": {
+   "title": "Category: Sales",
+   "items": [
+    {
+     "title": "KIPROULA VARELLA",
+     "href": "/employee/kiproula-varella/",
+     "date": "30.11 2022"
+    },
+    {
+     "title": "STAVROS PAIS",
+     "href": "/employee/stavros-pais/",
+     "date": "26.11 2022"
+    },
+    {
+     "title": "POLIVIOS POLIVIOU",
+     "href": "/employee/polivios-poliviou/",
+     "date": "24.11 2022"
+    },
+    {
+     "title": "SERGE KOSTIN",
+     "href": "/employee/serge-kostin/",
+     "date": "27.10 2022"
+    },
+    {
+     "title": "MARILENA PHILIPPIDOU",
+     "href": "/employee/marilena-philippidou/",
+     "date": "27.10 2022"
+    },
+    {
+     "title": "NADA YASSINE",
+     "href": "/employee/nada-yassine/",
+     "date": "30.03 2021"
+    }
+   ]
+  },
+  "accounting-finance": {
+   "title": "Category: Accounting & Finance",
+   "items": [
+    {
+     "title": "DEMOS PETEVIS",
+     "href": "/employee/demos-petevis/",
+     "date": "25.11 2022"
+    },
+    {
+     "title": "CHARIKLEIA MOUSKOU",
+     "href": "/employee/charikleia-mouskou/",
+     "date": "23.11 2022"
+    }
+   ]
+  },
+  "qa": {
+   "title": "Category: Quality",
+   "items": [
+    {
+     "title": "AIMILIANA AVRAAM",
+     "href": "/employee/kyriakoc-michael/",
+     "date": "22.09 2022"
+    }
+   ]
+  },
+  "ra": {
+   "title": "Category: Regulatory",
+   "items": [
+    {
+     "title": "ROMANA NOVAKOVIC",
+     "href": "/employee/romana-novakovic/",
+     "date": "30.03 2021"
+    }
+   ]
+  },
+  "ld": {
+   "title": "Category: Logistics",
+   "items": [
+    {
+     "title": "GEORGIA ANTONIADES",
+     "href": "/employee/georgia-antioniades/",
+     "date": "29.11 2022"
+    },
+    {
+     "title": "MARIA NICOU",
+     "href": "/employee/maria-nikou/",
+     "date": "28.11 2022"
+    }
+   ]
+  },
+  "human-resources": {
+   "title": "Category: Human Resources",
+   "items": [
+    {
+     "title": "RENA PAPASPYROU",
+     "href": "/employee/rena-papaspyrou/",
+     "date": "03.09 2024"
+    },
+    {
+     "title": "SAKIS PAPASPYROU",
+     "href": "/employee/sakis-papaspyrou/",
+     "date": "08.02 2023"
+    }
+   ]
+  }
+ }
+}
