@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 import { MobileBottomNav } from "@/components/talkrx/MobileBottomNav";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -40,10 +41,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           MozOsxFontSmoothing: "grayscale",
         }}
       >
-        <VaultProvider>
-          {children}
-          <MobileBottomNav />
-        </VaultProvider>
+        <SmoothScroll>
+          <VaultProvider>
+            {children}
+            <MobileBottomNav />
+          </VaultProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

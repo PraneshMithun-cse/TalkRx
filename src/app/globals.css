@@ -185,7 +185,28 @@
   transform: scaleX(1);
 }
 
-/* Mobile Web App Touch Optimizations */
+/* Lenis Smooth Scroll Recommended Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Mobile Web App Touch & GPU Optimizations */
 @layer utilities {
   .scrollbar-none {
     -ms-overflow-style: none;
@@ -204,4 +225,16 @@ html {
 body {
   overscroll-behavior-y: none;
   -webkit-touch-callout: none;
+}
+
+@media (max-width: 768px) {
+  /* Optimize heavy blur rendering for mobile 60fps */
+  .backdrop-blur-3xl {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .backdrop-blur-2xl {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
