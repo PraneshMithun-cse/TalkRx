@@ -155,13 +155,13 @@ export function DoctorDashboard() {
   return (
     <div className="space-y-6">
       {/* Top Doctor Navigation Header */}
-      <div className="rounded-2xl bg-neutral-950 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-black/10 shadow-sm">
+      <div className="rounded-2xl bg-neutral-950 p-4 sm:p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-black/10 shadow-sm">
         <div className="flex items-center gap-3.5 flex-1 min-w-0">
           <div className="rounded-full bg-white/10 p-2.5 text-white shrink-0">
             <Stethoscope className="h-5 w-5 stroke-[1.75]" />
           </div>
           {isEditingIdentity ? (
-            <form onSubmit={handleSaveIdentity} className="grid grid-cols-2 gap-2 text-xs flex-1">
+            <form onSubmit={handleSaveIdentity} className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs flex-1">
               <input
                 value={identityForm.name}
                 onChange={(e) => setIdentityForm({ ...identityForm, name: e.target.value })}
@@ -192,8 +192,8 @@ export function DoctorDashboard() {
             </form>
           ) : (
             <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-bold text-white">{identity.name}</span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-sm font-bold text-white truncate">{identity.name}</span>
                 <span
                   className="rounded-full bg-white/15 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-neutral-300"
                   style={{ fontFamily: "var(--do-font-label)" }}
@@ -204,19 +204,19 @@ export function DoctorDashboard() {
                   type="button"
                   onClick={() => { setIdentityForm(identity); setIsEditingIdentity(true); }}
                   aria-label="Edit doctor identity"
-                  className="text-neutral-500 hover:text-white"
+                  className="text-neutral-400 hover:text-white"
                 >
                   <Pencil className="h-3 w-3" />
                 </button>
               </div>
-              <p className="text-xs text-neutral-400">{identity.organization} &bull; {identity.department}</p>
+              <p className="text-xs text-neutral-400 truncate">{identity.organization} &bull; {identity.department}</p>
             </div>
           )}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 w-full sm:w-auto">
           <span
-            className="text-[11px] font-semibold text-neutral-400 uppercase tracking-wider"
+            className="text-[10px] sm:text-[11px] font-semibold text-neutral-400 uppercase tracking-wider shrink-0"
             style={{ fontFamily: "var(--do-font-label)" }}
           >
             Queue:
@@ -224,7 +224,7 @@ export function DoctorDashboard() {
           <select
             value={effectivePatientId}
             onChange={(e) => setSelectedPatientId(e.target.value)}
-            className="rounded-full border border-neutral-700 bg-neutral-900 px-3.5 py-1.5 text-xs font-medium text-white focus:outline-none focus:ring-1 focus:ring-white"
+            className="w-full sm:w-auto rounded-full border border-neutral-700 bg-neutral-900 px-3.5 py-1.5 text-xs font-medium text-white focus:outline-none focus:ring-1 focus:ring-white"
             style={{ fontFamily: "var(--do-font-label)" }}
           >
             {patients.map((p) => (
@@ -237,14 +237,14 @@ export function DoctorDashboard() {
       </div>
 
       {/* Access by Serial / QR */}
-      <div className="rounded-3xl border border-black/[0.08] bg-white/80 backdrop-blur-xl p-5 shadow-sm">
+      <div className="rounded-3xl border border-black/[0.08] bg-white/80 backdrop-blur-xl p-4 sm:p-5 shadow-sm">
         <div className="flex items-center gap-2 mb-3">
           <KeyRound className="h-4 w-4 text-neutral-900" />
           <span className="text-xs font-bold uppercase tracking-wider text-neutral-950" style={{ fontFamily: "var(--do-font-label)" }}>
             Access Patient Record by TalkRx Serial Number / QR
           </span>
         </div>
-        <form onSubmit={handleSerialLookup} className="flex flex-col sm:flex-row gap-3">
+        <form onSubmit={handleSerialLookup} className="flex flex-col sm:flex-row gap-2.5">
           <input
             value={serialLookup}
             onChange={(e) => { setSerialLookup(e.target.value); setLookupMessage(null); }}
@@ -268,17 +268,17 @@ export function DoctorDashboard() {
       </div>
 
       {/* Patient Header Card */}
-      <div className="rounded-3xl border border-black/[0.08] bg-white/80 backdrop-blur-xl p-5 shadow-sm">
+      <div className="rounded-3xl border border-black/[0.08] bg-white/80 backdrop-blur-xl p-4 sm:p-5 shadow-sm">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-black text-white font-bold text-lg">
+          <div className="flex items-start sm:items-center gap-3.5 min-w-0">
+            <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-2xl bg-black text-white font-bold text-base sm:text-lg">
               {patient.name.charAt(0)}
             </div>
-            <div>
-              <div className="flex items-center gap-3">
-                <h4 className="text-lg font-bold text-neutral-950">{patient.name}</h4>
-                <span className="text-xs text-neutral-500 font-medium">
-                  {patient.age} Yrs &bull; {patient.gender} &bull; Blood: {patient.bloodGroup}
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h4 className="text-base sm:text-lg font-bold text-neutral-950 truncate">{patient.name}</h4>
+                <span className="text-xs text-neutral-500 font-medium whitespace-nowrap">
+                  {patient.age} Yrs &bull; {patient.gender} &bull; {patient.bloodGroup}
                 </span>
                 <span
                   className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-bold uppercase text-neutral-800"
@@ -287,11 +287,11 @@ export function DoctorDashboard() {
                   {patient.tokenNumber}
                 </span>
               </div>
-              <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-neutral-600">
-                <span>ABHA: <strong>{patient.abhaId}</strong></span>
-                <span>&bull;</span>
-                <span>Language: <strong>{patient.preferredLanguage.toUpperCase()}</strong></span>
-                <span>&bull;</span>
+              <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-neutral-600">
+                <span>ABHA: <strong className="font-mono">{patient.abhaId}</strong></span>
+                <span className="hidden sm:inline">&bull;</span>
+                <span>Lang: <strong>{patient.preferredLanguage.toUpperCase()}</strong></span>
+                <span className="hidden sm:inline">&bull;</span>
                 <span className="inline-flex items-center gap-1 text-emerald-800 font-medium">
                   <ShieldCheck className="h-3.5 w-3.5" /> Granular Consent (12h)
                 </span>
@@ -300,8 +300,8 @@ export function DoctorDashboard() {
           </div>
 
           {/* Metrics Pill Grid */}
-          <div className="flex items-center gap-2">
-            <div className="rounded-2xl bg-neutral-50 p-3 border border-black/5 text-center min-w-[90px]">
+          <div className="grid grid-cols-3 gap-2 w-full lg:w-auto">
+            <div className="rounded-2xl bg-neutral-50 p-2.5 sm:p-3 border border-black/5 text-center">
               <div className="text-[9px] font-bold text-neutral-400 uppercase" style={{ fontFamily: "var(--do-font-label)" }}>
                 Intake Time
               </div>
@@ -309,13 +309,13 @@ export function DoctorDashboard() {
                 {patient.structuredSummary?.intakeDurationSeconds || 320}s
               </div>
             </div>
-            <div className="rounded-2xl bg-neutral-50 p-3 border border-black/5 text-center min-w-[90px]">
+            <div className="rounded-2xl bg-neutral-50 p-2.5 sm:p-3 border border-black/5 text-center">
               <div className="text-[9px] font-bold text-neutral-400 uppercase" style={{ fontFamily: "var(--do-font-label)" }}>
                 Doctor Read
               </div>
               <div className="text-sm font-bold text-neutral-950 mt-0.5">&lt; 60s</div>
             </div>
-            <div className="rounded-2xl bg-neutral-50 p-3 border border-black/5 text-center min-w-[90px]">
+            <div className="rounded-2xl bg-neutral-50 p-2.5 sm:p-3 border border-black/5 text-center">
               <div className="text-[9px] font-bold text-neutral-400 uppercase" style={{ fontFamily: "var(--do-font-label)" }}>
                 Data Points
               </div>
@@ -326,7 +326,7 @@ export function DoctorDashboard() {
       </div>
 
       {/* Segmented Pill Tabs */}
-      <div className="flex justify-start overflow-x-auto gap-2 border-b border-black/[0.06] pb-3">
+      <div className="flex justify-start overflow-x-auto gap-2 border-b border-black/[0.06] pb-3 scrollbar-none">
         {[
           { id: "summary", label: "60s Structured Summary" },
           { id: "timeline", label: `Longitudinal Timeline (${patient.timeline.length})` },
@@ -340,10 +340,10 @@ export function DoctorDashboard() {
               key={tab.id}
               type="button"
               onClick={() => setActiveTab(tab.id as any)}
-              className={`rounded-full px-4 py-2 text-xs font-semibold whitespace-nowrap uppercase tracking-wider transition-all ${
+              className={`rounded-full px-3.5 sm:px-4 py-2 text-xs font-semibold whitespace-nowrap uppercase tracking-wider transition-all ${
                 isActive
                   ? "bg-black text-white shadow-sm"
-                  : "bg-white/60 text-neutral-600 hover:text-black hover:bg-white"
+                  : "bg-white/70 text-neutral-600 hover:text-black hover:bg-white border border-black/5"
               }`}
               style={{ fontFamily: "var(--do-font-label)" }}
             >
@@ -570,8 +570,8 @@ export function DoctorDashboard() {
               </p>
             </div>
 
-            <div className="overflow-x-auto rounded-2xl border border-black/5">
-              <table className="w-full text-left text-xs">
+            <div className="overflow-x-auto rounded-2xl border border-black/5 scrollbar-none">
+              <table className="w-full text-left text-xs min-w-[640px]">
                 <thead className="bg-neutral-100 font-bold uppercase text-neutral-700 text-[10px]" style={{ fontFamily: "var(--do-font-label)" }}>
                   <tr>
                     <th className="p-3">Generic Molecule</th>
