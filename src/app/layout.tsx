@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 import { MobileBottomNav } from "@/components/talkrx/MobileBottomNav";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
