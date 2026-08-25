@@ -668,7 +668,7 @@ function OverviewTab({
                     </span>
                   </div>
                   <div className="rounded-xl bg-white p-3 border border-black/5 font-mono text-[11px] text-neutral-700">
-                    <span className="text-neutral-400 block text-[9px] uppercase font-sans font-bold">// Extracted Parameters:</span>
+                    <span className="text-neutral-400 block text-[9px] uppercase font-sans font-bold">{"// Extracted Parameters:"}</span>
                     {report.findings}
                   </div>
                 </div>
@@ -1018,7 +1018,7 @@ function SelfAssessmentTab({
         {preview && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-2">
             <div className="rounded-2xl border border-black/10 bg-neutral-950 p-5 text-white">
-              <div className="text-neutral-500 text-[10px] uppercase mb-2 font-mono">// Original Input:</div>
+              <div className="text-neutral-500 text-[10px] uppercase mb-2 font-mono">{"// Original Input:"}</div>
               <p className="font-mono text-xs text-neutral-300 leading-relaxed">{rawText}</p>
             </div>
             <div className="rounded-2xl border border-black/[0.08] bg-white p-5 space-y-3">

@@ -104,8 +104,12 @@ export function VaultProvider({ children }: { children: React.ReactNode }) {
   }, [isSignedIn, pathname, router]);
 
   useEffect(() => {
+    let isMounted = true;
     if (!isLoaded) return;
-    void fetchSession();
+    fetchSession().catch(() => {});
+    return () => {
+      isMounted = false;
+    };
   }, [isLoaded, fetchSession]);
 
   const patchPatient = useCallback((updated: PatientProfile) => {
