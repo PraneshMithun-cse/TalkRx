@@ -14,7 +14,8 @@ import {
 } from "lucide-react";
 import { useVault } from "./VaultContext";
 import { isValidSerial } from "./serial";
-import { extractFromPharmacyBill } from "./ai-extraction";
+import { previewPharmacyBillAction } from "@/lib/actions/ai-preview";
+import type { PharmacyBillExtractionResult } from "@/lib/ai/extraction";
 
 export function PharmacyNetwork() {
   const { lookupPatient, addPharmacyDispensation } = useVault();
@@ -23,7 +24,8 @@ export function PharmacyNetwork() {
   const [linkedPatient, setLinkedPatient] = useState<{ name: string; age: number } | null>(null);
   const [linkAttempted, setLinkAttempted] = useState(false);
   const [billText, setBillText] = useState("");
-  const [billPreview, setBillPreview] = useState<ReturnType<typeof extractFromPharmacyBill> | null>(null);
+  const [billPreview, setBillPreview] = useState<PharmacyBillExtractionResult | null>(null);
+  const [isParsingBill, setIsParsingBill] = useState(false);
   const [dispensedItems, setDispensedItems] = useState([
     {
       id: "rx-1",
@@ -52,23 +54,28 @@ export function PharmacyNetwork() {
     qty: "14 Caps",
   });
 
-  const handleLinkSerial = (e: React.FormEvent) => {
+  const handleLinkSerial = async (e: React.FormEvent) => {
     e.preventDefault();
     setLinkAttempted(true);
     if (!isValidSerial(serialInput)) {
       setLinkedPatient(null);
       return;
     }
-    const found = lookupPatient(serialInput);
+    const found = await lookupPatient(serialInput);
     setLinkedPatient(found ? { name: found.name, age: found.age } : null);
   };
 
-  const handleParseBill = () => {
+  const handleParseBill = async () => {
     if (!billText.trim()) return;
-    setBillPreview(extractFromPharmacyBill(billText));
+    setIsParsingBill(true);
+    try {
+      setBillPreview(await previewPharmacyBillAction(billText));
+    } finally {
+      setIsParsingBill(false);
+    }
   };
 
-  const handleRecordDispensation = (e: React.FormEvent) => {
+  const handleRecordDispensation = async (e: React.FormEvent) => {
     e.preventDefault();
     // Local dispensation record — unaffected whether or not a TalkRx Serial Number is linked.
     setDispensedItems((prev) => [
@@ -85,7 +92,7 @@ export function PharmacyNetwork() {
     ]);
 
     if (isValidSerial(serialInput) && linkedPatient) {
-      addPharmacyDispensation(serialInput, {
+      await addPharmacyDispensation(serialInput, {
         pharmacyName: "Apollo Pharmacy #419",
         items: [{ molecule: newDispense.molecule, brand: newDispense.brand, dosage: "", frequency: "", quantity: newDispense.batch }],
       });
@@ -192,10 +199,11 @@ export function PharmacyNetwork() {
         <button
           type="button"
           onClick={handleParseBill}
-          className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-neutral-800 hover:bg-neutral-100"
+          disabled={isParsingBill}
+          className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-neutral-800 hover:bg-neutral-100 disabled:opacity-50"
           style={{ fontFamily: "var(--do-font-label)" }}
         >
-          <Sparkles className="h-3 w-3" /> Parse with AI
+          <Sparkles className="h-3 w-3" /> {isParsingBill ? "Parsing…" : "Parse with AI"}
         </button>
         {billPreview && (
           <div className="mt-3 space-y-1.5">

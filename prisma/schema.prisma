@@ -33,24 +33,6 @@ enum IndicLanguage {
   en
 }
 
-enum QueueStatus {
-  waiting
-  in_case_taking
-  triage_alert
-  case_completed
-  consulting
-  discharged
-}
-
-enum ProvenanceSource {
-  patient_reported
-  doctor_prescribed
-  pharmacy_dispensed
-  document_extracted
-  ayush_assessed
-  lab_verified
-}
-
 enum ConditionKind {
   symptom
   condition
@@ -72,34 +54,10 @@ enum DocumentCategory {
   ayush_consult
 }
 
-enum GranteeType {
-  Doctor
-  Hospital
-  Pharmacy
-  Diagnostic_Lab
-  AYUSH_Practitioner
-}
-
-enum AccessLevel {
-  Read_Only
-  Write_Only
-  Full_Care_Access
-}
-
 enum ConsentStatus {
   Active
   Revoked
   Expired
-}
-
-enum RedFlagCategory {
-  cardiac
-  respiratory
-  stroke
-  sepsis
-  obstetric
-  paediatric
-  severe_trauma
 }
 
 enum RedFlagSeverity {
@@ -150,7 +108,7 @@ model Patient {
   tokenNumber       String        @default("—")
   department        String        @default("—")
   hospitalName      String        @default("—")
-  queueStatus       QueueStatus   @default(waiting)
+  queueStatus       String        @default("waiting")
 
   structuredSummary Json?
   ayushData         Json?
@@ -180,7 +138,7 @@ model PatientCondition {
 
   label               String
   kind                ConditionKind
-  source              ProvenanceSource
+  source              String
   confidence          Float
   verified            Boolean           @default(false)
   recordedBy          String?
@@ -209,7 +167,7 @@ model ExtractedMedication {
   confidence          Float
   confirmedByPatient  Boolean           @default(false)
   status              MedicationStatus  @default(active)
-  source              ProvenanceSource
+  source              String
   prescribedBy        String?
   dispensedBy         String?
   dispensedAt         DateTime?
@@ -267,10 +225,10 @@ model ConsentAuthorization {
   patient        Patient       @relation(fields: [patientId], references: [id], onDelete: Cascade)
 
   granteeName    String
-  granteeType    GranteeType
+  granteeType    String
   purpose        String
   dataCategories String[]
-  accessLevel    AccessLevel
+  accessLevel    String
   validFrom      DateTime
   validTill      DateTime
   status         ConsentStatus @default(Active)
@@ -304,7 +262,7 @@ model TimelineEvent {
   title       String
   subtitle    String
   category    String
-  source      ProvenanceSource
+  source      String
   sourceEntity String
   doctorName  String?
   facility    String
@@ -322,7 +280,7 @@ model RedFlagAlert {
   patientId        String
   patient          Patient         @relation(fields: [patientId], references: [id], onDelete: Cascade)
 
-  category         RedFlagCategory
+  category         String
   severity         RedFlagSeverity
   matchedRule      String
   patientStatement String

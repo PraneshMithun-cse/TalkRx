@@ -1,61 +1,36 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { MOCK_PATIENTS } from "./mock-data";
-import { generateSerialNumber, isValidSerial } from "./serial";
-import { extractFromSelfAssessment, extractFromPharmacyBill } from "./ai-extraction";
+import { useUser, useClerk } from "@clerk/nextjs";
+import { usePathname, useRouter } from "next/navigation";
+import {
+  getSessionStateAction,
+  createAccountAction,
+  lookupPatientAction,
+  setDoctorIdentityAction,
+  addSelfAssessmentAction,
+  addDoctorRecordAction,
+  addPharmacyDispensationAction,
+  grantConsentAction,
+  revokeConsentAction,
+  logAccessAction,
+  submitCaseTakingSummaryAction,
+} from "@/lib/actions/vault";
+import type { CreateAccountInput, DoctorRecordInput, PharmacyDispenseInput } from "@/lib/actions/vault";
+import { uploadMedicalDocumentAction } from "@/lib/actions/documents";
 import type {
   PatientProfile,
   DoctorIdentity,
   ConsentAuthorization,
   AccessAuditLog,
-  ExtractedMedication,
-  TimelineEvent,
-  IndicLanguage,
+  StructuredHpiSummary,
+  DashavidhaParikshaData,
 } from "./types";
-
-const STORAGE_KEY = "talkrx.vault.v1";
 
 interface VaultState {
   patients: PatientProfile[];
-  currentPatientId: string | null;
+  currentPatient: PatientProfile | null;
   doctorIdentity: DoctorIdentity | null;
-}
-
-function nowStr(): string {
-  return new Date().toISOString().slice(0, 16).replace("T", " ");
-}
-
-function seedState(): VaultState {
-  return {
-    patients: structuredClone(MOCK_PATIENTS),
-    currentPatientId: null,
-    doctorIdentity: null,
-  };
-}
-
-interface CreateAccountInput {
-  name: string;
-  age: number;
-  gender: PatientProfile["gender"];
-  phone: string;
-  bloodGroup: string;
-  preferredLanguage: IndicLanguage;
-}
-
-interface DoctorRecordInput {
-  doctorName: string;
-  licenseNumber: string;
-  organization: string;
-  clinicalNotes: string;
-  diagnoses: string[];
-  recommendations: string;
-  prescriptions: Array<{ drugName: string; dosage: string; frequency: string; duration: string }>;
-}
-
-interface PharmacyDispenseInput {
-  pharmacyName: string;
-  items: Array<{ molecule: string; brand?: string; dosage: string; frequency: string; quantity: string }>;
 }
 
 interface VaultContextValue {
@@ -64,374 +39,159 @@ interface VaultContextValue {
   currentPatient: PatientProfile | null;
   doctorIdentity: DoctorIdentity | null;
 
-  createAccount(input: CreateAccountInput): PatientProfile;
-  signInWithSerial(serial: string): PatientProfile | null;
+  createAccount(input: CreateAccountInput): Promise<PatientProfile>;
+  signInWithSerial(serial: string): Promise<PatientProfile | null>;
   signOut(): void;
-  lookupPatient(query: string): PatientProfile | null;
+  lookupPatient(query: string): Promise<PatientProfile | null>;
 
-  setDoctorIdentity(identity: DoctorIdentity): void;
+  setDoctorIdentity(identity: DoctorIdentity): Promise<void>;
 
-  addSelfAssessment(patientId: string, rawText: string): void;
+  addSelfAssessment(patientId: string, rawText: string): Promise<void>;
 
-  addDoctorRecord(patientId: string, input: DoctorRecordInput): void;
+  addDoctorRecord(patientId: string, input: DoctorRecordInput): Promise<void>;
 
-  addPharmacyDispensation(serial: string, input: PharmacyDispenseInput): { ok: true; patientName: string } | { ok: false; reason: string };
+  addPharmacyDispensation(
+    serial: string,
+    input: PharmacyDispenseInput
+  ): Promise<{ ok: true; patientName: string } | { ok: false; reason: string }>;
 
-  grantConsent(patientId: string, consent: Omit<ConsentAuthorization, "id" | "status">): void;
-  revokeConsent(patientId: string, consentId: string): void;
-  logAccess(patientId: string, entry: Omit<AccessAuditLog, "id" | "timestamp">): void;
+  grantConsent(patientId: string, consent: Omit<ConsentAuthorization, "id" | "status">): Promise<void>;
+  revokeConsent(patientId: string, consentId: string): Promise<void>;
+  logAccess(patientId: string, entry: Omit<AccessAuditLog, "id" | "timestamp">): Promise<void>;
+
+  submitCaseTakingSummary(patientId: string, summary: StructuredHpiSummary, ayushData?: DashavidhaParikshaData): Promise<void>;
+  uploadMedicalDocument(formData: FormData): Promise<void>;
 }
 
 const VaultContext = createContext<VaultContextValue | null>(null);
 
+const EMPTY_STATE: VaultState = { patients: [], currentPatient: null, doctorIdentity: null };
+
 export function VaultProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState<VaultState>({ patients: [], currentPatientId: null, doctorIdentity: null });
+  const { isLoaded, isSignedIn } = useUser();
+  const { signOut: clerkSignOut } = useClerk();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const [state, setState] = useState<VaultState>(EMPTY_STATE);
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        setState(JSON.parse(raw) as VaultState);
-      } else {
-        setState(seedState());
+    if (!isLoaded) return;
+    let cancelled = false;
+    (async () => {
+      if (!isSignedIn) {
+        if (cancelled) return;
+        setState(EMPTY_STATE);
+        setIsHydrated(true);
+        return;
       }
-    } catch {
-      setState(seedState());
-    }
-    setIsHydrated(true);
-  }, []);
+      const session = await getSessionStateAction();
+      if (cancelled) return;
+      if (session.role === null && pathname !== "/onboarding") {
+        router.replace("/onboarding");
+        return;
+      }
+      setState({ patients: session.patients, currentPatient: session.currentPatient, doctorIdentity: session.doctorIdentity });
+      setIsHydrated(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoaded, isSignedIn, pathname, router]);
 
-  useEffect(() => {
-    if (!isHydrated) return;
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    } catch {
-      // storage unavailable — demo continues in-memory only
-    }
-  }, [state, isHydrated]);
-
-  const updatePatient = useCallback((patientId: string, updater: (p: PatientProfile) => PatientProfile) => {
+  const patchPatient = useCallback((updated: PatientProfile) => {
     setState((prev) => ({
       ...prev,
-      patients: prev.patients.map((p) => (p.id === patientId ? updater(p) : p)),
+      patients: prev.patients.map((p) => (p.id === updated.id ? updated : p)),
+      currentPatient: prev.currentPatient?.id === updated.id ? updated : prev.currentPatient,
     }));
   }, []);
 
-  const createAccount = useCallback(
-    (input: CreateAccountInput): PatientProfile => {
-      let created: PatientProfile;
-      setState((prev) => {
-        const serial = generateSerialNumber(prev.patients.map((p) => p.serialNumber));
-        created = {
-          id: `pat-${serial}`,
-          serialNumber: serial,
-          createdAt: nowStr(),
-          conditions: [],
-          selfAssessments: [],
-          doctorRecords: [],
-          consents: [],
-          auditLog: [],
-          abhaId: "Not Linked",
-          abhaAddress: "Not Linked",
-          name: input.name,
-          age: input.age,
-          gender: input.gender,
-          phone: input.phone,
-          bloodGroup: input.bloodGroup,
-          preferredLanguage: input.preferredLanguage,
-          isReturningPatient: false,
-          tokenNumber: "—",
-          department: "—",
-          hospitalName: "—",
-          queueStatus: "waiting",
-          timeline: [
-            {
-              id: `tl-create-${serial}`,
-              date: nowStr().slice(0, 10),
-              time: nowStr().slice(11),
-              title: "TalkRx Account Created",
-              subtitle: "Self-registration",
-              category: "case-taking",
-              source: "patient-reported",
-              sourceEntity: "TalkRx Account Service",
-              facility: "TalkRx Digital",
-              description: `${input.name} created a TalkRx account and received Serial Number ${serial}.`,
-              tags: ["Account Created"],
-            },
-          ],
-          documents: [],
-          activeMedications: [],
-          allergies: [],
-        };
-        return { ...prev, patients: [...prev.patients, created], currentPatientId: created.id };
-      });
-      return created!;
-    },
-    []
-  );
-
-  const signInWithSerial = useCallback(
-    (serial: string): PatientProfile | null => {
-      const found = state.patients.find((p) => p.serialNumber === serial.trim());
-      if (found) {
-        setState((prev) => ({ ...prev, currentPatientId: found.id }));
-        return found;
-      }
-      return null;
-    },
-    [state.patients]
-  );
-
-  const signOut = useCallback(() => {
-    setState((prev) => ({ ...prev, currentPatientId: null }));
+  const createAccount = useCallback(async (input: CreateAccountInput) => {
+    const created = await createAccountAction(input);
+    setState((prev) => ({ ...prev, currentPatient: created }));
+    return created;
   }, []);
 
-  const lookupPatient = useCallback(
-    (query: string): PatientProfile | null => {
-      const q = query.trim();
-      return state.patients.find((p) => p.serialNumber === q || p.abhaId === q) || null;
-    },
-    [state.patients]
-  );
+  const signInWithSerial = useCallback(async (serial: string) => {
+    const found = await lookupPatientAction(serial);
+    if (found) setState((prev) => ({ ...prev, currentPatient: found }));
+    return found;
+  }, []);
 
-  const setDoctorIdentity = useCallback((identity: DoctorIdentity) => {
+  const signOut = useCallback(() => {
+    setState(EMPTY_STATE);
+    void clerkSignOut(() => router.push("/"));
+  }, [clerkSignOut, router]);
+
+  const lookupPatient = useCallback(async (query: string) => lookupPatientAction(query), []);
+
+  const setDoctorIdentity = useCallback(async (identity: DoctorIdentity) => {
+    await setDoctorIdentityAction(identity);
     setState((prev) => ({ ...prev, doctorIdentity: identity }));
   }, []);
 
   const addSelfAssessment = useCallback(
-    (patientId: string, rawText: string) => {
-      const extraction = extractFromSelfAssessment(rawText);
-      const timestamp = nowStr();
-      const entryId = `sa-${Date.now()}`;
-
-      updatePatient(patientId, (p) => {
-        const newConditions = extraction.conditions.map((c, idx) => ({
-          id: `cond-${Date.now()}-${idx}`,
-          label: c.label,
-          kind: c.kind,
-          source: "patient-reported" as const,
-          confidence: c.confidence,
-          verified: false,
-          recordedBy: "Self-reported",
-          recordedAt: timestamp,
-        }));
-
-        const newMedications: ExtractedMedication[] = extraction.medications.map((m, idx) => ({
-          id: `med-sa-${Date.now()}-${idx}`,
-          rawText: m.rawText,
-          standardMolecule: m.standardMolecule,
-          dosage: m.dosage,
-          frequency: m.frequency,
-          duration: "Unspecified",
-          confidence: m.confidence,
-          confirmedByPatient: true,
-          status: "active",
-          source: "patient-reported",
-        }));
-
-        const newAllergies = extraction.conditions
-          .filter((c) => c.kind === "allergy")
-          .map((c) => c.label)
-          .filter((a) => !p.allergies.includes(a));
-
-        const timelineEvent: TimelineEvent = {
-          id: `tl-sa-${Date.now()}`,
-          date: timestamp.slice(0, 10),
-          time: timestamp.slice(11),
-          title: "Self-Assessment Submitted",
-          subtitle: "Patient-reported, AI-assisted extraction",
-          category: "case-taking",
-          source: "patient-reported",
-          sourceEntity: "TalkRx Self-Assessment AI",
-          facility: "TalkRx Digital",
-          description: `Patient described symptoms/history in natural language. AI suggested ${extraction.conditions.length} condition(s)/symptom(s) and ${extraction.medications.length} medication(s) — unverified, pending clinical review.`,
-          tags: ["Self-Assessment", `${Math.round(extraction.confidenceAvg * 100)}% Avg Confidence`],
-        };
-
-        return {
-          ...p,
-          conditions: [...p.conditions, ...newConditions],
-          activeMedications: [...p.activeMedications, ...newMedications],
-          allergies: [...p.allergies, ...newAllergies],
-          selfAssessments: [
-            ...p.selfAssessments,
-            {
-              id: entryId,
-              submittedAt: timestamp,
-              rawText,
-              extractedConditionIds: newConditions.map((c) => c.id),
-              extractedMedicationIds: newMedications.map((m) => m.id),
-              aiConfidenceAvg: extraction.confidenceAvg,
-            },
-          ],
-          timeline: [timelineEvent, ...p.timeline],
-        };
-      });
+    async (patientId: string, rawText: string) => {
+      const updated = await addSelfAssessmentAction(patientId, rawText);
+      patchPatient(updated);
     },
-    [updatePatient]
+    [patchPatient]
   );
 
   const addDoctorRecord = useCallback(
-    (patientId: string, input: DoctorRecordInput) => {
-      const timestamp = nowStr();
-      const recordId = `dr-${Date.now()}`;
-
-      updatePatient(patientId, (p) => {
-        const diagnosedConditions = input.diagnoses.map((label, idx) => ({
-          id: `cond-dr-${Date.now()}-${idx}`,
-          label,
-          kind: "diagnosis" as const,
-          source: "doctor-prescribed" as const,
-          confidence: 1,
-          verified: true,
-          recordedBy: input.doctorName,
-          recordedAt: timestamp,
-        }));
-
-        const prescribedMedications: ExtractedMedication[] = input.prescriptions.map((rx, idx) => ({
-          id: `med-dr-${Date.now()}-${idx}`,
-          rawText: `${rx.drugName} ${rx.dosage} ${rx.frequency} x ${rx.duration}`,
-          standardMolecule: rx.drugName,
-          dosage: rx.dosage,
-          frequency: rx.frequency,
-          duration: rx.duration,
-          confidence: 1,
-          confirmedByPatient: false,
-          status: "active",
-          source: "doctor-prescribed",
-          prescribedBy: `${input.doctorName}${input.licenseNumber ? ` (${input.licenseNumber})` : ""}`,
-        }));
-
-        const timelineEvent: TimelineEvent = {
-          id: `tl-dr-${Date.now()}`,
-          date: timestamp.slice(0, 10),
-          time: timestamp.slice(11),
-          title: "Doctor Consultation Recorded",
-          subtitle: `${input.doctorName}${input.organization ? ` · ${input.organization}` : ""}`,
-          category: "consultation",
-          source: "doctor-prescribed",
-          sourceEntity: "TalkRx Doctor Dashboard",
-          doctorName: input.doctorName,
-          facility: input.organization || "TalkRx Connected Clinic",
-          description:
-            input.clinicalNotes ||
-            `${input.diagnoses.length} condition(s) observed, ${input.prescriptions.length} medication(s) prescribed.`,
-          tags: ["Doctor-Verified", ...(input.diagnoses.length ? [`${input.diagnoses.length} Diagnosis`] : [])],
-        };
-
-        return {
-          ...p,
-          conditions: [...p.conditions, ...diagnosedConditions],
-          activeMedications: [...p.activeMedications, ...prescribedMedications],
-          doctorRecords: [
-            ...p.doctorRecords,
-            {
-              id: recordId,
-              doctorName: input.doctorName,
-              licenseNumber: input.licenseNumber,
-              organization: input.organization,
-              timestamp,
-              clinicalNotes: input.clinicalNotes,
-              diagnosedConditionIds: diagnosedConditions.map((c) => c.id),
-              prescribedMedicationIds: prescribedMedications.map((m) => m.id),
-              recommendations: input.recommendations,
-            },
-          ],
-          timeline: [timelineEvent, ...p.timeline],
-        };
-      });
+    async (patientId: string, input: DoctorRecordInput) => {
+      const updated = await addDoctorRecordAction(patientId, input);
+      patchPatient(updated);
     },
-    [updatePatient]
+    [patchPatient]
   );
 
-  const addPharmacyDispensation = useCallback(
-    (serial: string, input: PharmacyDispenseInput): { ok: true; patientName: string } | { ok: false; reason: string } => {
-      if (!isValidSerial(serial)) return { ok: false, reason: "Invalid serial format" };
-      const patient = state.patients.find((p) => p.serialNumber === serial.trim());
-      if (!patient) return { ok: false, reason: "No TalkRx account found for that serial" };
-
-      const timestamp = nowStr();
-
-      updatePatient(patient.id, (p) => {
-        const dispensedMedications: ExtractedMedication[] = input.items.map((item, idx) => ({
-          id: `med-ph-${Date.now()}-${idx}`,
-          rawText: `${item.molecule} ${item.dosage}`.trim(),
-          standardMolecule: item.molecule,
-          brandName: item.brand,
-          dosage: item.dosage,
-          frequency: item.frequency,
-          duration: item.quantity,
-          confidence: 0.85,
-          confirmedByPatient: false,
-          status: "active",
-          source: "pharmacy-dispensed",
-          dispensedBy: input.pharmacyName,
-          dispensedAt: timestamp,
-        }));
-
-        const timelineEvent: TimelineEvent = {
-          id: `tl-ph-${Date.now()}`,
-          date: timestamp.slice(0, 10),
-          time: timestamp.slice(11),
-          title: "Pharmacy Dispensation Linked",
-          subtitle: input.pharmacyName,
-          category: "dispensation",
-          source: "pharmacy-dispensed",
-          sourceEntity: "TalkRx Pharmacy Integration",
-          facility: input.pharmacyName,
-          description: `${input.items.length} medication(s) dispensed and voluntarily linked via TalkRx Serial Number.`,
-          tags: ["Pharmacy-Dispensed", "Serial-Linked"],
-        };
-
-        return {
-          ...p,
-          activeMedications: [...p.activeMedications, ...dispensedMedications],
-          timeline: [timelineEvent, ...p.timeline],
-        };
-      });
-
-      return { ok: true, patientName: patient.name };
-    },
-    [state.patients, updatePatient]
-  );
+  const addPharmacyDispensation = useCallback(async (serial: string, input: PharmacyDispenseInput) => {
+    return addPharmacyDispensationAction(serial, input);
+  }, []);
 
   const grantConsent = useCallback(
-    (patientId: string, consent: Omit<ConsentAuthorization, "id" | "status">) => {
-      updatePatient(patientId, (p) => ({
-        ...p,
-        consents: [...p.consents, { ...consent, id: `con-${Date.now()}`, status: "Active" }],
-      }));
+    async (patientId: string, consent: Omit<ConsentAuthorization, "id" | "status">) => {
+      const updated = await grantConsentAction(patientId, consent);
+      patchPatient(updated);
     },
-    [updatePatient]
+    [patchPatient]
   );
 
   const revokeConsent = useCallback(
-    (patientId: string, consentId: string) => {
-      updatePatient(patientId, (p) => ({
-        ...p,
-        consents: p.consents.map((c) => (c.id === consentId ? { ...c, status: "Revoked" } : c)),
-      }));
+    async (patientId: string, consentId: string) => {
+      const updated = await revokeConsentAction(patientId, consentId);
+      patchPatient(updated);
     },
-    [updatePatient]
+    [patchPatient]
   );
 
-  const logAccess = useCallback(
-    (patientId: string, entry: Omit<AccessAuditLog, "id" | "timestamp">) => {
-      updatePatient(patientId, (p) => ({
-        ...p,
-        auditLog: [{ ...entry, id: `aud-${Date.now()}`, timestamp: nowStr() }, ...p.auditLog],
-      }));
+  const logAccess = useCallback(async (patientId: string, entry: Omit<AccessAuditLog, "id" | "timestamp">) => {
+    await logAccessAction(patientId, entry);
+  }, []);
+
+  const submitCaseTakingSummary = useCallback(
+    async (patientId: string, summary: StructuredHpiSummary, ayushData?: DashavidhaParikshaData) => {
+      const updated = await submitCaseTakingSummaryAction(patientId, summary, ayushData);
+      patchPatient(updated);
     },
-    [updatePatient]
+    [patchPatient]
   );
 
-  const currentPatient = state.patients.find((p) => p.id === state.currentPatientId) || null;
+  const uploadMedicalDocument = useCallback(
+    async (formData: FormData) => {
+      const updated = await uploadMedicalDocumentAction(formData);
+      patchPatient(updated);
+    },
+    [patchPatient]
+  );
 
   const value: VaultContextValue = {
     isHydrated,
     patients: state.patients,
-    currentPatient,
+    currentPatient: state.currentPatient,
     doctorIdentity: state.doctorIdentity,
     createAccount,
     signInWithSerial,
@@ -444,6 +204,8 @@ export function VaultProvider({ children }: { children: React.ReactNode }) {
     grantConsent,
     revokeConsent,
     logAccess,
+    submitCaseTakingSummary,
+    uploadMedicalDocument,
   };
 
   return <VaultContext.Provider value={value}>{children}</VaultContext.Provider>;

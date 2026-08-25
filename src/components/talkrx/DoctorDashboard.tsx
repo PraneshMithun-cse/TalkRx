@@ -97,21 +97,21 @@ export function DoctorDashboard() {
 
   const identity = doctorIdentity || DEFAULT_IDENTITY;
 
-  const handleSaveIdentity = (e: React.FormEvent) => {
+  const handleSaveIdentity = async (e: React.FormEvent) => {
     e.preventDefault();
-    setDoctorIdentity(identityForm);
+    await setDoctorIdentity(identityForm);
     setIsEditingIdentity(false);
   };
 
-  const handleSerialLookup = (e: React.FormEvent) => {
+  const handleSerialLookup = async (e: React.FormEvent) => {
     e.preventDefault();
-    const found = lookupPatient(serialLookup);
+    const found = await lookupPatient(serialLookup);
     if (!found) {
       setLookupMessage({ type: "error", text: "No TalkRx account found for that Serial Number / QR." });
       return;
     }
     setSelectedPatientId(found.id);
-    grantConsent(found.id, {
+    await grantConsent(found.id, {
       granteeName: identity.name,
       granteeType: "Doctor",
       purpose: "Serial-authorized access",
@@ -120,7 +120,7 @@ export function DoctorDashboard() {
       validFrom: new Date().toISOString().slice(0, 16).replace("T", " "),
       validTill: new Date(Date.now() + 12 * 3600 * 1000).toISOString().slice(0, 16).replace("T", " "),
     });
-    logAccess(found.id, {
+    await logAccess(found.id, {
       accessorName: identity.name,
       accessorRole: `${identity.department || "Physician"}`,
       facility: identity.organization,
@@ -132,8 +132,8 @@ export function DoctorDashboard() {
     setSerialLookup("");
   };
 
-  const handleCompleteConsultation = () => {
-    addDoctorRecord(patient.id, {
+  const handleCompleteConsultation = async () => {
+    await addDoctorRecord(patient.id, {
       doctorName: identity.name,
       licenseNumber: identity.licenseNumber,
       organization: identity.organization,

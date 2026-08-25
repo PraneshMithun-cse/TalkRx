@@ -32,7 +32,8 @@ import {
 } from "lucide-react";
 import { useVault } from "./VaultContext";
 import { INDIC_LANGUAGES } from "./mock-data";
-import { extractFromSelfAssessment } from "./ai-extraction";
+import { previewSelfAssessmentAction } from "@/lib/actions/ai-preview";
+import type { SelfAssessmentExtractionResult } from "@/lib/ai/extraction";
 import { PseudoQr } from "./PseudoQr";
 import { formatSerial } from "./serial";
 import { ProvenanceBadge } from "./ProvenanceBadge";
@@ -744,16 +745,22 @@ function SelfAssessmentTab({
   addSelfAssessment: ReturnType<typeof useVault>["addSelfAssessment"];
 }) {
   const [rawText, setRawText] = useState("");
-  const [preview, setPreview] = useState<ReturnType<typeof extractFromSelfAssessment> | null>(null);
+  const [preview, setPreview] = useState<SelfAssessmentExtractionResult | null>(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
-  const handleAnalyze = () => {
+  const handleAnalyze = async () => {
     if (!rawText.trim()) return;
-    setPreview(extractFromSelfAssessment(rawText));
+    setIsAnalyzing(true);
+    try {
+      setPreview(await previewSelfAssessmentAction(rawText));
+    } finally {
+      setIsAnalyzing(false);
+    }
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!rawText.trim()) return;
-    addSelfAssessment(patient.id, rawText);
+    await addSelfAssessment(patient.id, rawText);
     setRawText("");
     setPreview(null);
   };
@@ -777,10 +784,11 @@ function SelfAssessmentTab({
           <button
             type="button"
             onClick={handleAnalyze}
-            className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-800 hover:bg-neutral-100 shadow-sm"
+            disabled={isAnalyzing}
+            className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-800 hover:bg-neutral-100 shadow-sm disabled:opacity-50"
             style={{ fontFamily: "var(--do-font-label)" }}
           >
-            <Sparkles className="h-3.5 w-3.5" /> Analyze with AI
+            <Sparkles className="h-3.5 w-3.5" /> {isAnalyzing ? "Analyzing…" : "Analyze with AI"}
           </button>
           <button
             type="button"
@@ -958,17 +966,35 @@ function AccountGate({
   const [preferredLanguage, setPreferredLanguage] = useState<IndicLanguage>("en");
   const [serialInput, setSerialInput] = useState("");
   const [signInError, setSignInError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleCreate = (e: React.FormEvent) => {
+  const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !age) return;
-    createAccount({ name: name.trim(), age: Number(age), gender, phone, bloodGroup, preferredLanguage });
+    setIsSubmitting(true);
+    setSignInError("");
+    try {
+      await createAccount({ name: name.trim(), age: Number(age), gender, phone, bloodGroup, preferredLanguage });
+    } catch (err: unknown) {
+      setSignInError(err instanceof Error ? err.message : "Failed to create passport");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleSignIn = (e: React.FormEvent) => {
+  const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
-    const found = signInWithSerial(serialInput);
-    if (!found) setSignInError("No TalkRx account found for that Serial Number.");
+    if (!serialInput.trim()) return;
+    setIsSubmitting(true);
+    setSignInError("");
+    try {
+      const found = await signInWithSerial(serialInput.trim());
+      if (!found) setSignInError("No TalkRx account found for that Serial Number.");
+    } catch (err: unknown) {
+      setSignInError(err instanceof Error ? err.message : "Lookup failed");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -1067,7 +1093,7 @@ function AccountGate({
                   <button
                     key={p.id}
                     type="button"
-                    onClick={() => signInWithSerial(p.serialNumber)}
+                    onClick={() => void signInWithSerial(p.serialNumber)}
                     className="w-full text-left p-2 rounded-xl bg-neutral-50 hover:bg-neutral-100 text-xs flex items-center justify-between border border-black/5"
                   >
                     <span className="font-bold text-neutral-900">{p.name} ({p.age} Y)</span>
