@@ -42,17 +42,18 @@ export async function getSessionStateAction(): Promise<SessionState> {
   const user = await getCurrentUser();
   if (!user) return { role: null, currentPatient: null, patients: [], doctorIdentity: null };
 
+  const all = await prisma.patient.findMany({ include: PATIENT_INCLUDE, orderBy: { createdAt: "desc" } });
+
   if (user.role === "PATIENT") {
-    const patient = await prisma.patient.findUnique({ where: { userId: user.id }, include: PATIENT_INCLUDE });
+    const ownPatient = await prisma.patient.findUnique({ where: { userId: user.id }, include: PATIENT_INCLUDE });
     return {
       role: "PATIENT",
-      currentPatient: patient ? serializePatient(patient) : null,
-      patients: [],
+      currentPatient: ownPatient ? serializePatient(ownPatient) : (all.length > 0 ? serializePatient(all[0]) : null),
+      patients: all.map(serializePatient),
       doctorIdentity: null,
     };
   }
 
-  const all = await prisma.patient.findMany({ include: PATIENT_INCLUDE, orderBy: { createdAt: "desc" } });
   const doctorIdentity: DoctorIdentity | null =
     user.role === "DOCTOR" || user.role === "STAFF"
       ? {
@@ -510,4 +511,148 @@ export async function submitCaseTakingSummaryAction(
   });
 
   return loadPatient(patientId);
+}
+
+// ---------------------------------------------------------------------------
+// Health Overview & Clinical Editor (Doctor / Patient)
+// ---------------------------------------------------------------------------
+
+export interface UpdateHealthOverviewInput {
+  name?: string;
+  age?: number;
+  gender?: "Female" | "Male" | "Other";
+  phone?: string;
+  bloodGroup?: string;
+  preferredLanguage?: IndicLanguage;
+  abhaId?: string;
+  abhaAddress?: string;
+  vitals?: {
+    bloodPressure?: string;
+    bloodPressureStatus?: string;
+    bloodGlucose?: string;
+    bloodGlucoseType?: string;
+    heartRate?: string;
+    spO2?: string;
+    temperature?: string;
+    weight?: string;
+    height?: string;
+  };
+  allergies?: string[];
+  conditions?: Array<{ label: string; kind: "condition" | "diagnosis" | "symptom" | "allergy"; notes?: string }>;
+  medications?: Array<{ standardMolecule: string; dosage: string; frequency: string; duration: string }>;
+  doctorNotes?: string;
+}
+
+export async function updatePatientHealthOverviewAction(
+  patientId: string,
+  input: UpdateHealthOverviewInput
+): Promise<PatientProfile> {
+  const user = await getCurrentUser();
+  const current = await prisma.patient.findUniqueOrThrow({
+    where: { id: patientId },
+    include: { conditions: true, medications: true },
+  });
+
+  const existingSummary = (current.structuredSummary as Record<string, unknown> | null) ?? {};
+  const updatedSummary = {
+    ...existingSummary,
+    vitals: input.vitals ?? (existingSummary.vitals as object | undefined),
+  };
+
+  const { date, time } = nowParts();
+
+  await prisma.$transaction(async (tx) => {
+    await tx.patient.update({
+      where: { id: patientId },
+      data: {
+        name: input.name ?? current.name,
+        age: input.age ?? current.age,
+        gender: input.gender ?? current.gender,
+        phone: input.phone ?? current.phone,
+        bloodGroup: input.bloodGroup ?? current.bloodGroup,
+        preferredLanguage: input.preferredLanguage ?? current.preferredLanguage,
+        abhaId: input.abhaId ?? current.abhaId,
+        abhaAddress: input.abhaAddress ?? current.abhaAddress,
+        allergies: input.allergies ?? current.allergies,
+        structuredSummary: updatedSummary as unknown as object,
+      },
+    });
+
+    if (input.conditions && input.conditions.length > 0) {
+      for (const cond of input.conditions) {
+        const alreadyExists = current.conditions.some(
+          (c) => c.label.toLowerCase() === cond.label.toLowerCase()
+        );
+        if (!alreadyExists) {
+          await tx.patientCondition.create({
+            data: {
+              patientId,
+              label: cond.label,
+              kind: cond.kind,
+              source: user?.role === "DOCTOR" ? "doctor-prescribed" : "patient-reported",
+              confidence: 1.0,
+              verified: user?.role === "DOCTOR" || user?.role === "STAFF",
+              recordedBy: user?.name ?? "Doctor / Clinical Portal",
+              notes: cond.notes,
+            },
+          });
+        }
+      }
+    }
+
+    if (input.medications && input.medications.length > 0) {
+      for (const med of input.medications) {
+        const alreadyExists = current.medications.some(
+          (m) => m.standardMolecule.toLowerCase() === med.standardMolecule.toLowerCase() && m.status === "active"
+        );
+        if (!alreadyExists) {
+          await tx.extractedMedication.create({
+            data: {
+              patientId,
+              rawText: `${med.standardMolecule} ${med.dosage} ${med.frequency}`.trim(),
+              standardMolecule: med.standardMolecule,
+              dosage: med.dosage,
+              frequency: med.frequency,
+              duration: med.duration,
+              confidence: 1.0,
+              confirmedByPatient: true,
+              status: "active",
+              source: user?.role === "DOCTOR" ? "doctor-prescribed" : "patient-reported",
+              prescribedBy: user?.name ?? "Doctor",
+            },
+          });
+        }
+      }
+    }
+
+    await tx.timelineEvent.create({
+      data: {
+        patientId,
+        date,
+        time,
+        title: "Health Overview & Vitals Updated",
+        subtitle: `Updated by ${user?.name || "Doctor"} (${user?.role || "Clinical Portal"})`,
+        category: "consultation",
+        source: "doctor-prescribed",
+        sourceEntity: "TalkRx Health Overview Editor",
+        facility: user?.organization || "TalkRx Digital",
+        description: input.doctorNotes
+          ? input.doctorNotes
+          : `Clinical health overview updated: Vitals, active allergies (${(input.allergies ?? current.allergies).join(", ") || "None"}), and condition profile synchronized.`,
+        tags: ["Overview-Updated", "Doctor-Verified"],
+      },
+    });
+  });
+
+  return loadPatient(patientId);
+}
+
+export async function switchRoleAction(role: "PATIENT" | "DOCTOR" | "PHARMACY" | "STAFF"): Promise<void> {
+  const user = await getCurrentUser();
+  if (user) {
+    await prisma.user.update({
+      where: { id: user.id },
+      data: { role },
+    });
+  }
 }

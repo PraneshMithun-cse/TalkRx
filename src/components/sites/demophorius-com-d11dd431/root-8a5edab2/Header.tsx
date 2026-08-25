@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
 import { TalkRxWordmark, AyushBadge, LoginIcon, HamburgerIcon } from "@/components/sites/demophorius-com-d11dd431/shared/icons";
-import { X, ArrowRight, ShieldCheck, Stethoscope, Mic, Building2, Pill } from "lucide-react";
+import { useVault } from "@/components/talkrx/VaultContext";
+import { X, ArrowRight, ShieldCheck, Stethoscope, Mic, Building2, Pill, ChevronDown, User, Check } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Case-Taking", href: "/case-taking", icon: Mic },
@@ -17,6 +18,23 @@ const NAV_LINKS = [
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isRoleDropdownOpen, setIsRoleDropdownOpen] = useState(false);
+  const { role, switchRole } = useVault();
+
+  const handleSwitchRole = async (newRole: "PATIENT" | "DOCTOR" | "PHARMACY" | "STAFF") => {
+    setIsRoleDropdownOpen(false);
+    await switchRole(newRole);
+  };
+
+  const getRoleLabel = () => {
+    if (role === "DOCTOR") return { label: "Doctor Mode", icon: Stethoscope, color: "text-blue-700 bg-blue-50 border-blue-200" };
+    if (role === "PHARMACY") return { label: "Pharmacy Mode", icon: Pill, color: "text-emerald-700 bg-emerald-50 border-emerald-200" };
+    if (role === "STAFF") return { label: "Staff Mode", icon: Building2, color: "text-purple-700 bg-purple-50 border-purple-200" };
+    return { label: "Patient Mode", icon: User, color: "text-teal-700 bg-teal-50 border-teal-200" };
+  };
+
+  const currentRoleInfo = getRoleLabel();
+  const CurrentIcon = currentRoleInfo.icon;
 
   return (
     <>
@@ -43,7 +61,58 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <Show when="signed-in">
+            {/* Quick Role Switcher Dropdown */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setIsRoleDropdownOpen(!isRoleDropdownOpen)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${currentRoleInfo.color}`}
+                style={{ fontFamily: "var(--do-font-label)" }}
+              >
+                <CurrentIcon className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline uppercase tracking-wider">{currentRoleInfo.label}</span>
+                <ChevronDown className="h-3 w-3 opacity-60" />
+              </button>
+
+              {isRoleDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl z-50 animate-fadeIn text-xs space-y-1">
+                  <div className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-neutral-400">
+                    Switch Active Mode
+                  </div>
+                  {[
+                    { id: "PATIENT", label: "Patient Mode", icon: User, desc: "Health Passport & Vitals" },
+                    { id: "DOCTOR", label: "Doctor Mode", icon: Stethoscope, desc: "Clinical Triage & Editor" },
+                    { id: "PHARMACY", label: "Pharmacy Mode", icon: Pill, desc: "Dispensation Network" },
+                    { id: "STAFF", label: "Hospital Staff", icon: Building2, desc: "Queue & OPD Intake" },
+                  ].map((r) => {
+                    const Icon = r.icon;
+                    const isSelected = role === r.id || (role === null && r.id === "PATIENT");
+                    return (
+                      <button
+                        key={r.id}
+                        type="button"
+                        onClick={() => void handleSwitchRole(r.id as "PATIENT" | "DOCTOR" | "PHARMACY" | "STAFF")}
+                        className={`w-full text-left p-2 rounded-xl flex items-center justify-between transition-colors ${
+                          isSelected ? "bg-neutral-100 font-bold text-neutral-950" : "hover:bg-neutral-50 text-neutral-700"
+                        }`}
+                      >
+                        <div className="flex items-center gap-2">
+                          <Icon className="h-3.5 w-3.5 text-neutral-500" />
+                          <div>
+                            <div className="text-xs">{r.label}</div>
+                            <div className="text-[10px] text-neutral-400 font-normal">{r.desc}</div>
+                          </div>
+                        </div>
+                        {isSelected && <Check className="h-3.5 w-3.5 text-emerald-600" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </Show>
 
           <Show when="signed-out">
             <SignInButton>

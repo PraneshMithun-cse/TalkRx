@@ -15,8 +15,10 @@ import {
   revokeConsentAction,
   logAccessAction,
   submitCaseTakingSummaryAction,
+  updatePatientHealthOverviewAction,
+  switchRoleAction,
 } from "@/lib/actions/vault";
-import type { CreateAccountInput, DoctorRecordInput, PharmacyDispenseInput } from "@/lib/actions/vault";
+import type { CreateAccountInput, DoctorRecordInput, PharmacyDispenseInput, UpdateHealthOverviewInput } from "@/lib/actions/vault";
 import { uploadMedicalDocumentAction } from "@/lib/actions/documents";
 import type {
   PatientProfile,
@@ -28,6 +30,7 @@ import type {
 } from "./types";
 
 interface VaultState {
+  role: "PATIENT" | "DOCTOR" | "PHARMACY" | "STAFF" | null;
   patients: PatientProfile[];
   currentPatient: PatientProfile | null;
   doctorIdentity: DoctorIdentity | null;
@@ -35,6 +38,7 @@ interface VaultState {
 
 interface VaultContextValue {
   isHydrated: boolean;
+  role: "PATIENT" | "DOCTOR" | "PHARMACY" | "STAFF" | null;
   patients: PatientProfile[];
   currentPatient: PatientProfile | null;
   doctorIdentity: DoctorIdentity | null;
@@ -43,13 +47,14 @@ interface VaultContextValue {
   signInWithSerial(serial: string): Promise<PatientProfile | null>;
   signOut(): void;
   lookupPatient(query: string): Promise<PatientProfile | null>;
+  selectPatient(patientId: string): void;
+  switchRole(role: "PATIENT" | "DOCTOR" | "PHARMACY" | "STAFF"): Promise<void>;
+  updateHealthOverview(patientId: string, input: UpdateHealthOverviewInput): Promise<PatientProfile>;
+  refreshVault(): Promise<void>;
 
   setDoctorIdentity(identity: DoctorIdentity): Promise<void>;
-
   addSelfAssessment(patientId: string, rawText: string): Promise<void>;
-
   addDoctorRecord(patientId: string, input: DoctorRecordInput): Promise<void>;
-
   addPharmacyDispensation(
     serial: string,
     input: PharmacyDispenseInput
@@ -65,7 +70,7 @@ interface VaultContextValue {
 
 const VaultContext = createContext<VaultContextValue | null>(null);
 
-const EMPTY_STATE: VaultState = { patients: [], currentPatient: null, doctorIdentity: null };
+const EMPTY_STATE: VaultState = { role: null, patients: [], currentPatient: null, doctorIdentity: null };
 
 export function VaultProvider({ children }: { children: React.ReactNode }) {
   const { isLoaded, isSignedIn } = useUser();
@@ -76,47 +81,81 @@ export function VaultProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<VaultState>(EMPTY_STATE);
   const [isHydrated, setIsHydrated] = useState(false);
 
+  const fetchSession = useCallback(async () => {
+    if (!isSignedIn) {
+      setState(EMPTY_STATE);
+      setIsHydrated(true);
+      return;
+    }
+    const session = await getSessionStateAction();
+    if (session.role === null && pathname !== "/onboarding") {
+      router.replace("/onboarding");
+      return;
+    }
+    setState((prev) => ({
+      role: session.role,
+      patients: session.patients,
+      currentPatient: prev.currentPatient && session.patients.some((p) => p.id === prev.currentPatient?.id)
+        ? session.patients.find((p) => p.id === prev.currentPatient?.id)!
+        : session.currentPatient,
+      doctorIdentity: session.doctorIdentity,
+    }));
+    setIsHydrated(true);
+  }, [isSignedIn, pathname, router]);
+
   useEffect(() => {
     if (!isLoaded) return;
-    let cancelled = false;
-    (async () => {
-      if (!isSignedIn) {
-        if (cancelled) return;
-        setState(EMPTY_STATE);
-        setIsHydrated(true);
-        return;
-      }
-      const session = await getSessionStateAction();
-      if (cancelled) return;
-      if (session.role === null && pathname !== "/onboarding") {
-        router.replace("/onboarding");
-        return;
-      }
-      setState({ patients: session.patients, currentPatient: session.currentPatient, doctorIdentity: session.doctorIdentity });
-      setIsHydrated(true);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [isLoaded, isSignedIn, pathname, router]);
+    void fetchSession();
+  }, [isLoaded, fetchSession]);
 
   const patchPatient = useCallback((updated: PatientProfile) => {
     setState((prev) => ({
       ...prev,
-      patients: prev.patients.map((p) => (p.id === updated.id ? updated : p)),
-      currentPatient: prev.currentPatient?.id === updated.id ? updated : prev.currentPatient,
+      patients: prev.patients.some((p) => p.id === updated.id)
+        ? prev.patients.map((p) => (p.id === updated.id ? updated : p))
+        : [updated, ...prev.patients],
+      currentPatient: prev.currentPatient?.id === updated.id || !prev.currentPatient ? updated : prev.currentPatient,
     }));
   }, []);
 
+  const selectPatient = useCallback((patientId: string) => {
+    setState((prev) => {
+      const found = prev.patients.find((p) => p.id === patientId);
+      return found ? { ...prev, currentPatient: found } : prev;
+    });
+  }, []);
+
+  const switchRole = useCallback(async (newRole: "PATIENT" | "DOCTOR" | "PHARMACY" | "STAFF") => {
+    await switchRoleAction(newRole);
+    setState((prev) => ({ ...prev, role: newRole }));
+    await fetchSession();
+  }, [fetchSession]);
+
+  const updateHealthOverview = useCallback(async (patientId: string, input: UpdateHealthOverviewInput) => {
+    const updated = await updatePatientHealthOverviewAction(patientId, input);
+    patchPatient(updated);
+    return updated;
+  }, [patchPatient]);
+
   const createAccount = useCallback(async (input: CreateAccountInput) => {
     const created = await createAccountAction(input);
-    setState((prev) => ({ ...prev, currentPatient: created }));
+    setState((prev) => ({
+      ...prev,
+      patients: prev.patients.some((p) => p.id === created.id) ? prev.patients : [created, ...prev.patients],
+      currentPatient: created,
+    }));
     return created;
   }, []);
 
   const signInWithSerial = useCallback(async (serial: string) => {
     const found = await lookupPatientAction(serial);
-    if (found) setState((prev) => ({ ...prev, currentPatient: found }));
+    if (found) {
+      setState((prev) => ({
+        ...prev,
+        patients: prev.patients.some((p) => p.id === found.id) ? prev.patients : [found, ...prev.patients],
+        currentPatient: found,
+      }));
+    }
     return found;
   }, []);
 
@@ -190,6 +229,7 @@ export function VaultProvider({ children }: { children: React.ReactNode }) {
 
   const value: VaultContextValue = {
     isHydrated,
+    role: state.role,
     patients: state.patients,
     currentPatient: state.currentPatient,
     doctorIdentity: state.doctorIdentity,
@@ -197,6 +237,10 @@ export function VaultProvider({ children }: { children: React.ReactNode }) {
     signInWithSerial,
     signOut,
     lookupPatient,
+    selectPatient,
+    switchRole,
+    updateHealthOverview,
+    refreshVault: fetchSession,
     setDoctorIdentity,
     addSelfAssessment,
     addDoctorRecord,

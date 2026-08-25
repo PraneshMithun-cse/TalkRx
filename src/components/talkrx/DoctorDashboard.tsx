@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   User,
   AlertTriangle,
@@ -26,6 +27,7 @@ import {
   KeyRound,
   Pencil,
   X,
+  Edit3,
 } from "lucide-react";
 import { useVault } from "./VaultContext";
 import { formatSerial } from "./serial";
@@ -41,7 +43,7 @@ const DEFAULT_IDENTITY: DoctorIdentity = {
 };
 
 export function DoctorDashboard() {
-  const { isHydrated, patients, doctorIdentity, setDoctorIdentity, lookupPatient, addDoctorRecord, grantConsent, logAccess } = useVault();
+  const { isHydrated, patients, doctorIdentity, setDoctorIdentity, lookupPatient, addDoctorRecord, grantConsent, logAccess, selectPatient } = useVault();
   const [selectedPatientId, setSelectedPatientId] = useState<string>("");
   const [activeTab, setActiveTab] = useState<"summary" | "timeline" | "medications" | "ayush" | "prescribe">("summary");
   const [newPrescription, setNewPrescription] = useState({
@@ -295,6 +297,15 @@ export function DoctorDashboard() {
                 <span className="inline-flex items-center gap-1 text-emerald-800 font-medium">
                   <ShieldCheck className="h-3.5 w-3.5" /> Granular Consent (12h)
                 </span>
+                <span className="hidden sm:inline">&bull;</span>
+                <Link
+                  href="/health-passport"
+                  onClick={() => selectPatient(patient.id)}
+                  className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-bold bg-blue-50 hover:bg-blue-100 px-2.5 py-0.5 rounded-full border border-blue-200 transition-colors"
+                >
+                  <Edit3 className="h-3 w-3" />
+                  <span>Edit Health Passport</span>
+                </Link>
               </div>
             </div>
           </div>

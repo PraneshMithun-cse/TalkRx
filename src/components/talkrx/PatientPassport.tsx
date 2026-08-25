@@ -26,9 +26,15 @@ import {
   Check,
   Eye,
   ChevronRight,
+  ChevronDown,
   AlertCircle,
   FileCheck,
   Zap,
+  Edit3,
+  User,
+  SlidersHorizontal,
+  Save,
+  X,
 } from "lucide-react";
 import { useVault } from "./VaultContext";
 import { INDIC_LANGUAGES } from "./mock-data";
@@ -38,14 +44,31 @@ import { PseudoQr } from "./PseudoQr";
 import { formatSerial } from "./serial";
 import { ProvenanceBadge } from "./ProvenanceBadge";
 import { TimelineStream } from "./TimelineStream";
-import type { ConsentAuthorization, IndicLanguage } from "./types";
+import type { ConsentAuthorization, IndicLanguage, PatientProfile, UpdateHealthOverviewInput, CreateAccountInput } from "./types";
 
 type PassportTab = "overview" | "passport" | "vitals" | "self-assessment" | "timeline" | "documents" | "consent" | "audit";
 
 export function PatientPassport() {
-  const { isHydrated, currentPatient, patients, createAccount, signInWithSerial, signOut, addSelfAssessment, revokeConsent } = useVault();
+  const {
+    isHydrated,
+    currentPatient,
+    patients,
+    role,
+    createAccount,
+    signInWithSerial,
+    signOut,
+    addSelfAssessment,
+    revokeConsent,
+    selectPatient,
+    switchRole,
+    updateHealthOverview,
+  } = useVault();
+
   const [activeTab, setActiveTab] = useState<PassportTab>("overview");
   const [showShareModal, setShowShareModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [showPatientDropdown, setShowPatientDropdown] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
 
   if (!isHydrated) {
@@ -57,7 +80,7 @@ export function PatientPassport() {
   }
 
   if (!currentPatient) {
-    return <AccountGate patients={patients} createAccount={createAccount} signInWithSerial={signInWithSerial} />;
+    return <AccountGate patients={patients} createAccount={createAccount} signInWithSerial={signInWithSerial} onSelectPatient={selectPatient} />;
   }
 
   const patient = currentPatient;
@@ -67,45 +90,166 @@ export function PatientPassport() {
     setTimeout(() => setCopiedLink(false), 2000);
   };
 
+  const isDoctorMode = role === "DOCTOR" || role === "STAFF";
+
   return (
     <div className="space-y-8">
-      {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/[0.06] pb-5 gap-4">
+      {/* Header Banner with Patient Switcher & Clinical Controls */}
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between border-b border-black/[0.06] pb-5 gap-4">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <ShieldCheck className="h-3.5 w-3.5 text-neutral-900" />
             <span
               className="text-[11px] font-bold uppercase tracking-[1.5px] text-neutral-800"
               style={{ fontFamily: "var(--do-font-label)" }}
             >
-              Patient Health Passport &amp; Consent Manager &bull; ABDM Rails
+              Patient Health Passport &bull; ABDM Rails
             </span>
+
+            {/* Role Mode Badge / Switcher */}
+            <button
+              type="button"
+              onClick={() => void switchRole(isDoctorMode ? "PATIENT" : "DOCTOR")}
+              className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all border ${
+                isDoctorMode
+                  ? "bg-blue-50 text-blue-800 border-blue-200 hover:bg-blue-100"
+                  : "bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100"
+              }`}
+              title="Click to toggle between Doctor Mode (editing enabled) and Patient Mode"
+            >
+              {isDoctorMode ? <Stethoscope className="h-3 w-3 text-blue-600" /> : <User className="h-3 w-3 text-emerald-600" />}
+              <span>{isDoctorMode ? "Doctor Mode Active" : "Patient Mode Active"}</span>
+              <span className="text-[9px] text-neutral-400 font-normal underline">(Toggle)</span>
+            </button>
           </div>
-          <h3 className="mt-1 text-2xl md:text-3xl font-normal tracking-tight text-neutral-950">
-            Citizen Health Passport &amp; Interactive Hub
-          </h3>
-          <p className="text-xs text-neutral-500 mt-0.5">
-            {patient.name} &bull; TalkRx Serial No. <span className="font-mono font-bold text-neutral-800">{formatSerial(patient.serialNumber)}</span> &bull; ABHA: <span className="font-mono">{patient.abhaId}</span>
+
+          <div className="mt-1 flex flex-wrap items-center gap-3">
+            <h3 className="text-2xl md:text-3xl font-normal tracking-tight text-neutral-950">
+              Citizen Health Passport &amp; Interactive Hub
+            </h3>
+
+            {/* Patient Switcher Dropdown */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setShowPatientDropdown(!showPatientDropdown)}
+                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-neutral-50 hover:bg-neutral-100 px-3.5 py-1.5 text-xs font-bold text-neutral-900 shadow-sm transition-all"
+                style={{ fontFamily: "var(--do-font-label)" }}
+              >
+                <User className="h-3.5 w-3.5 text-blue-600" />
+                <span>{patient.name}</span>
+                <span className="font-mono text-[10px] text-neutral-500">({formatSerial(patient.serialNumber)})</span>
+                <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+              </button>
+
+              {showPatientDropdown && (
+                <div className="absolute left-0 mt-2 w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl z-50 animate-fadeIn text-xs space-y-1.5">
+                  <div className="flex items-center justify-between px-2 py-1 border-b border-black/5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
+                      Switch Patient ({patients.length})
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowPatientDropdown(false);
+                        setShowRegisterModal(true);
+                      }}
+                      className="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 uppercase"
+                    >
+                      <Plus className="h-3 w-3" />
+                      <span>New Patient</span>
+                    </button>
+                  </div>
+
+                  <div className="max-h-60 overflow-y-auto space-y-1 scrollbar-thin">
+                    {patients.map((p) => {
+                      const isSelected = p.id === patient.id;
+                      return (
+                        <button
+                          key={p.id}
+                          type="button"
+                          onClick={() => {
+                            selectPatient(p.id);
+                            setShowPatientDropdown(false);
+                          }}
+                          className={`w-full text-left p-2 rounded-xl flex items-center justify-between transition-colors ${
+                            isSelected ? "bg-neutral-100 font-bold text-neutral-950 border border-black/5" : "hover:bg-neutral-50 text-neutral-700"
+                          }`}
+                        >
+                          <div>
+                            <div className="font-bold text-neutral-900">{p.name} ({p.age} Y, {p.gender})</div>
+                            <div className="font-mono text-[10px] text-neutral-400">{formatSerial(p.serialNumber)} &bull; ABHA: {p.abhaId}</div>
+                          </div>
+                          {isSelected && <Check className="h-3.5 w-3.5 text-emerald-600" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <div className="pt-1 border-t border-black/5">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowPatientDropdown(false);
+                        setShowRegisterModal(true);
+                      }}
+                      className="w-full py-2 px-3 rounded-xl bg-neutral-950 text-white text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-neutral-800 transition-colors"
+                      style={{ fontFamily: "var(--do-font-label)" }}
+                    >
+                      <UserPlus className="h-3.5 w-3.5" />
+                      <span>Create New Patient Passport</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <p className="text-xs text-neutral-500 mt-1">
+            {patient.name} &bull; TalkRx Serial No. <span className="font-mono font-bold text-neutral-800">{formatSerial(patient.serialNumber)}</span> &bull; ABHA: <span className="font-mono">{patient.abhaId}</span> &bull; Blood: <span className="font-bold text-neutral-700">{patient.bloodGroup}</span>
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2.5">
+          {/* Edit Health Overview Button */}
+          <button
+            type="button"
+            onClick={() => setShowEditModal(true)}
+            className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 text-xs font-bold uppercase tracking-wider shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all active:scale-95"
+            style={{ fontFamily: "var(--do-font-label)" }}
+          >
+            <Edit3 className="h-3.5 w-3.5" />
+            <span>Edit Health Overview</span>
+          </button>
+
+          {/* Create Multiple Passports Action */}
+          <button
+            type="button"
+            onClick={() => setShowRegisterModal(true)}
+            className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3.5 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-50 shadow-sm transition-all"
+            style={{ fontFamily: "var(--do-font-label)" }}
+          >
+            <UserPlus className="h-3.5 w-3.5 text-neutral-600" />
+            <span>+ New Patient</span>
+          </button>
+
           <button
             type="button"
             onClick={() => setShowShareModal(true)}
-            className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3.5 py-1.5 text-xs font-semibold text-neutral-800 hover:bg-neutral-50 shadow-sm transition-all"
+            className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3.5 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-50 shadow-sm transition-all"
             style={{ fontFamily: "var(--do-font-label)" }}
           >
             <Share2 className="h-3.5 w-3.5" />
             <span>Emergency QR</span>
           </button>
+
           <button
             type="button"
             onClick={signOut}
-            className="text-[11px] uppercase tracking-wider text-neutral-400 hover:text-black transition-colors"
+            className="text-[11px] uppercase tracking-wider text-neutral-400 hover:text-black transition-colors px-2"
             style={{ fontFamily: "var(--do-font-label)" }}
           >
-            Switch Account
+            Sign Out
           </button>
         </div>
       </div>
@@ -141,7 +285,13 @@ export function PatientPassport() {
         })}
       </div>
 
-      {activeTab === "overview" && <OverviewTab patient={patient} onNavigateToTab={setActiveTab} />}
+      {activeTab === "overview" && (
+        <OverviewTab
+          patient={patient}
+          onNavigateToTab={setActiveTab}
+          onOpenEditModal={() => setShowEditModal(true)}
+        />
+      )}
       {activeTab === "passport" && <DigitalCardTab patient={patient} />}
       {activeTab === "vitals" && <VitalsTab patient={patient} />}
       {activeTab === "documents" && <DocumentsTab patient={patient} />}
@@ -151,6 +301,29 @@ export function PatientPassport() {
       )}
       {activeTab === "consent" && <ConsentTab patient={patient} revokeConsent={revokeConsent} />}
       {activeTab === "audit" && <AuditTab patient={patient} />}
+
+      {/* Edit Health Overview Modal */}
+      {showEditModal && (
+        <EditHealthOverviewModal
+          patient={patient}
+          isOpen={showEditModal}
+          onClose={() => setShowEditModal(false)}
+          onSave={async (input) => {
+            await updateHealthOverview(patient.id, input);
+          }}
+        />
+      )}
+
+      {/* Register New Patient Modal */}
+      {showRegisterModal && (
+        <RegisterPatientModal
+          isOpen={showRegisterModal}
+          onClose={() => setShowRegisterModal(false)}
+          onCreate={async (input) => {
+            await createAccount(input);
+          }}
+        />
+      )}
 
       {/* Emergency Share Modal */}
       {showShareModal && (
@@ -203,9 +376,11 @@ export function PatientPassport() {
 function OverviewTab({
   patient,
   onNavigateToTab,
+  onOpenEditModal,
 }: {
   patient: NonNullable<ReturnType<typeof useVault>["currentPatient"]>;
   onNavigateToTab: (tab: PassportTab) => void;
+  onOpenEditModal: () => void;
 }) {
   const [uploadedReports, setUploadedReports] = useState<{ name: string; size: string; status: string; findings: string }[]>([
     {
@@ -239,52 +414,91 @@ function OverviewTab({
     }, 1200);
   };
 
+  const bpVal = patient.vitals?.bloodPressure || "128/82";
+  const bpStatus = patient.vitals?.bloodPressureStatus || "Optimal Range";
+  const bgVal = patient.vitals?.bloodGlucose || "134";
+  const bgType = patient.vitals?.bloodGlucoseType || "Fasting • Monitored";
+  const hrVal = patient.vitals?.heartRate || "72 bpm";
+  const spo2Val = patient.vitals?.spO2 || "99%";
+
   return (
     <div className="space-y-8">
-      {/* Quick Interactive Vital Highlights Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm">
-          <div className="flex items-center justify-between text-neutral-500 mb-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider" style={{ fontFamily: "var(--do-font-label)" }}>
-              Blood Pressure
+      {/* Quick Interactive Vital Highlights Bar with Edit Action */}
+      <div>
+        <div className="flex items-center justify-between mb-2 px-1">
+          <div className="flex items-center gap-2">
+            <Activity className="h-4 w-4 text-blue-600" />
+            <span className="text-xs font-bold uppercase tracking-wider text-neutral-900" style={{ fontFamily: "var(--do-font-label)" }}>
+              Live Clinical Vitals &amp; Safety Guard
             </span>
-            <Heart className="h-3.5 w-3.5 text-rose-500" />
           </div>
-          <div className="text-xl font-bold text-neutral-950">128/82 <span className="text-xs font-normal text-neutral-500">mmHg</span></div>
-          <span className="inline-block mt-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Optimal Range</span>
+          <button
+            type="button"
+            onClick={onOpenEditModal}
+            className="text-[11px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 uppercase tracking-wide bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full border border-blue-200 transition-colors"
+            style={{ fontFamily: "var(--do-font-label)" }}
+          >
+            <Edit3 className="h-3 w-3" />
+            <span>Edit Vitals &amp; Overview</span>
+          </button>
         </div>
 
-        <div className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm">
-          <div className="flex items-center justify-between text-neutral-500 mb-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider" style={{ fontFamily: "var(--do-font-label)" }}>
-              Blood Glucose
-            </span>
-            <Activity className="h-3.5 w-3.5 text-blue-500" />
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div
+            onClick={onOpenEditModal}
+            className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm cursor-pointer hover:border-blue-300 hover:shadow-md transition-all group"
+          >
+            <div className="flex items-center justify-between text-neutral-500 mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider group-hover:text-blue-600 transition-colors" style={{ fontFamily: "var(--do-font-label)" }}>
+                Blood Pressure
+              </span>
+              <Heart className="h-3.5 w-3.5 text-rose-500" />
+            </div>
+            <div className="text-xl font-bold text-neutral-950">{bpVal} <span className="text-xs font-normal text-neutral-500">mmHg</span></div>
+            <span className="inline-block mt-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">{bpStatus}</span>
           </div>
-          <div className="text-xl font-bold text-neutral-950">134 <span className="text-xs font-normal text-neutral-500">mg/dL</span></div>
-          <span className="inline-block mt-1 text-[10px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">Fasting &bull; Monitored</span>
-        </div>
 
-        <div className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm">
-          <div className="flex items-center justify-between text-neutral-500 mb-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider" style={{ fontFamily: "var(--do-font-label)" }}>
-              Active Meds
-            </span>
-            <Pill className="h-3.5 w-3.5 text-indigo-500" />
+          <div
+            onClick={onOpenEditModal}
+            className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm cursor-pointer hover:border-blue-300 hover:shadow-md transition-all group"
+          >
+            <div className="flex items-center justify-between text-neutral-500 mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider group-hover:text-blue-600 transition-colors" style={{ fontFamily: "var(--do-font-label)" }}>
+                Blood Glucose
+              </span>
+              <Activity className="h-3.5 w-3.5 text-blue-500" />
+            </div>
+            <div className="text-xl font-bold text-neutral-950">{bgVal} <span className="text-xs font-normal text-neutral-500">mg/dL</span></div>
+            <span className="inline-block mt-1 text-[10px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full">{bgType}</span>
           </div>
-          <div className="text-xl font-bold text-neutral-950">{prescribedMeds.length} <span className="text-xs font-normal text-neutral-500">Regimens</span></div>
-          <span className="inline-block mt-1 text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">100% Adherence</span>
-        </div>
 
-        <div className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm">
-          <div className="flex items-center justify-between text-neutral-500 mb-1">
-            <span className="text-[10px] font-bold uppercase tracking-wider" style={{ fontFamily: "var(--do-font-label)" }}>
-              Allergy Shield
-            </span>
-            <ShieldAlert className="h-3.5 w-3.5 text-red-500" />
+          <div
+            onClick={onOpenEditModal}
+            className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm cursor-pointer hover:border-blue-300 hover:shadow-md transition-all group"
+          >
+            <div className="flex items-center justify-between text-neutral-500 mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider group-hover:text-blue-600 transition-colors" style={{ fontFamily: "var(--do-font-label)" }}>
+                Active Meds
+              </span>
+              <Pill className="h-3.5 w-3.5 text-indigo-500" />
+            </div>
+            <div className="text-xl font-bold text-neutral-950">{patient.activeMedications.length} <span className="text-xs font-normal text-neutral-500">Regimens</span></div>
+            <span className="inline-block mt-1 text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">Doctor Verified</span>
           </div>
-          <div className="text-xl font-bold text-neutral-950">{patient.allergies.length || allergyEntries.length} <span className="text-xs font-normal text-neutral-500">Flagged</span></div>
-          <span className="inline-block mt-1 text-[10px] font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Active Contraindication</span>
+
+          <div
+            onClick={onOpenEditModal}
+            className="rounded-2xl border border-black/5 bg-white/80 p-4 backdrop-blur-md shadow-sm cursor-pointer hover:border-red-300 hover:shadow-md transition-all group"
+          >
+            <div className="flex items-center justify-between text-neutral-500 mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider group-hover:text-red-600 transition-colors" style={{ fontFamily: "var(--do-font-label)" }}>
+                Allergy Shield
+              </span>
+              <ShieldAlert className="h-3.5 w-3.5 text-red-500" />
+            </div>
+            <div className="text-xl font-bold text-neutral-950">{patient.allergies.length || allergyEntries.length} <span className="text-xs font-normal text-neutral-500">Flagged</span></div>
+            <span className="inline-block mt-1 text-[10px] font-semibold text-red-700 bg-red-50 px-2 py-0.5 rounded-full">Active Contraindication</span>
+          </div>
         </div>
       </div>
 
@@ -953,10 +1167,12 @@ function AccountGate({
   patients,
   createAccount,
   signInWithSerial,
+  onSelectPatient,
 }: {
   patients: ReturnType<typeof useVault>["patients"];
   createAccount: ReturnType<typeof useVault>["createAccount"];
   signInWithSerial: ReturnType<typeof useVault>["signInWithSerial"];
+  onSelectPatient?: (patientId: string) => void;
 }) {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -1002,7 +1218,7 @@ function AccountGate({
       <div className="text-center max-w-xl mx-auto">
         <h3 className="text-3xl font-bold tracking-tight text-neutral-950">Patient Health Passport</h3>
         <p className="mt-2 text-xs text-neutral-500">
-          Create your TalkRx digital passport to receive a unique 8-digit Serial Number and emergency QR code, or sign in to view your records.
+          Create your TalkRx digital passport to receive a unique 8-digit Serial Number and emergency QR code, or select a patient to view and edit their records.
         </p>
       </div>
 
@@ -1012,7 +1228,7 @@ function AccountGate({
           <div className="flex items-center gap-2">
             <UserPlus className="h-4 w-4 text-neutral-900" />
             <span className="text-xs font-bold uppercase tracking-wider text-neutral-950" style={{ fontFamily: "var(--do-font-label)" }}>
-              Create Your Health Passport
+              Create New Patient Passport
             </span>
           </div>
           <form onSubmit={handleCreate} className="space-y-3 text-xs">
@@ -1054,19 +1270,23 @@ function AccountGate({
               </div>
             </div>
 
-            <button type="submit" className="w-full rounded-full bg-neutral-950 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800 shadow-sm mt-2">
-              Generate Digital Passport
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full rounded-full bg-neutral-950 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800 shadow-sm mt-2 disabled:opacity-50"
+            >
+              {isSubmitting ? "Generating Passport..." : "Generate Digital Passport"}
             </button>
           </form>
         </div>
 
-        {/* Sign in with existing patient */}
+        {/* Sign in or select existing patient */}
         <div className="rounded-[28px] border border-black/[0.08] bg-white p-6 space-y-4 shadow-sm flex flex-col justify-between">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <LogIn className="h-4 w-4 text-neutral-900" />
               <span className="text-xs font-bold uppercase tracking-wider text-neutral-950" style={{ fontFamily: "var(--do-font-label)" }}>
-                Sign In With Serial Number
+                Lookup / Select Patient
               </span>
             </div>
             <form onSubmit={handleSignIn} className="space-y-3 text-xs">
@@ -1081,29 +1301,793 @@ function AccountGate({
                 />
               </div>
               {signInError && <p className="text-xs text-red-600">{signInError}</p>}
-              <button type="submit" className="w-full rounded-full border border-black/10 bg-neutral-100 py-3 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-200">
-                Unlock Health Passport
+              <button type="submit" disabled={isSubmitting} className="w-full rounded-full border border-black/10 bg-neutral-100 py-3 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:bg-neutral-200 disabled:opacity-50">
+                {isSubmitting ? "Searching Vault..." : "Unlock Health Passport"}
               </button>
             </form>
 
             <div className="pt-3 border-t border-black/5">
-              <span className="text-[11px] text-neutral-400 block mb-2 font-bold uppercase">Quick Demo Profiles:</span>
-              <div className="space-y-1.5">
+              <span className="text-[11px] text-neutral-400 block mb-2 font-bold uppercase">
+                Active Patients in System ({patients.length}):
+              </span>
+              <div className="space-y-1.5 max-h-56 overflow-y-auto scrollbar-thin">
                 {patients.map((p) => (
                   <button
                     key={p.id}
                     type="button"
-                    onClick={() => void signInWithSerial(p.serialNumber)}
-                    className="w-full text-left p-2 rounded-xl bg-neutral-50 hover:bg-neutral-100 text-xs flex items-center justify-between border border-black/5"
+                    onClick={() => {
+                      if (onSelectPatient) {
+                        onSelectPatient(p.id);
+                      } else {
+                        void signInWithSerial(p.serialNumber);
+                      }
+                    }}
+                    className="w-full text-left p-2.5 rounded-xl bg-neutral-50 hover:bg-blue-50 hover:border-blue-200 text-xs flex items-center justify-between border border-black/5 transition-all"
                   >
-                    <span className="font-bold text-neutral-900">{p.name} ({p.age} Y)</span>
-                    <span className="font-mono text-[11px] text-neutral-500">{formatSerial(p.serialNumber)}</span>
+                    <div>
+                      <span className="font-bold text-neutral-900">{p.name} ({p.age} Y, {p.gender})</span>
+                      <span className="block text-[10px] text-neutral-500">Blood: {p.bloodGroup} &bull; ABHA: {p.abhaId}</span>
+                    </div>
+                    <span className="font-mono text-[11px] font-bold text-blue-700 bg-white px-2 py-0.5 rounded-md border border-black/5">{formatSerial(p.serialNumber)}</span>
                   </button>
                 ))}
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Edit Health Overview Modal (Doctor & Clinical Controls)
+// ---------------------------------------------------------------------------
+
+function EditHealthOverviewModal({
+  patient,
+  isOpen,
+  onClose,
+  onSave,
+}: {
+  patient: PatientProfile;
+  isOpen: boolean;
+  onClose: () => void;
+  onSave: (input: UpdateHealthOverviewInput) => Promise<void>;
+}) {
+  const [modalTab, setModalTab] = useState<"vitals" | "allergies" | "conditions" | "medications" | "demographics">("vitals");
+
+  // Demographics
+  const [name, setName] = useState(patient.name);
+  const [age, setAge] = useState(patient.age);
+  const [gender, setGender] = useState(patient.gender);
+  const [phone, setPhone] = useState(patient.phone);
+  const [bloodGroup, setBloodGroup] = useState(patient.bloodGroup);
+  const [abhaId, setAbhaId] = useState(patient.abhaId === "Not Linked" ? "" : patient.abhaId);
+
+  // Vitals
+  const [bloodPressure, setBloodPressure] = useState(patient.vitals?.bloodPressure ?? "128/82");
+  const [bloodPressureStatus, setBloodPressureStatus] = useState(patient.vitals?.bloodPressureStatus ?? "Optimal Range");
+  const [bloodGlucose, setBloodGlucose] = useState(patient.vitals?.bloodGlucose ?? "134");
+  const [bloodGlucoseType, setBloodGlucoseType] = useState(patient.vitals?.bloodGlucoseType ?? "Fasting • Monitored");
+  const [heartRate, setHeartRate] = useState(patient.vitals?.heartRate ?? "72 bpm");
+  const [spO2, setSpO2] = useState(patient.vitals?.spO2 ?? "99%");
+  const [temperature, setTemperature] = useState(patient.vitals?.temperature ?? "98.6 °F");
+
+  // Allergies
+  const [allergies, setAllergies] = useState<string[]>(
+    patient.allergies.length ? patient.allergies : ["Sulfa Drugs (Angioedema / Swelling)"]
+  );
+  const [newAllergy, setNewAllergy] = useState("");
+
+  // Conditions
+  const [conditions, setConditions] = useState<Array<{ label: string; kind: "condition" | "diagnosis" | "symptom" | "allergy"; notes?: string }>>(
+    patient.conditions.map((c) => ({ label: c.label, kind: c.kind, notes: c.notes }))
+  );
+  const [newCondLabel, setNewCondLabel] = useState("");
+  const [newCondKind, setNewCondKind] = useState<"condition" | "diagnosis" | "symptom">("diagnosis");
+
+  // Medications
+  const [medications, setMedications] = useState<Array<{ standardMolecule: string; dosage: string; frequency: string; duration: string }>>(
+    patient.activeMedications.map((m) => ({
+      standardMolecule: m.standardMolecule,
+      dosage: m.dosage,
+      frequency: m.frequency,
+      duration: m.duration,
+    }))
+  );
+  const [newMedMolecule, setNewMedMolecule] = useState("");
+  const [newMedDosage, setNewMedDosage] = useState("500mg");
+  const [newMedFreq, setNewMedFreq] = useState("BD (Twice daily)");
+  const [newMedDur, setNewMedDur] = useState("5 Days");
+
+  const [doctorNotes, setDoctorNotes] = useState("");
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveSuccess, setSaveSuccess] = useState(false);
+
+  if (!isOpen) return null;
+
+  const handleAddAllergy = () => {
+    if (!newAllergy.trim()) return;
+    if (!allergies.includes(newAllergy.trim())) {
+      setAllergies([...allergies, newAllergy.trim()]);
+    }
+    setNewAllergy("");
+  };
+
+  const handleRemoveAllergy = (item: string) => {
+    setAllergies(allergies.filter((a) => a !== item));
+  };
+
+  const handleAddCondition = () => {
+    if (!newCondLabel.trim()) return;
+    setConditions([...conditions, { label: newCondLabel.trim(), kind: newCondKind }]);
+    setNewCondLabel("");
+  };
+
+  const handleRemoveCondition = (index: number) => {
+    setConditions(conditions.filter((_, idx) => idx !== index));
+  };
+
+  const handleAddMed = () => {
+    if (!newMedMolecule.trim()) return;
+    setMedications([...medications, { standardMolecule: newMedMolecule.trim(), dosage: newMedDosage, frequency: newMedFreq, duration: newMedDur }]);
+    setNewMedMolecule("");
+  };
+
+  const handleRemoveMed = (index: number) => {
+    setMedications(medications.filter((_, idx) => idx !== index));
+  };
+
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSaving(true);
+    try {
+      await onSave({
+        name,
+        age: Number(age),
+        gender,
+        phone,
+        bloodGroup,
+        abhaId: abhaId.trim() || "Not Linked",
+        vitals: {
+          bloodPressure,
+          bloodPressureStatus,
+          bloodGlucose,
+          bloodGlucoseType,
+          heartRate,
+          spO2,
+          temperature,
+        },
+        allergies,
+        conditions,
+        medications,
+        doctorNotes: doctorNotes.trim() || undefined,
+      });
+      setSaveSuccess(true);
+      setTimeout(() => {
+        setSaveSuccess(false);
+        onClose();
+      }, 500);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-md animate-fadeIn">
+      <div className="w-full max-w-2xl max-h-[90vh] flex flex-col rounded-[28px] border border-black/10 bg-white shadow-2xl overflow-hidden">
+        {/* Modal Header */}
+        <div className="flex items-center justify-between p-6 border-b border-black/5 bg-neutral-50/80">
+          <div>
+            <div className="flex items-center gap-2">
+              <Stethoscope className="h-4 w-4 text-blue-600" />
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-900" style={{ fontFamily: "var(--do-font-label)" }}>
+                Doctor Clinical Health Overview Editor
+              </span>
+            </div>
+            <h3 className="text-xl font-bold text-neutral-950 mt-0.5">
+              Edit Health Overview &bull; {patient.name}
+            </h3>
+            <p className="text-[11px] text-neutral-500 font-mono">
+              Serial: {formatSerial(patient.serialNumber)} &bull; ABHA: {patient.abhaId}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-2 rounded-full hover:bg-neutral-200/60 text-neutral-400 hover:text-black transition-colors"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* Modal Nav Tabs */}
+        <div className="flex gap-2 px-6 pt-3 pb-2 border-b border-black/5 bg-white text-xs overflow-x-auto">
+          {[
+            { id: "vitals", label: "Vitals & BP", icon: Heart },
+            { id: "allergies", label: `Allergies (${allergies.length})`, icon: ShieldAlert },
+            { id: "conditions", label: `Conditions (${conditions.length})`, icon: Activity },
+            { id: "medications", label: `Medications (${medications.length})`, icon: Pill },
+            { id: "demographics", label: "Demographics & ABHA", icon: User },
+          ].map((t) => {
+            const Icon = t.icon;
+            const isActive = modalTab === t.id;
+            return (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => setModalTab(t.id as typeof modalTab)}
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
+                  isActive ? "bg-blue-600 text-white shadow-sm" : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                }`}
+                style={{ fontFamily: "var(--do-font-label)" }}
+              >
+                <Icon className="h-3.5 w-3.5" />
+                <span>{t.label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Modal Form Content */}
+        <form onSubmit={handleSave} className="flex-1 overflow-y-auto p-6 space-y-5 text-xs">
+          {modalTab === "vitals" && (
+            <div className="space-y-4 animate-fadeIn">
+              <div className="rounded-2xl bg-blue-50/60 p-3.5 border border-blue-100 text-blue-900 leading-relaxed text-[11px]">
+                <strong>Clinical Vitals:</strong> Changes made here will update the patient&apos;s real-time vital summary cards and trigger a timestamped clinical update event in their longitudinal health passport.
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Blood Pressure (Systolic/Diastolic)</label>
+                  <input
+                    value={bloodPressure}
+                    onChange={(e) => setBloodPressure(e.target.value)}
+                    placeholder="e.g. 128/82"
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 font-bold text-neutral-900 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">BP Classification Status</label>
+                  <select
+                    value={bloodPressureStatus}
+                    onChange={(e) => setBloodPressureStatus(e.target.value)}
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 font-semibold text-neutral-900"
+                  >
+                    <option>Optimal Range</option>
+                    <option>Normal (120-129 / &lt;80)</option>
+                    <option>Pre-Hypertension (130-139 / 80-89)</option>
+                    <option>Stage 1 Hypertension (140-159 / 90-99)</option>
+                    <option>Stage 2 Hypertension (&ge;160 / &ge;100)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Blood Glucose (mg/dL)</label>
+                  <input
+                    value={bloodGlucose}
+                    onChange={(e) => setBloodGlucose(e.target.value)}
+                    placeholder="e.g. 134"
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 font-bold text-neutral-900 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Glucose Measurement Type</label>
+                  <select
+                    value={bloodGlucoseType}
+                    onChange={(e) => setBloodGlucoseType(e.target.value)}
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 font-semibold text-neutral-900"
+                  >
+                    <option>Fasting &bull; Monitored</option>
+                    <option>Post-Prandial (2hr after meal)</option>
+                    <option>Random Blood Sugar (RBS)</option>
+                    <option>HbA1c &bull; 3 Month Average</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Heart Rate (Pulse)</label>
+                  <input
+                    value={heartRate}
+                    onChange={(e) => setHeartRate(e.target.value)}
+                    placeholder="e.g. 72 bpm"
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  />
+                </div>
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">SpO2 Oxygen Saturation</label>
+                  <input
+                    value={spO2}
+                    onChange={(e) => setSpO2(e.target.value)}
+                    placeholder="e.g. 99%"
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Body Temperature</label>
+                  <input
+                    value={temperature}
+                    onChange={(e) => setTemperature(e.target.value)}
+                    placeholder="e.g. 98.6 °F"
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {modalTab === "allergies" && (
+            <div className="space-y-4 animate-fadeIn">
+              <div className="rounded-2xl bg-red-50/60 p-3.5 border border-red-100 text-red-900 leading-relaxed text-[11px]">
+                <strong>Allergy Shield &amp; Safety Guard:</strong> Flagged allergies auto-lock contraindicated medications during doctor prescribing and pharmacy dispensing.
+              </div>
+
+              <div className="flex gap-2">
+                <input
+                  value={newAllergy}
+                  onChange={(e) => setNewAllergy(e.target.value)}
+                  placeholder="e.g. Penicillin, Sulfa Drugs, NSAIDs, Peanuts..."
+                  className="flex-1 rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      handleAddAllergy();
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={handleAddAllergy}
+                  className="px-4 py-2.5 rounded-xl bg-red-600 text-white font-bold uppercase tracking-wider hover:bg-red-700 shadow-sm"
+                >
+                  + Add Allergy
+                </button>
+              </div>
+
+              <div className="space-y-2">
+                <span className="font-bold text-neutral-700 block">Active Allergy Flags ({allergies.length}):</span>
+                <div className="flex flex-wrap gap-2">
+                  {allergies.map((item, idx) => (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center gap-1.5 rounded-full bg-red-100 border border-red-200 px-3 py-1 text-xs font-bold text-red-900"
+                    >
+                      <span>{item}</span>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveAllergy(item)}
+                        className="hover:text-red-600 rounded-full"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {modalTab === "conditions" && (
+            <div className="space-y-4 animate-fadeIn">
+              <div className="rounded-2xl bg-indigo-50/60 p-3.5 border border-indigo-100 text-indigo-900 leading-relaxed text-[11px]">
+                <strong>Diagnosed Conditions &amp; Chronic Illnesses:</strong> Recorded conditions populate the doctor consultation ledger and longitudinal timeline.
+              </div>
+
+              <div className="grid grid-cols-3 gap-2">
+                <input
+                  value={newCondLabel}
+                  onChange={(e) => setNewCondLabel(e.target.value)}
+                  placeholder="e.g. Type 2 Diabetes Mellitus, Hypertension..."
+                  className="col-span-2 rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      handleAddCondition();
+                    }
+                  }}
+                />
+                <select
+                  value={newCondKind}
+                  onChange={(e) => setNewCondKind(e.target.value as typeof newCondKind)}
+                  className="rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900 font-semibold"
+                >
+                  <option value="diagnosis">Diagnosis</option>
+                  <option value="condition">Chronic Condition</option>
+                  <option value="symptom">Symptom</option>
+                </select>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleAddCondition}
+                className="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-bold uppercase tracking-wider hover:bg-indigo-700 shadow-sm"
+              >
+                + Add Condition to Patient File
+              </button>
+
+              <div className="space-y-2">
+                <span className="font-bold text-neutral-700 block">Recorded Conditions ({conditions.length}):</span>
+                <div className="space-y-1.5 max-h-48 overflow-y-auto">
+                  {conditions.map((c, idx) => (
+                    <div key={idx} className="flex items-center justify-between p-2.5 rounded-xl bg-neutral-50 border border-black/5">
+                      <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-indigo-600" />
+                        <span className="font-bold text-neutral-900">{c.label}</span>
+                        <span className="rounded-full bg-neutral-200 px-2 py-0.5 text-[9px] font-bold uppercase text-neutral-600">
+                          {c.kind}
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveCondition(idx)}
+                        className="text-neutral-400 hover:text-red-600 p-1"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {modalTab === "medications" && (
+            <div className="space-y-4 animate-fadeIn">
+              <div className="rounded-2xl bg-blue-50/60 p-3.5 border border-blue-100 text-blue-900 leading-relaxed text-[11px]">
+                <strong>Active Prescriptions &amp; Regimens:</strong> Synchronized with the pharmacy verification network.
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <input
+                  value={newMedMolecule}
+                  onChange={(e) => setNewMedMolecule(e.target.value)}
+                  placeholder="Drug (e.g. Telmisartan)"
+                  className="rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                />
+                <input
+                  value={newMedDosage}
+                  onChange={(e) => setNewMedDosage(e.target.value)}
+                  placeholder="Dosage (e.g. 40mg)"
+                  className="rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                />
+                <input
+                  value={newMedFreq}
+                  onChange={(e) => setNewMedFreq(e.target.value)}
+                  placeholder="Freq (e.g. OD)"
+                  className="rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                />
+                <input
+                  value={newMedDur}
+                  onChange={(e) => setNewMedDur(e.target.value)}
+                  placeholder="Dur (e.g. 30 Days)"
+                  className="rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                />
+              </div>
+
+              <button
+                type="button"
+                onClick={handleAddMed}
+                className="w-full py-2.5 rounded-xl bg-blue-600 text-white font-bold uppercase tracking-wider hover:bg-blue-700 shadow-sm"
+              >
+                + Add Prescribed Medication
+              </button>
+
+              <div className="space-y-2">
+                <span className="font-bold text-neutral-700 block">Active Medication Regimens ({medications.length}):</span>
+                <div className="space-y-1.5 max-h-48 overflow-y-auto">
+                  {medications.map((m, idx) => (
+                    <div key={idx} className="flex items-center justify-between p-2.5 rounded-xl bg-neutral-50 border border-black/5">
+                      <div className="flex items-center gap-2">
+                        <Pill className="h-3.5 w-3.5 text-blue-600" />
+                        <span className="font-bold text-neutral-900">{m.standardMolecule}</span>
+                        <span className="text-neutral-500 font-mono text-[11px]">({m.dosage} &bull; {m.frequency} &bull; {m.duration})</span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveMed(idx)}
+                        className="text-neutral-400 hover:text-red-600 p-1"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {modalTab === "demographics" && (
+            <div className="space-y-4 animate-fadeIn">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Full Legal Name</label>
+                  <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900 font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">ABHA Health ID / Number</label>
+                  <input
+                    value={abhaId}
+                    onChange={(e) => setAbhaId(e.target.value)}
+                    placeholder="e.g. 14-8921-4402-9912"
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 font-mono text-neutral-900"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Age</label>
+                  <input
+                    type="number"
+                    value={age}
+                    onChange={(e) => setAge(Number(e.target.value))}
+                    required
+                    min={0}
+                    max={120}
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  />
+                </div>
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Gender</label>
+                  <select
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value as typeof gender)}
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  >
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Blood Group</label>
+                  <select
+                    value={bloodGroup}
+                    onChange={(e) => setBloodGroup(e.target.value)}
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 font-bold text-neutral-900"
+                  >
+                    <option>O+</option>
+                    <option>A+</option>
+                    <option>B+</option>
+                    <option>AB+</option>
+                    <option>O-</option>
+                    <option>A-</option>
+                    <option>B-</option>
+                    <option>AB-</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="font-bold text-neutral-700 block mb-1">Phone Number</label>
+                  <input
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="font-bold text-neutral-700 block mb-1">Doctor Remarks / Consultation Note</label>
+                <textarea
+                  value={doctorNotes}
+                  onChange={(e) => setDoctorNotes(e.target.value)}
+                  rows={2}
+                  placeholder="Optional clinical notes explaining why vitals or prescriptions were updated..."
+                  className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Modal Footer */}
+          <div className="pt-4 border-t border-black/5 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-5 py-2.5 rounded-full border border-black/10 bg-white font-bold uppercase tracking-wider text-neutral-700 hover:bg-neutral-100 text-xs"
+            >
+              Cancel
+            </button>
+
+            <button
+              type="submit"
+              disabled={isSaving}
+              className="px-6 py-2.5 rounded-full bg-neutral-950 text-white font-bold uppercase tracking-wider text-xs hover:bg-neutral-800 shadow-md flex items-center gap-1.5 disabled:opacity-50"
+            >
+              {saveSuccess ? (
+                <>
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                  <span>Saved!</span>
+                </>
+              ) : isSaving ? (
+                <>
+                  <RefreshCw className="h-4 w-4 animate-spin" />
+                  <span>Updating Health Passport...</span>
+                </>
+              ) : (
+                <>
+                  <Save className="h-4 w-4" />
+                  <span>Save &amp; Sync Health Passport</span>
+                </>
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Register Patient Modal
+// ---------------------------------------------------------------------------
+
+function RegisterPatientModal({
+  isOpen,
+  onClose,
+  onCreate,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  onCreate: (input: CreateAccountInput) => Promise<void>;
+}) {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState<"Female" | "Male" | "Other">("Female");
+  const [phone, setPhone] = useState("+91 ");
+  const [bloodGroup, setBloodGroup] = useState("O+");
+  const [preferredLanguage, setPreferredLanguage] = useState<IndicLanguage>("en");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  if (!isOpen) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !age) return;
+    setIsSubmitting(true);
+    setError("");
+    try {
+      await onCreate({
+        name: name.trim(),
+        age: Number(age),
+        gender,
+        phone,
+        bloodGroup,
+        preferredLanguage,
+      });
+      onClose();
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Failed to create patient");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-md animate-fadeIn">
+      <div className="w-full max-w-md rounded-[28px] border border-black/10 bg-white shadow-2xl p-6 space-y-4">
+        <div className="flex items-center justify-between border-b border-black/5 pb-3">
+          <div className="flex items-center gap-2">
+            <UserPlus className="h-4 w-4 text-neutral-900" />
+            <span className="text-xs font-bold uppercase tracking-wider text-neutral-950" style={{ fontFamily: "var(--do-font-label)" }}>
+              Register New Patient Passport
+            </span>
+          </div>
+          <button type="button" onClick={onClose} className="text-neutral-400 hover:text-black">
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-3 text-xs">
+          <div>
+            <label className="font-semibold text-neutral-600 block mb-1">Full Legal Name</label>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="e.g. Ramesh Iyer"
+              required
+              className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900 font-medium"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="font-semibold text-neutral-600 block mb-1">Age</label>
+              <input
+                type="number"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                placeholder="42"
+                required
+                min={0}
+                max={120}
+                className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+              />
+            </div>
+            <div>
+              <label className="font-semibold text-neutral-600 block mb-1">Gender</label>
+              <select
+                value={gender}
+                onChange={(e) => setGender(e.target.value as typeof gender)}
+                className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+              >
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="font-semibold text-neutral-600 block mb-1">Blood Group</label>
+              <select
+                value={bloodGroup}
+                onChange={(e) => setBloodGroup(e.target.value)}
+                className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900 font-bold"
+              >
+                <option>O+</option>
+                <option>A+</option>
+                <option>B+</option>
+                <option>AB+</option>
+                <option>O-</option>
+                <option>A-</option>
+                <option>B-</option>
+                <option>AB-</option>
+              </select>
+            </div>
+            <div>
+              <label className="font-semibold text-neutral-600 block mb-1">Preferred Language</label>
+              <select
+                value={preferredLanguage}
+                onChange={(e) => setPreferredLanguage(e.target.value as IndicLanguage)}
+                className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+              >
+                {INDIC_LANGUAGES.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.name} ({lang.nativeName})
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label className="font-semibold text-neutral-600 block mb-1">Contact Phone</label>
+            <input
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+91 98402 12345"
+              className="w-full rounded-xl border border-black/10 p-2.5 bg-neutral-50 text-neutral-900"
+            />
+          </div>
+
+          {error && <p className="text-xs text-red-600">{error}</p>}
+
+          <div className="pt-2 flex gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex-1 py-2.5 rounded-full border border-black/10 text-neutral-700 font-bold uppercase tracking-wider hover:bg-neutral-50"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="flex-1 py-2.5 rounded-full bg-neutral-950 text-white font-bold uppercase tracking-wider hover:bg-neutral-800 shadow-md disabled:opacity-50"
+            >
+              {isSubmitting ? "Registering..." : "Create Passport"}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
