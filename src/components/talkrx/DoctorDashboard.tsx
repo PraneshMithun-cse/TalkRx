@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   User,
   AlertTriangle,
@@ -26,6 +27,7 @@ import {
   KeyRound,
   Pencil,
   X,
+  Edit3,
 } from "lucide-react";
 import { useVault } from "./VaultContext";
 import { formatSerial } from "./serial";
@@ -41,7 +43,7 @@ const DEFAULT_IDENTITY: DoctorIdentity = {
 };
 
 export function DoctorDashboard() {
-  const { isHydrated, patients, doctorIdentity, setDoctorIdentity, lookupPatient, addDoctorRecord, grantConsent, logAccess } = useVault();
+  const { isHydrated, patients, doctorIdentity, setDoctorIdentity, lookupPatient, addDoctorRecord, grantConsent, logAccess, selectPatient } = useVault();
   const [selectedPatientId, setSelectedPatientId] = useState<string>("");
   const [activeTab, setActiveTab] = useState<"summary" | "timeline" | "medications" | "ayush" | "prescribe">("summary");
   const [newPrescription, setNewPrescription] = useState({
@@ -97,21 +99,21 @@ export function DoctorDashboard() {
 
   const identity = doctorIdentity || DEFAULT_IDENTITY;
 
-  const handleSaveIdentity = (e: React.FormEvent) => {
+  const handleSaveIdentity = async (e: React.FormEvent) => {
     e.preventDefault();
-    setDoctorIdentity(identityForm);
+    await setDoctorIdentity(identityForm);
     setIsEditingIdentity(false);
   };
 
-  const handleSerialLookup = (e: React.FormEvent) => {
+  const handleSerialLookup = async (e: React.FormEvent) => {
     e.preventDefault();
-    const found = lookupPatient(serialLookup);
+    const found = await lookupPatient(serialLookup);
     if (!found) {
       setLookupMessage({ type: "error", text: "No TalkRx account found for that Serial Number / QR." });
       return;
     }
     setSelectedPatientId(found.id);
-    grantConsent(found.id, {
+    await grantConsent(found.id, {
       granteeName: identity.name,
       granteeType: "Doctor",
       purpose: "Serial-authorized access",
@@ -120,7 +122,7 @@ export function DoctorDashboard() {
       validFrom: new Date().toISOString().slice(0, 16).replace("T", " "),
       validTill: new Date(Date.now() + 12 * 3600 * 1000).toISOString().slice(0, 16).replace("T", " "),
     });
-    logAccess(found.id, {
+    await logAccess(found.id, {
       accessorName: identity.name,
       accessorRole: `${identity.department || "Physician"}`,
       facility: identity.organization,
@@ -132,8 +134,8 @@ export function DoctorDashboard() {
     setSerialLookup("");
   };
 
-  const handleCompleteConsultation = () => {
-    addDoctorRecord(patient.id, {
+  const handleCompleteConsultation = async () => {
+    await addDoctorRecord(patient.id, {
       doctorName: identity.name,
       licenseNumber: identity.licenseNumber,
       organization: identity.organization,
@@ -295,6 +297,15 @@ export function DoctorDashboard() {
                 <span className="inline-flex items-center gap-1 text-emerald-800 font-medium">
                   <ShieldCheck className="h-3.5 w-3.5" /> Granular Consent (12h)
                 </span>
+                <span className="hidden sm:inline">&bull;</span>
+                <Link
+                  href="/health-passport"
+                  onClick={() => selectPatient(patient.id)}
+                  className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-bold bg-blue-50 hover:bg-blue-100 px-2.5 py-0.5 rounded-full border border-blue-200 transition-colors"
+                >
+                  <Edit3 className="h-3 w-3" />
+                  <span>Edit Health Passport</span>
+                </Link>
               </div>
             </div>
           </div>

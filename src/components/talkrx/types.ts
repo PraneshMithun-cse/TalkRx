@@ -174,6 +174,18 @@ export interface StructuredHpiSummary {
   intakeDurationSeconds: number;
 }
 
+export interface PatientVitals {
+  bloodPressure?: string;
+  bloodPressureStatus?: string;
+  bloodGlucose?: string;
+  bloodGlucoseType?: string;
+  heartRate?: string;
+  spO2?: string;
+  temperature?: string;
+  weight?: string;
+  height?: string;
+}
+
 export interface PatientProfile {
   id: string;
   serialNumber: string;
@@ -199,6 +211,7 @@ export interface PatientProfile {
   queueStatus: "waiting" | "in-case-taking" | "triage-alert" | "case-completed" | "consulting" | "discharged";
   structuredSummary?: StructuredHpiSummary;
   ayushData?: DashavidhaParikshaData;
+  vitals?: PatientVitals;
   timeline: TimelineEvent[];
   documents: MedicalDocument[];
   activeMedications: ExtractedMedication[];
@@ -266,4 +279,37 @@ export interface DoctorIdentity {
   licenseNumber: string;
   organization: string;
   department: string;
+}
+
+export interface CreateAccountInput {
+  name: string;
+  age: number;
+  gender: "Female" | "Male" | "Other";
+  phone: string;
+  bloodGroup: string;
+  preferredLanguage: IndicLanguage;
+}
+
+export interface UpdateHealthOverviewInput {
+  name?: string;
+  age?: number;
+  gender?: "Female" | "Male" | "Other";
+  phone?: string;
+  bloodGroup?: string;
+  abhaId?: string;
+  vitals?: PatientVitals;
+  allergies?: string[];
+  conditions?: Array<{
+    label: string;
+    kind: "condition" | "diagnosis" | "symptom" | "allergy";
+    notes?: string;
+  }>;
+  medications?: Array<{
+    standardMolecule: string;
+    dosage: string;
+    frequency: string;
+    duration: string;
+    instructions?: string;
+  }>;
+  doctorNotes?: string;
 }

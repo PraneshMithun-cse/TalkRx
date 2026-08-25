@@ -17,8 +17,10 @@ import {
   Upload,
   FileText,
 } from "lucide-react";
-import { INDIC_LANGUAGES, MOCK_PATIENTS } from "./mock-data";
-import type { IndicLanguage, RedFlagAlert, StructuredHpiSummary } from "./types";
+import { INDIC_LANGUAGES } from "./mock-data";
+import { useVault } from "./VaultContext";
+import { formatSerial } from "./serial";
+import type { IndicLanguage, RedFlagAlert, StructuredHpiSummary, DashavidhaParikshaData } from "./types";
 
 type Mode = "conventional" | "ayush";
 
@@ -267,14 +269,19 @@ export function CaseTakingEngine({
   onTriggerRedFlag?: (alert: RedFlagAlert) => void;
 }) {
   const router = useRouter();
+  const { currentPatient, isHydrated, submitCaseTakingSummary } = useVault();
   const [mode, setMode] = useState<Mode>("conventional");
   const [selectedLang, setSelectedLang] = useState<IndicLanguage>("ta");
   const [currentQIndex, setCurrentQIndex] = useState<number>(0);
   const [inputValue, setInputValue] = useState("");
   const [isListening, setIsListening] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [hasRedFlag, setHasRedFlag] = useState(false);
   const [redFlagAlert, setRedFlagAlert] = useState<RedFlagAlert | null>(null);
+  const [answers, setAnswers] = useState<{ category: string; question: string; answer: string }[]>([]);
+  const [redFlags, setRedFlags] = useState<RedFlagAlert[]>([]);
+  const [startedAt] = useState(() => Date.now());
 
   const activeQuestion = QUESTIONS[currentQIndex] || QUESTIONS[0];
   const stepsList = mode === "conventional" ? CONVENTIONAL_STEPS : AYUSH_STEPS;
@@ -282,13 +289,17 @@ export function CaseTakingEngine({
   const currentQuestionText = mode === "conventional" ? activeQuestion.question : (activeQuestion.ayushQuestion || activeQuestion.question);
   const currentSuggestions = mode === "conventional" ? activeQuestion.suggestions : (activeQuestion.ayushSuggestions || activeQuestion.suggestions);
 
-  const patientTag = mode === "conventional"
-    ? "PATIENT: KAMALA SUNDARAM • ABHA-TN-9182-3847"
-    : "PATIENT: RAMESH IYER • AYU-IN-4821-7790";
+  const patientTag = currentPatient
+    ? `PATIENT: ${currentPatient.name.toUpperCase()} • ${
+        currentPatient.abhaId !== "Not Linked" ? currentPatient.abhaId : `SERIAL ${formatSerial(currentPatient.serialNumber)}`
+      }`
+    : "NO PATIENT SESSION ACTIVE";
 
-  const handleSend = (textToSend?: string) => {
+  const handleSend = async (textToSend?: string) => {
     const text = textToSend || inputValue;
     if (!text.trim()) return;
+
+    let triggeredAlert: RedFlagAlert | null = null;
 
     // Check for Red Flag trigger on cardiac terms
     if (
@@ -297,7 +308,8 @@ export function CaseTakingEngine({
       text.toLowerCase().includes("sweat") ||
       text.toLowerCase().includes("crushing")
     ) {
-      const alert: RedFlagAlert = {
+      triggeredAlert = {
+        // eslint-disable-next-line react-hooks/purity -- runs only inside this user-triggered submit handler, never during render.
         id: `rf-${Date.now()}`,
         category: "cardiac",
         severity: "critical",
@@ -309,19 +321,94 @@ export function CaseTakingEngine({
         actionRequired: "Stat 12-lead ECG, Oxygen 4L/min, IV Cannulation, immediate bedside review.",
       };
       setHasRedFlag(true);
-      setRedFlagAlert(alert);
-      if (onTriggerRedFlag) onTriggerRedFlag(alert);
+      setRedFlagAlert(triggeredAlert);
+      setRedFlags((prev) => [...prev, triggeredAlert as RedFlagAlert]);
+      if (onTriggerRedFlag) onTriggerRedFlag(triggeredAlert);
     }
 
+    const answerRecord = { category: currentStepName, question: currentQuestionText, answer: text };
+    const updatedAnswers = [...answers, answerRecord];
+    setAnswers(updatedAnswers);
     setInputValue("");
+
     if (currentQIndex < QUESTIONS.length - 1) {
       setCurrentQIndex((prev) => prev + 1);
-    } else {
-      setIsComplete(true);
-      if (onComplete) {
-        onComplete(MOCK_PATIENTS[0].structuredSummary!);
+      return;
+    }
+
+    setIsComplete(true);
+
+    const finalRedFlags = triggeredAlert ? [...redFlags, triggeredAlert] : redFlags;
+    const chiefComplaint = updatedAnswers[0]?.answer || "Not specified";
+    const hpiNarrative = updatedAnswers.map((a) => `${a.category}: ${a.answer}`).join(" — ");
+
+    const summary: StructuredHpiSummary = {
+      chiefComplaint,
+      duration: updatedAnswers[1]?.answer || "Not specified",
+      hpiNarrative,
+      pertinentPositives: updatedAnswers.slice(0, 4).map((a) => a.answer),
+      pertinentNegatives: [],
+      redFlagsDetected: finalRedFlags,
+      allergies: [],
+      currentMedications: [],
+      pastMedicalHistory: [updatedAnswers[2]?.answer || "Not specified"],
+      pastSurgicalHistory: [],
+      familyHistory: [],
+      lifestyle: { smoking: "Not captured", alcohol: "Not captured", diet: "Not captured", sleep: "Not captured" },
+      reviewOfSystems: Object.fromEntries(updatedAnswers.map((a) => [a.category, a.answer])),
+      generatedAt: new Date().toISOString().slice(0, 16).replace("T", " "),
+      // eslint-disable-next-line react-hooks/purity -- Date.now() here only ever runs inside this user-triggered submit handler, never during render.
+      intakeDurationSeconds: Math.round((Date.now() - startedAt) / 1000),
+    };
+
+    const ayushData: DashavidhaParikshaData | undefined =
+      mode === "ayush"
+        ? {
+            prakriti: {
+              primaryDosha: updatedAnswers[0]?.answer || "Tridosha",
+              scores: { vata: 0, pitta: 0, kapha: 0 },
+              physicalTraits: "Pending clinical scoring by AYUSH practitioner",
+              psychologicalTraits: "Pending clinical scoring by AYUSH practitioner",
+            },
+            vikriti: {
+              imbalancedDosha: updatedAnswers[1]?.answer || "Not assessed",
+              currentDeviation: updatedAnswers[1]?.answer || "Not assessed",
+              namasteMorbidityCode: "",
+              whoIcd11Tm2Code: "",
+            },
+            sara: { tissueQuality: updatedAnswers[3]?.answer || "Madhyama (Medium)", dominantTissue: "Not assessed" },
+            samhanana: { build: "Moderate" },
+            pramana: { anthropometry: "Proportionate" },
+            satmya: { habituation: "Mixed" },
+            sattva: { mentalStrength: "Madhyama (Moderate)" },
+            aharaShakti: { abhyavaharana: "Moderate", jaranaShakti: "Good Digestion" },
+            vyayamaShakti: { exerciseCapacity: "Moderate" },
+            vaya: { ageClassification: "Madhyama (Middle age)" },
+            ashtavidha: {
+              nadi: updatedAnswers[5]?.answer || "Not assessed",
+              mutra: "Not assessed",
+              mala: "Not assessed",
+              jihva: "Not assessed",
+              shabda: "Not assessed",
+              sparsha: "Not assessed",
+              drik: "Not assessed",
+              akriti: "Not assessed",
+            },
+            agni: "Samagni (Balanced)",
+            koshtha: "Madhyama (Medium)",
+          }
+        : undefined;
+
+    if (currentPatient) {
+      setIsSaving(true);
+      try {
+        await submitCaseTakingSummary(currentPatient.id, summary, ayushData);
+      } finally {
+        setIsSaving(false);
       }
     }
+
+    if (onComplete) onComplete(summary);
   };
 
   const handleMicToggle = () => {
@@ -343,6 +430,24 @@ export function CaseTakingEngine({
       }
     }, 35);
   };
+
+  if (isHydrated && !currentPatient) {
+    return (
+      <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 bg-[#fafafa] px-6 text-center">
+        <h2 className="text-2xl font-bold text-neutral-950">No Patient Session Active</h2>
+        <p className="max-w-md text-sm text-neutral-600">
+          The AI case-taking kiosk records a clinical history against a patient account. Sign in with a patient account, or
+          create a TalkRx Health Passport, to begin.
+        </p>
+        <Link
+          href="/health-passport"
+          className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-neutral-800"
+        >
+          Go to Health Passport
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#fafafa] flex flex-col justify-between selection:bg-neutral-900 selection:text-white">
@@ -591,10 +696,12 @@ export function CaseTakingEngine({
             </div>
             <div>
               <h3 className="text-2xl font-bold text-neutral-950">
-                Case-Taking Complete &bull; History Recorded
+                {isSaving ? "Saving to Health Passport…" : "Case-Taking Complete • History Recorded"}
               </h3>
               <p className="text-xs text-neutral-600 leading-relaxed mt-1">
-                Your structured clinical data has been securely saved to your TalkRx Health Passport and queued for physician consultation.
+                {isSaving
+                  ? "AI is extracting structured clinical data from your intake — this only takes a moment."
+                  : "Your structured clinical data has been securely saved to your TalkRx Health Passport and queued for physician consultation."}
               </p>
             </div>
 

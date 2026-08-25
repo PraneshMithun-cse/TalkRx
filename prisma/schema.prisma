@@ -1,0 +1,332 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  PATIENT
+  DOCTOR
+  PHARMACY
+  STAFF
+}
+
+enum Gender {
+  Female
+  Male
+  Other
+}
+
+enum IndicLanguage {
+  hi
+  ta
+  te
+  bn
+  mr
+  kn
+  ml
+  gu
+  pa
+  od
+  en
+}
+
+enum ConditionKind {
+  symptom
+  condition
+  allergy
+  diagnosis
+}
+
+enum MedicationStatus {
+  active
+  completed
+  discontinued
+}
+
+enum DocumentCategory {
+  prescription
+  lab_report
+  discharge_summary
+  diagnostic_scan
+  ayush_consult
+}
+
+enum ConsentStatus {
+  Active
+  Revoked
+  Expired
+}
+
+enum RedFlagSeverity {
+  critical
+  high
+  moderate
+}
+
+enum RedFlagStatus {
+  active
+  acknowledged
+  resolved
+}
+
+model User {
+  id             String   @id @default(cuid())
+  clerkId        String   @unique
+  email          String?
+  role           UserRole
+  name           String
+  licenseNumber  String?
+  organization   String?
+  department     String?
+  createdAt      DateTime @default(now())
+
+  patient        Patient?
+  doctorRecords  DoctorConsultationRecord[]
+
+  @@index([role])
+}
+
+model Patient {
+  id                String        @id @default(cuid())
+  userId            String        @unique
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  serialNumber      String        @unique
+  abhaId            String        @default("Not Linked")
+  abhaAddress       String        @default("Not Linked")
+  name              String
+  age               Int
+  gender            Gender
+  phone             String
+  bloodGroup        String
+  preferredLanguage IndicLanguage @default(en)
+  photoUrl          String?
+  isReturningPatient Boolean      @default(false)
+  tokenNumber       String        @default("—")
+  department        String        @default("—")
+  hospitalName      String        @default("—")
+  queueStatus       String        @default("waiting")
+
+  structuredSummary Json?
+  ayushData         Json?
+
+  allergies         String[]      @default([])
+
+  createdAt         DateTime      @default(now())
+
+  conditions        PatientCondition[]
+  medications       ExtractedMedication[]
+  selfAssessments   SelfAssessmentEntry[]
+  doctorRecords     DoctorConsultationRecord[]
+  consents          ConsentAuthorization[]
+  auditLog          AccessAuditLog[]
+  timeline          TimelineEvent[]
+  documents         MedicalDocument[]
+  redFlagAlerts     RedFlagAlert[]
+
+  @@index([serialNumber])
+  @@index([abhaId])
+}
+
+model PatientCondition {
+  id                  String            @id @default(cuid())
+  patientId           String
+  patient             Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  label               String
+  kind                ConditionKind
+  source              String
+  confidence          Float
+  verified            Boolean           @default(false)
+  recordedBy          String?
+  recordedAt          DateTime          @default(now())
+  notes               String?
+
+  sourceAssessmentId  String?
+  sourceAssessment    SelfAssessmentEntry?      @relation(fields: [sourceAssessmentId], references: [id], onDelete: SetNull)
+  sourceDoctorRecordId String?
+  sourceDoctorRecord  DoctorConsultationRecord? @relation(fields: [sourceDoctorRecordId], references: [id], onDelete: SetNull)
+
+  @@index([patientId])
+}
+
+model ExtractedMedication {
+  id                  String            @id @default(cuid())
+  patientId           String
+  patient             Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  rawText             String
+  standardMolecule    String
+  brandName           String?
+  dosage              String
+  frequency           String
+  duration            String
+  confidence          Float
+  confirmedByPatient  Boolean           @default(false)
+  status              MedicationStatus  @default(active)
+  source              String
+  prescribedBy        String?
+  dispensedBy         String?
+  dispensedAt         DateTime?
+  notes               String?
+
+  sourceAssessmentId  String?
+  sourceAssessment    SelfAssessmentEntry?      @relation(fields: [sourceAssessmentId], references: [id], onDelete: SetNull)
+  sourceDoctorRecordId String?
+  sourceDoctorRecord  DoctorConsultationRecord? @relation(fields: [sourceDoctorRecordId], references: [id], onDelete: SetNull)
+  sourceDocumentId    String?
+  sourceDocument      MedicalDocument?          @relation(fields: [sourceDocumentId], references: [id], onDelete: SetNull)
+
+  @@index([patientId])
+}
+
+model SelfAssessmentEntry {
+  id              String    @id @default(cuid())
+  patientId       String
+  patient         Patient   @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  submittedAt     DateTime  @default(now())
+  rawText         String
+  aiConfidenceAvg Float
+
+  conditions      PatientCondition[]
+  medications     ExtractedMedication[]
+
+  @@index([patientId])
+}
+
+model DoctorConsultationRecord {
+  id              String    @id @default(cuid())
+  patientId       String
+  patient         Patient   @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  doctorId        String?
+  doctor          User?     @relation(fields: [doctorId], references: [id], onDelete: SetNull)
+
+  doctorName      String
+  licenseNumber   String
+  organization    String
+  timestamp       DateTime  @default(now())
+  clinicalNotes   String
+  recommendations String
+
+  diagnosedConditions   PatientCondition[]
+  prescribedMedications ExtractedMedication[]
+
+  @@index([patientId])
+}
+
+model ConsentAuthorization {
+  id             String        @id @default(cuid())
+  patientId      String
+  patient        Patient       @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  granteeName    String
+  granteeType    String
+  purpose        String
+  dataCategories String[]
+  accessLevel    String
+  validFrom      DateTime
+  validTill      DateTime
+  status         ConsentStatus @default(Active)
+
+  @@index([patientId])
+}
+
+model AccessAuditLog {
+  id            String   @id @default(cuid())
+  patientId     String
+  patient       Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  timestamp     DateTime @default(now())
+  accessorName  String
+  accessorRole  String
+  facility      String
+  action        String
+  dataAccessed  String
+  ipLocation    String
+
+  @@index([patientId])
+}
+
+model TimelineEvent {
+  id          String            @id @default(cuid())
+  patientId   String
+  patient     Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  date        String
+  time        String?
+  title       String
+  subtitle    String
+  category    String
+  source      String
+  sourceEntity String
+  doctorName  String?
+  facility    String
+  description String
+  tags        String[]
+  metadata    Json?
+  isRedFlag   Boolean           @default(false)
+  createdAt   DateTime          @default(now())
+
+  @@index([patientId])
+}
+
+model RedFlagAlert {
+  id               String          @id @default(cuid())
+  patientId        String
+  patient          Patient         @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  category         String
+  severity         RedFlagSeverity
+  matchedRule      String
+  patientStatement String
+  timestamp        DateTime        @default(now())
+  escalatedTo      String
+  status           RedFlagStatus   @default(active)
+  actionRequired   String
+
+  @@index([patientId])
+}
+
+model MedicalDocument {
+  id                 String            @id @default(cuid())
+  patientId          String
+  patient            Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  title              String
+  category           DocumentCategory
+  date               String
+  facility           String
+  doctorName         String?
+  fileUrl            String?
+  ocrConfidence      Float
+  extractedDiagnoses String[]
+  rawText            String
+  verified           Boolean           @default(false)
+
+  extractedLabs      ExtractedLabResult[]
+  extractedMedicines ExtractedMedication[]
+
+  @@index([patientId])
+}
+
+model ExtractedLabResult {
+  id             String          @id @default(cuid())
+  documentId     String
+  document       MedicalDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  parameter      String
+  value          String
+  unit           String
+  referenceRange String
+  isAbnormal     Boolean
+  loincCode      String?
+  sourceDoc      String
+  date           String
+
+  @@index([documentId])
+}

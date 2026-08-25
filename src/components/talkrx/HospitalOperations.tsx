@@ -14,9 +14,10 @@ import {
   ShieldAlert,
   ArrowRight,
 } from "lucide-react";
-import { MOCK_PATIENTS } from "./mock-data";
+import { useVault } from "./VaultContext";
 
 export function HospitalOperations() {
+  const { patients } = useVault();
   const [selectedQueueFilter, setSelectedQueueFilter] = useState<string>("all");
   const [fhirExported, setFhirExported] = useState(false);
 
@@ -197,7 +198,14 @@ export function HospitalOperations() {
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200">
-              {MOCK_PATIENTS.map((p) => (
+              {patients.length === 0 && (
+                <tr>
+                  <td colSpan={8} className="p-6 text-center text-neutral-400">
+                    No patients in the queue yet.
+                  </td>
+                </tr>
+              )}
+              {patients.map((p) => (
                 <tr key={p.id} className="hover:bg-neutral-50/60">
                   <td className="p-3.5 font-bold text-neutral-950">{p.tokenNumber}</td>
                   <td className="p-3.5 font-semibold text-neutral-800">{p.name}</td>
