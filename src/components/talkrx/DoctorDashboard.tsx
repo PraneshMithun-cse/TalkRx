@@ -474,7 +474,7 @@ export function DoctorDashboard() {
                       Pertinent Positives
                     </span>
                     <ul className="list-disc list-inside space-y-1 text-neutral-800">
-                      {patient.structuredSummary?.pertinentPositives.map((pos, idx) => (
+                      {(patient.structuredSummary?.pertinentPositives ?? []).map((pos, idx) => (
                         <li key={idx}>{pos}</li>
                       ))}
                     </ul>
@@ -484,7 +484,7 @@ export function DoctorDashboard() {
                       Pertinent Negatives
                     </span>
                     <ul className="list-disc list-inside space-y-1 text-neutral-800">
-                      {patient.structuredSummary?.pertinentNegatives.map((neg, idx) => (
+                      {(patient.structuredSummary?.pertinentNegatives ?? []).map((neg, idx) => (
                         <li key={idx}>{neg}</li>
                       ))}
                     </ul>
@@ -499,13 +499,13 @@ export function DoctorDashboard() {
                     Past Medical &amp; Surgical
                   </span>
                   <ul className="space-y-1.5 text-neutral-700">
-                    {patient.structuredSummary?.pastMedicalHistory.map((h, i) => (
+                    {(patient.structuredSummary?.pastMedicalHistory ?? []).map((h, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <span className="h-1.5 w-1.5 rounded-full bg-black" />
                         <span>{h}</span>
                       </li>
                     ))}
-                    {patient.structuredSummary?.pastSurgicalHistory.map((s, i) => (
+                    {(patient.structuredSummary?.pastSurgicalHistory ?? []).map((s, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <span className="h-1.5 w-1.5 rounded-full bg-neutral-400" />
                         <span>{s}</span>
@@ -519,7 +519,7 @@ export function DoctorDashboard() {
                     Family &amp; Social
                   </span>
                   <ul className="space-y-1.5 text-neutral-700">
-                    {patient.structuredSummary?.familyHistory.map((f, i) => (
+                    {(patient.structuredSummary?.familyHistory ?? []).map((f, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <span className="h-1.5 w-1.5 rounded-full bg-neutral-600" />
                         <span>{f}</span>
