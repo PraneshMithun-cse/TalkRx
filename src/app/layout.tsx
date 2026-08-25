@@ -1,3 +1,5 @@
+import { ClerkProvider } from "@clerk/nextjs";
+import { shadcn } from "@clerk/ui/themes";
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import { VaultProvider } from "@/components/talkrx/VaultContext";
@@ -41,12 +43,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           MozOsxFontSmoothing: "grayscale",
         }}
       >
-        <SmoothScroll>
+        <ClerkProvider appearance={{ theme: shadcn }}>
+          <SmoothScroll>
           <VaultProvider>
-            {children}
-            <MobileBottomNav />
+          {children}
+          <MobileBottomNav />
           </VaultProvider>
-        </SmoothScroll>
+          </SmoothScroll>
+        </ClerkProvider>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
 import { TalkRxWordmark, AyushBadge, LoginIcon, HamburgerIcon } from "@/components/sites/demophorius-com-d11dd431/shared/icons";
 import { X, ArrowRight, ShieldCheck, Stethoscope, Mic, Building2, Pill } from "lucide-react";
 
@@ -44,15 +45,32 @@ export function Header() {
 
         <div className="flex items-center gap-4">
 
-          <Link
-            href="/doctor-dashboard"
-            aria-label="Doctor / Kiosk Portal"
-            className="flex h-9 px-4 items-center justify-center rounded-full bg-neutral-950 text-white text-xs font-semibold tracking-wider uppercase hover:bg-neutral-800 transition-all gap-1.5 shadow-sm"
-            style={{ fontFamily: "var(--do-font-label)" }}
-          >
-            <LoginIcon className="h-3 w-3" />
-            <span className="hidden sm:inline">OPD Portal</span>
-          </Link>
+          <Show when="signed-out">
+            <SignInButton>
+              <button
+                type="button"
+                aria-label="Sign In to TalkRx"
+                className="flex h-9 px-4 items-center justify-center rounded-full bg-neutral-950 text-white text-xs font-semibold tracking-wider uppercase hover:bg-neutral-800 transition-all gap-1.5 shadow-sm"
+                style={{ fontFamily: "var(--do-font-label)" }}
+              >
+                <LoginIcon className="h-3 w-3" />
+                <span className="hidden sm:inline">Sign In</span>
+              </button>
+            </SignInButton>
+            <SignUpButton>
+              <button
+                type="button"
+                aria-label="Sign Up for TalkRx"
+                className="hidden sm:flex h-9 px-4 items-center justify-center rounded-full border border-neutral-950 text-neutral-950 text-xs font-semibold tracking-wider uppercase hover:bg-neutral-100 transition-all"
+                style={{ fontFamily: "var(--do-font-label)" }}
+              >
+                Sign Up
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton afterSignOutUrl="/" />
+          </Show>
 
           <button
             type="button"
