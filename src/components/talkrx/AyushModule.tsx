@@ -84,7 +84,7 @@ export function AyushModule() {
               <button
                 key={tab.id}
                 type="button"
-                onClick={() => setActiveSubTab(tab.id as any)}
+                onClick={() => setActiveSubTab(tab.id as "dashavidha" | "ashtavidha" | "namaste")}
                 className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all ${
                   isActive
                     ? "bg-neutral-950 text-white shadow-sm"

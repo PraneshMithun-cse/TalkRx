@@ -7,6 +7,11 @@ export default defineConfig({
     path: "prisma/migrations",
   },
   datasource: {
-    url: env("PRISMA_CONNECTION_STRING"),
+    url:
+      env("PRISMA_CONNECTION_STRING") ||
+      env("DATABASE_URL") ||
+      env("POSTGRES_PRISMA_URL") ||
+      env("POSTGRES_URL") ||
+      "postgresql://postgres:postgres@localhost:5432/talkrx",
   },
 });

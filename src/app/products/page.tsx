@@ -17,7 +17,7 @@ export default function ProductsPage() {
           Demophorius is dedicated to manufacturing medical related products of the highest quality and standards.
           Demotek blood bags are manufactured under strict quality control to ensure safety, reliability, as well as
           excellent product quality. D-vac blood collection system has been designed to conform to worldwide
-          standards and safety. D-tek sutures have achieved to be branded among the top brands due to the company's
+          standards and safety. D-tek sutures have achieved to be branded among the top brands due to the company&apos;s
           commitment of manufacturing high quality surgical sutures. Demotek medical disposables have proved to be
           one of the most reputable brands in general hospital supplies.
         </p>
