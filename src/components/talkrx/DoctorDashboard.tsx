@@ -28,11 +28,15 @@ import {
   Pencil,
   X,
   Edit3,
+  Heart,
+  Droplet,
+  Thermometer,
 } from "lucide-react";
 import { useVault } from "./VaultContext";
 import { formatSerial } from "./serial";
 import { ProvenanceBadge } from "./ProvenanceBadge";
 import { TimelineStream } from "./TimelineStream";
+import { classifyVitals } from "./vitals-classifier";
 import type { DoctorIdentity } from "./types";
 
 const DEFAULT_IDENTITY: DoctorIdentity = {
@@ -74,6 +78,9 @@ export function DoctorDashboard() {
       </div>
     );
   }
+
+  const vitalsClassification = classifyVitals(patient.vitals);
+  const activeMedications = patient.activeMedications.filter((m) => m.status === "active");
 
   const handleAddRx = (e: React.FormEvent) => {
     e.preventDefault();
@@ -411,6 +418,88 @@ export function DoctorDashboard() {
               </div>
             )}
 
+            {/* Health Overview Metrics */}
+            <div className="rounded-2xl border border-black/5 bg-neutral-50/60 p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <span
+                  className="text-[10px] font-bold uppercase tracking-widest text-neutral-400"
+                  style={{ fontFamily: "var(--do-font-label)" }}
+                >
+                  Health Overview &bull; Latest Vitals
+                </span>
+                {vitalsClassification.conditions.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 justify-end">
+                    {vitalsClassification.conditions.map((c) => (
+                      <span
+                        key={c}
+                        className={`rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${
+                          vitalsClassification.bpFlag === "crisis" || vitalsClassification.glucoseFlag === "diabetic"
+                            ? "bg-red-100 text-red-800"
+                            : "bg-amber-100 text-amber-800"
+                        }`}
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                <div className="rounded-xl bg-white p-2.5 border border-black/5">
+                  <span className="text-neutral-400 flex items-center gap-1 text-[10px] uppercase">
+                    <Heart className="h-3 w-3" /> Blood Pressure
+                  </span>
+                  <span
+                    className={`font-bold ${
+                      vitalsClassification.bpFlag === "crisis" || vitalsClassification.bpFlag === "stage2"
+                        ? "text-red-700"
+                        : vitalsClassification.bpFlag === "stage1" || vitalsClassification.bpFlag === "elevated"
+                        ? "text-amber-700"
+                        : "text-neutral-900"
+                    }`}
+                  >
+                    {patient.vitals?.bloodPressure || "Not recorded"}
+                  </span>
+                </div>
+                <div className="rounded-xl bg-white p-2.5 border border-black/5">
+                  <span className="text-neutral-400 flex items-center gap-1 text-[10px] uppercase">
+                    <Droplet className="h-3 w-3" /> Blood Glucose
+                  </span>
+                  <span
+                    className={`font-bold ${
+                      vitalsClassification.glucoseFlag === "diabetic"
+                        ? "text-red-700"
+                        : vitalsClassification.glucoseFlag === "prediabetic"
+                        ? "text-amber-700"
+                        : "text-neutral-900"
+                    }`}
+                  >
+                    {patient.vitals?.bloodGlucose ? `${patient.vitals.bloodGlucose} mg/dL` : "Not recorded"}
+                  </span>
+                  {patient.vitals?.bloodGlucoseType && (
+                    <span className="block text-[10px] text-neutral-400">{patient.vitals.bloodGlucoseType}</span>
+                  )}
+                </div>
+                <div className="rounded-xl bg-white p-2.5 border border-black/5">
+                  <span className="text-neutral-400 flex items-center gap-1 text-[10px] uppercase">
+                    <Activity className="h-3 w-3" /> Heart Rate
+                  </span>
+                  <span className="font-bold text-neutral-900">{patient.vitals?.heartRate || "Not recorded"}</span>
+                </div>
+                <div className="rounded-xl bg-white p-2.5 border border-black/5">
+                  <span className="text-neutral-400 flex items-center gap-1 text-[10px] uppercase">SpO2</span>
+                  <span className="font-bold text-neutral-900">{patient.vitals?.spO2 || "Not recorded"}</span>
+                </div>
+                <div className="rounded-xl bg-white p-2.5 border border-black/5">
+                  <span className="text-neutral-400 flex items-center gap-1 text-[10px] uppercase">
+                    <Thermometer className="h-3 w-3" /> Temperature
+                  </span>
+                  <span className="font-bold text-neutral-900">{patient.vitals?.temperature || "Not recorded"}</span>
+                </div>
+              </div>
+            </div>
+
             {/* Chief Complaint & Narrative HPI */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2 space-y-4">
@@ -441,6 +530,12 @@ export function DoctorDashboard() {
                     </span>
                     <p className="text-xs md:text-sm leading-relaxed text-neutral-800 bg-white p-4 rounded-xl border border-black/5">
                       {patient.structuredSummary?.hpiNarrative}
+                      {vitalsClassification.narrative && (
+                        <span className="mt-2 pt-2 border-t border-black/5 block font-medium text-amber-800">
+                          <strong className="uppercase text-[10px] tracking-wide block mb-0.5">Vitals-Based Assessment:</strong>
+                          {vitalsClassification.narrative}
+                        </span>
+                      )}
                     </p>
                   </div>
 
@@ -494,6 +589,32 @@ export function DoctorDashboard() {
 
               {/* Sidebar Background Info */}
               <div className="space-y-4 text-xs">
+                <div className="rounded-2xl border border-black/5 p-4 bg-neutral-50/50">
+                  <span
+                    className="font-bold uppercase tracking-wider text-neutral-900 flex items-center gap-1.5 mb-2"
+                    style={{ fontFamily: "var(--do-font-label)" }}
+                  >
+                    <Pill className="h-3.5 w-3.5" /> Current Medications
+                  </span>
+                  {activeMedications.length === 0 ? (
+                    <p className="text-neutral-400 italic">No active medications on record.</p>
+                  ) : (
+                    <ul className="space-y-1.5 text-neutral-700">
+                      {activeMedications.map((med) => (
+                        <li key={med.id} className="flex items-center justify-between gap-2">
+                          <span className="flex items-center gap-2">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
+                            <span className="font-semibold text-neutral-900">{med.standardMolecule}</span>
+                          </span>
+                          <span className="text-neutral-500 text-[11px]">
+                            {med.dosage} &bull; {med.frequency}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
                 <div className="rounded-2xl border border-black/5 p-4 bg-neutral-50/50">
                   <span className="font-bold uppercase tracking-wider text-neutral-900 block mb-2" style={{ fontFamily: "var(--do-font-label)" }}>
                     Past Medical &amp; Surgical
