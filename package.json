@@ -7,7 +7,9 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "db:seed:demo": "tsx prisma/seed-demo.mjs",
+    "db:smoke-test": "tsx prisma/smoke-test.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -37,6 +39,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }

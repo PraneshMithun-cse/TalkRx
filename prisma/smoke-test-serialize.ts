@@ -1,4 +1,6 @@
-import "server-only";
+// Standalone duplicate of ../src/lib/actions/serialize.ts for prisma/smoke-test.ts —
+// the real file starts with `import "server-only"`, which unconditionally throws
+// outside Next's RSC build. Keep this in sync if serialize.ts changes shape.
 import { Prisma } from "@prisma/client";
 import type {
   PatientProfile,
@@ -14,7 +16,7 @@ import type {
   StructuredHpiSummary,
   DashavidhaParikshaData,
   ProvenanceSource,
-} from "@/components/talkrx/types";
+} from "../src/components/talkrx/types";
 
 export const PATIENT_INCLUDE = {
   conditions: true,
